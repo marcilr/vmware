@@ -8,6 +8,9 @@ Filelist
 00INSTALL/
   Installing VMware vSphere
 
+clone/
+  Cloning virtual machines in vSphere
+
 docs/
   Documentation
 
