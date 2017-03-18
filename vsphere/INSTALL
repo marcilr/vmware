@@ -1,0 +1,58 @@
+INSTALL
+Created Thu Sep 10 10:59:45 AKDT 2009
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware vSphere Client install
+
+This client provides access to UAA ITS virtual machines.
+
+1. Go to https://anc-vmmgmt01.uaa.alaska.edu/   <== Installed VMware 4.1 (04/28/11)
+
+2. Click "Download vSphere Client" which downloads VMware-viclient.exe
+
+3. Installs VMware vSphere Client 4.0 (from vSphere Client 4.0.msi).
+In win 7 pro did right-click on VMware-viclient.exe "Run as administrator".
+Installed on UAA ITS Dell Latitude E6500, with win 7 pro, on Apr 21, 2010.
+Worked properly.
+
+4. Checked "Install vSphere Host Update Utility 4.0".  Described as:
+"Check the option below to install the vSphere Host Update Utility 4.0 
+along with vSphere Client software."
+
+5. Installed to C:\Program Files\VMware\Infrastructure\
+
+6. Installs:
+o Microsoft Visual J# 2.0 Second Edition
+o VMware vSphere Client 4.0
+o VMware vSphere Host Update Utility 4.0
+
+vSphere Client
+==============
+IP address/Name:    anc-vmmgmt01.uaa.alaska.edu
+Username:           remarcil
+Password:           The convoluted usual
+
+NOTE: vmconsole.uaa.alaska.edu is still up since it runs VMware v3 and is still 
+      distributing v3 licenses.  Will go away once everything gets updated.
+      (Sep 9, 2009 rem)
+
+
+Filelist
+========
+VMware-viclient.exe
+  VMware vSphere Client 4.0 installer
+  VMware Infrastructure Client install for access to UAA ITS
+  VMware virtual machines installed on HP blades.
+
+
+Links
+=====
+VMware vSphere 4
+https://anc-vmmgmt01.uaa.alaska.edu/
+
+VMware vSphere 4.0 download
+https://anc-vmmgmt01.uaa.alaska.edu/client/VMware-viclient.exe
+
+vSphere 4.0 Documentation
+http://communities.vmware.com/community/vmtn/vsphere/automationtools/vsphere_cli
