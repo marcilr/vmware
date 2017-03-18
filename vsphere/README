@@ -8,6 +8,9 @@ Filelist
 00INSTALL/
   Installing VMware vSphere
 
+docs/
+  Documentation
+
 links.txt
   VMware vSphere related links
 
