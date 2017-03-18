@@ -1,0 +1,82 @@
+glossary.txt
+Created Fri Nov  4 11:09:18 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware glossary
+
+
+HBA - Host Bus Adapter
+
+IOPS - (Input/Output Operations Per Second, pronounced eye-ops) is a common
+  performance measurement used to benchmark computer storage devices like hard
+  disk drives (HDD), solid state drives (SSD), and storage area networks (SAN).
+  As with any benchmark, IOPS numbers published by storage device
+  manufacturers do not guarantee real-world application performance.[1][2]
+  wikipedia.org/
+
+LUN - In computer storage, a logical unit number or LUN is simply the number
+  assigned to a logical unit. A logical unit is a SCSI protocol entity, the
+  only one which may be addressed by the actual input/output (I/O) operations.
+  Each SCSI target provides one or more logical units, and does not perform
+  I/O as itself, but only on behalf of a specific logical unit.  
+  wikipedia.org/
+
+P2V (physical-to-virtual)
+
+VMDK - VMDK files are the actual virtual hard drive for the virtual 
+  guest operation system (virtual machine / VM). You can create either dynamic 
+  or fixed virtual disks.  With dynamic disks, the disks start small and grow
+  as the disk inside the guest OS grows. With fixed disks, the virtual disk and 
+  guest OS disk start out at the same (large) disk.
+  petri.co.il/
+
+VM - Virtual Machine
+
+VMDK - Virtual Machine Disk is a file format developed by VMware for its
+  virtual appliance products, but is now an open format.[1]  The format is a
+  container for virtual hard disk drives to be used in virtual machines like
+  VMware Workstation or VirtualBox. The maximum VMDK size is generally 2TB for
+  most applications, but in September, 2013, VMware vSphere 5.5 introduced
+  62TB VMDK capacity.
+  wikipedia.org/
+
+VMM - In computing, a hypervisor, also called virtual machine manager (VMM), is 
+  one of many hardware virtualization techniques allowing multiple operating
+  systems, termed guests, to run concurrently on a host computer.  It is so
+  named because it is conceptually one level higher than a supervisory program. 
+  wikipedia.org/wiki/Hypervisor
+
+VMX - VMware virtual machine configuration.
+
+
+Links
+=====
+[1] Lowe, Scott (2010-02-12). ["Calculate IOPS in a storage array"].
+techrepublic.com. Retrieved 2011-07-03.
+http://www.techrepublic.com/blog/datacenter/calculate-iops-in-a-storage-array/2182
+
+[1] ["Virtual Disk Format 1.1"] (PDF). VMware.
+http://www.vmware.com/app/vmdk/?src=vmdk
+
+[2] ["Getting The Hang Of IOPS v1.3"]. 2012-08-03. Retrieved 2013-08-15.
+http://www.symantec.com/connect/articles/getting-hang-iops-v13
+
+Hypervisor
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/Hypervisor
+
+IOPS
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/IOPS
+
+Logical unit number
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/Logical_Unit_Number
+
+VMDK
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/Vmdk
+
+VMware Server & Workstation Disk Files Explained
+http://www.petri.co.il/virtual_vmware_files_explained.htm
