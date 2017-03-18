@@ -1,0 +1,35 @@
+TODO
+Created Wed Jan 18 08:06:10 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+
+
+Complete
+========
+x Wed Jan 18 09:37:09 AKST 2012 - From inspection with DNS Manager, 
+in Windows 7 Pro SP1 64-bit ajoite virtual machine under VirtualBox 
+on UAA ITS boothite debian squeeze 6.0.3 workstation:
+
+Run START > Administrative Tools > DNS get prompt for:
+Connect to DNS Server
+  This Computer
+  The following computer:
+    137.229.141.15
+x Connect to the specified computer now
+
+Found:
+
+ip address        host
+---------------------------------------------
+137.229.138.148   anc-backup01.uaa.alaska.edu
+137.229.138.149   anc-backup02.uaa.alaska.edu
+
+Wed Jan 18 08:06:10 AKST 2012 - Identify login and test UAA ITS vRanger Pro servers.
+
+
+Links
+=====
+Quest Software
+vRanger Pro backup software
+http://www.quest.com/vranger
