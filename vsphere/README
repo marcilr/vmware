@@ -14,5 +14,8 @@ links.txt
 svn_ext_val.txt
   List of repo hierarchical directories to checkout under vsphere/
 
+TODO
+  Items for VMware
+
 vsphere.txt
   VMware vSphere
