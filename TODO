@@ -1,0 +1,50 @@
+TODO
+Created Thu Jul 29 08:29:03 AKDT 2010
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
++++ Tue Jan 24 07:30:51 AKST 2012 - Need history and foundations for VMware
+Server, ESX, and ESXi.
+
++++ Mon Jan 23 20:17:03 AKST 2012 - Work with qemu to generate vmdk files.
+
++++ Fri Nov  4 15:55:42 AKDT 2011 - Configure ESXi on RM41416T2-T chassis, via
+USB key, to boot and access virtual machines on RAID 6 array.
+
+Will this work with the Gigabyte GA-990FXA-UD5 mobo?
+i.e. is ESXi compatible with the 2x SATA chipsets?
+
+       AMD SB950 - 6x SATA
+Marvell 88SE9172 - 2x SATA
+
++++ Jul 29, 2010 - Extract virtual machine for use under VMware Player or 
+VMware Workstation from UAA ITS vCenter Server?
+
+
+Complete
+========
+x Tue Jan 24 08:12:36 AKST 2012 - Done.
+Break 00ESXI/ into discrete repos.
+
+x Tue Jan 24 07:59:18 AKST 2012 - Broke up 00ESXI subdirectories into repos.
+Sun Jan 22 17:14:13 AKST 2012 - Break 00ESXI/ subdirectories into repos.
+
+x Mon Jan 23 20:15:30 AKST 2012 - done.
+
+Sun Jan 22 17:14:13 AKST 2012 - Migrate virtual_machine subdirectory to 00VM
+  hierarchical directory.
+
+x Mon Jan 23 20:15:30 AKST 2012 - done.
+
+Sun Jan 22 17:14:13 AKST 2012 - Migrate uaa subdirectory to 00UAA
+  hierarchical directory.
+
+
+Links
+=====
+VMware vCenter Converter
+"Automate and simplify physical to virtual machine conversions as well as conversions between 
+virtual machine formats with VMware vCenter Converter. Use the intuitive wizard-driven 
+interface of VMware vCenter Converter to convert your physical machines to virtual 
+machines."
+http://www.vmware.com/products/converter/faqs.html
