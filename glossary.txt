@@ -24,6 +24,13 @@ LUN - In computer storage, a logical unit number or LUN is simply the number
 
 P2V (physical-to-virtual)
 
+quiesce - To quiesce is to pause or alter a device or application to achieve
+  a consistent state, usually in preparation for a backup or other maintenance.
+  In software applications that modify information stored on disk, this
+  generally involves flushing any outstanding writes; see buffering.
+  Quiesce - Wikipedia
+  https://en.wikipedia.org/wiki/Quiesce
+
 VMDK - VMDK files are the actual virtual hard drive for the virtual 
   guest operation system (virtual machine / VM). You can create either dynamic 
   or fixed virtual disks.  With dynamic disks, the disks start small and grow
