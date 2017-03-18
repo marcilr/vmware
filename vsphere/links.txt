@@ -3,6 +3,13 @@ Created Sat Mar 18 10:21:09 AKDT 2017
 Copyright (C) 2017 by Raymond E. Marcil <marcilr@gmail.com>
 
 
-links.txt
-  VMware vSphere related links
+vSphere related links
 
+
+Links
+=====
+VMware vCenter Singel Sign-On
+GCI OSS vsphere-client login,
+Provided by Jerry Buttitta Fri March 17, 2017
+Login with gci\rmarcil ldap credentials
+https://192.168.56.30/vsphere-client/?csp
