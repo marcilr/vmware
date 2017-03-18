@@ -51,7 +51,8 @@ Backup
 ======
 Kurtis Bunker had mentioned esxRanger as a promising looking backup product.
 * no quiesce, live backup
-see: http://www.vizioncore.com/esxranger_eval.html  (googled link)
+
+--http://www.vizioncore.com/esxranger_eval.html  (googled link)
 
 
 VMware Server Documentation
@@ -193,6 +194,9 @@ docs/Kurt/VMware
 
 docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_config_max.pdf
   Important cert study document - easy read for config maximums.
+
+glossary.txt
+  Glossary for VMware
 
 links.txt
   VMware related links
