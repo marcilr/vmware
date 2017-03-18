@@ -1,0 +1,53 @@
+links.txt
+Created Wed Apr 18 10:16:03 AKDT 2012
+Copyright (C) 2012 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware snapshots related links.
+
+
+Links
+=====
+Understanding virtual machine snapshots in VMware ESX
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=101518                     0
+
+Restoring a Snapshot: Revert or Go To?
+http://www.vmware.com/support/ws5/doc/ws_preserve_sshot_revert_or_goto.html
+
+vSphere snapshots Considerations and Recommendations
+http://thevirtualheadline.com/2011/06/14/vsphere-snapshots-considerations-and-recommendations/
+
+Deleting Snapshots
+http://pubs.vmware.com/vsphere-50/index.jsp?topic=/com.vmware.vsphere.vm_admin.doc_50/GUID-06CB6D7D-9ECE-4C53-AA11-C5F2662328CD.html
+
+Changes to Snapshot mechanism "Delete All"
+Added Jul 5, 2010, By Duncan Epping with 18 Comments
+http://www.yellow-bricks.com/2010/07/05/changes-to-snapshot-mechanism-delete-all/
+
+Delete all snapshots
+Added Jan 7, 2008, By Duncan Epping with 20 Comments
+http://www.yellow-bricks.com/2008/01/07/delete-all-snapshots/
+
+Snapshots, the revision
+Added Dec 4, 2008, By Duncan Epping with 3 Comments
+http://www.yellow-bricks.com/2008/12/04/snapshots-the-revision/
+
+How VMware snapshots work
+Eric Siebert
+http://searchvmware.techtarget.com/tip/How-VMware-snapshots-work
+
+Troubleshooting VMware snapshots
+Eric Siebert
+http://searchvmware.techtarget.com/tip/Troubleshooting-VMware-snapshots
+
+Deleting virtual machine snapshots without wasting disk space
+Eric Siebert
+http://searchvmware.techtarget.com/tip/Deleting-virtual-machine-snapshots-without-wasting-disk-space
+
+VM snapshot backup process explained
+Stephen J. Bigelow, Senior Technology Writer 
+http://searchservervirtualization.techtarget.com/tip/VM-snapshot-backup-process-explained
+
+VMware snapshot best practices
+Pankaj Nath, Contributor
+http://searchdatacenter.techtarget.in/tip/VMware-snapshot-best-practices
