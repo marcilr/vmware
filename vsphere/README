@@ -9,7 +9,12 @@ Filelist
   Installing VMware vSphere
 
 clone/
-  Cloning virtual machines in vSphere
+  Cloning virtual machines in vSphere 
+
+  A VM clone is 100% the same as the source machine you cloned from, the
+  only thing that changes is the Name given by you on the VC Client, so as
+  stated, disable the NIC prior to making changes on the VM or you will
+  have Name / IP conflicts 
 
 docs/
   Documentation
