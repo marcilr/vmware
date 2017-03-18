@@ -1,0 +1,75 @@
+clone.txt                                                
+Created Mon Oct 11 15:04:30 AKDT 2010
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Cloning virtual machines in vSphere.
+
+o A VM clone is 100% the same as the source machine you cloned from, the
+only thing that changes is the Name given by you on the VC Client, so as
+stated, disable the NIC prior to making changes on the VM or you will
+have Name / IP conflicts
+
+o Disable the NICs in virtual center (uncheck "connect at power on")  before starting up a 
+clone to make sure everything (IP, name, domain, SID) has been properly changed.
+
+mail-archive.com/
+
+
+Tue Oct 19 14:27:13 AKDT 2010
+=============================
+Ran test of cloning virtual machine in VMware vSphere Client 4.0.0 Build 208111.
+
+1. In vSphere client right-click "anc-visual-studio" vm, under "Hosts and Clusters",
+and select "Clone..."
+
+2. At Name and Location:
+Name: anc-visual-studio-clone
+Inventory Location:
+  ANC-VMMGMT01.uaa.alaska.edu
+    Anchorage Data Center
+      Development VMs   <== Alongside original anc-visual-studio vm.
+
+click Next
+
+3. At Hot/Cluster: 
+Anchorage Data Center
+  ANC-ESX4-CLUSTER
+      
+click Next
+
+4. At Resource Pool:
+ANC-ESX4-CLUSTER
+  Development
+
+click Next
+
+5. At Datastore selected [ANC-ESX4-CLUSTER-VOLUME01] with 286.11GB free.
+click Next
+
+6. At Disk Format
+click Next
+
+7. Guest Customization
+click Next
+
+8. Ready to Complete
+
+Power on virtual machine after creation   <== Left unchecked.
+Edit virtual hardware (Experimental)      <== Left unchecked.
+
+click Finish
+
+NOTE: Should disable ethernet before starting.
+
+start:    10/19/2010 2:45:54PM
+complete: 10/19/2010 3:03:36PM
+
+
+
+Links
+=====
+How to properly clone a VM in Vsphere
+Stefan Jafs
+Tue, 22 Dec 2009 11:40:09 -0800
+http://www.mail-archive.com/ntsysadmin@lyris.sunbelt-software.com/msg62506.html
