@@ -1,0 +1,249 @@
+README
+Created Thu Sep 28 13:53:51 AKDT 2006
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Repository for vmware documentation.
+
+
+Fri Nov  4 14:16:52 AKDT 2011
+=============================
+I like ESXi for the handful of random non-production systems I use.  I just don't buy that 
+VM is the right direction for every company as a primary platform.  Sure, small scale VM has 
+it's benefits, but in a large scale scenario the overhead and vendor lock in becomes short 
+sighted.  Yes, eventually with enough VM in your datacenter, you'll save money, but at what 
+long term expense?  What's that vendor proprietary solution going to do for you in 10 years 
+when you want to move to the next big thing?  I say build out your DC using commodity hardware 
+and design your applications and network with fault tolerance and efficiency in mind.  Need a 
+more efficient footprint?  Try microservers http://www.dell.com/us/business/p/poweredge-c5125/pd 
+[dell.com]  1. Focus on getting the best bang for your buck with commodity hardware  2. Focus your
+people on streamlining operations for this model (instead of focusing on how to integrate VM with 
+existing models, etc)  3. Design your applications/architecture around not having some magical 
+single box with a thousand mac addresses that can move around the data center on a whim.  Who 
+would be dumb enough to believe in this model? Google and Facebook, for starters.
+
+Waste of time/money (Score:2)
+by ctime (755868) on Friday November 04, @01:48PM (#37949978) 
+http://it.slashdot.org/story/11/11/04/1712205/vmware-a-falling-giant
+
+
+Wed Feb 18 08:10:04 AKST 2009
+=============================
+"But Dell, Fujitsu Siemens, HP, IBM, and NEC all ship servers with x86 
+virtualization, often VMware's ESX, built in.  A hypervisor talks directly 
+to the hardware in lieu of of the operating system.  It lifts the OS up a 
+layer and assigns it the task of communicating with the application.  Windows 
+used to talk directly to the hardware; in virtualized environments, it just 
+hands off requests for hardware services to the hypervisor."
+
+"Dell's lowend $349 netbook runs with consumer-friendly Ubuntu Linux."
+
+from: Why Windows Must Go Open Source, Information Week, p. 24
+
+
+
+Backup
+======
+Kurtis Bunker had mentioned esxRanger as a promising looking backup product.
+* no quiesce, live backup
+see: http://www.vizioncore.com/esxranger_eval.html  (googled link)
+
+
+VMware Server Documentation
+===========================
+TODO: Need to migrate this!
+
+Location for docs on VMware. Snagged v1.0.1 online.
+
+VMware Server 1.0.1
+8/14/06 | Build 29996
+
+VMware Server Release Notes (HTML)
+
+VMware Server Online Library (HTML)
+  VMware Server Administration Guide (PDF | \u65e5\u672c\u8a9e PDF)
+  VMware Server Virtual Machine Guide (PDF | \u65e5\u672c\u8a9e PDF)
+
+Guest Operating System Installation Guide (HTML | PDF)
+Virtual Machine Mobility Planning Guide (PDF)
+
+Programming API Online Library (HTML)
+  Programming API Programming Guide (PDF)
+  Programming API Reference Guide (PDF)
+
+
+Files you should know
+=====================
+Log files - Log files are just that- a log of virtual server activity for a 
+single virtual server. Here is an example of what a log file looks like:
+  Microsoft MVP Program 	 
+  	
+Author is a Windows Server System - Exchange Server MVP 
+  Read More 	 
+	
+by: David Davis
+
+
+VMware Server & Workstation Disk Files Explained
+================================================
+When using VMware Server & Workstation, you will, at some point, go to the 
+directory where your VMware virtual machines are stored. Inside this directory,
+you will see a number of strange files and you will probably wonder what they 
+are and what they do. Now, you can stop wondering and find out.
+
+Virtualization Sponsor -- Vizioncore
+	
+
+Just Point, Click & Know How Your Virtual Machines Are Performing
+=================================================================
+When running hundreds to thousands of virtual machines and multiple 
+VirtualCenters, it is imperative to deploy a centralized and scalable 
+monitoring solution to quickly pinpoint trouble spots and easily track the 
+impact of higher hardware utilization and virtual machine performance.
+
+vCharter Pro not only helps users prevent unwanted downtime, it can also 
+assist in optimizing resource allocation among virtual machines a major 
+consideration for companies deploying large-scale virtualization 
+implementations.
+
+For more information about vCharter Pro or our full lineup of software, visit 
+us at www.Vizioncore.com!
+
+
+Files you should know
+=====================
+Log files - Log files are just that- a log of virtual server activity for a 
+single virtual server.  Log files should be used only when you are having 
+trouble with a virtual machine.
+
+VMDK files - VMDK files are the actual virtual hard drive for the virtual 
+guest operation system (virtual machine / VM). You can create either dynamic 
+or fixed virtual disks.  With dynamic disks, the disks start small and grow as
+ the disk inside the guest OS grows. With fixed disks, the virtual disk and 
+guest OS disk start out at the same (large) disk.  For more information on 
+monolithic vs. split disks see this comparison from sanbarrow.com.
+
+VMEM - A VMEM file is a backup of the virtual machine's paging file.  It will 
+only appear if the virtual machine is running, or if it has crashed.
+
+VMSN & VMSD files - these files are used for VMware snapshots. A VMSN file is 
+used to store the exact state of the virtual machine when the snapshot was 
+taken. Using this snapshot, you can then restore your machine to the same 
+state as when the snapshot was taken. A VMSD file stores information about 
+snapshots (metadata). You'll notice that the names of these files match the 
+names of the snapshots.
+
+NVRAM files - these files are the BIOS for the virtual machine. The VM must 
+know how many hard drives it has and other common BIOS settings. The NVRAM 
+file is where that BIOS information is stored.
+
+VMX files - a VMX file is the primary configuration file for a virtual 
+machine. When you create a new virtual machine and answer questions about the 
+operating system, disk sizes, and networking, those answers are stored in this
+file. As you can see from the screenshot below, a VMX file is actually a 
+simple text file that can be edited with Notepad.
+
+from: ubuntuforums.org/
+
+
+Articles
+========
+Why Windows Must Ho Open Source
+by Charles Babcock, cbabcock@techweb.com
+Information Week, Feb 2, 2009, p. 22-28 
+
+
+Books
+=====
+The Book of Vmware: The Complete Guide to Vmware Workstation
+by Brian Ward
+
+This one looked useful.  However, could  be version specific.
+$26.37 (Amazon Jan. 3, 2008)
+
+
+
+Filelist
+========
+VMware Firewall ports(v1.0).xls
+  BEAUTIFUL vmware firewall sheet and diagram!!!!
+  From Jim Weller on Jan. 1, 2009
+  http://communities.vmware.com/docs/DOC-5401
+
+  Created on: May 22, 2008 1:56 PM by rake
+  Last Modified:  May 23, 2008 2:53 PM by rake
+ 
+  VMWARE NETWORK PORTS Goal: To create a comprehensive list of known 
+  ports & protocols used for all VMware communications, in order to configure 
+  firewalls to allow specified traffic. 
+
+  V1.0 Current version (First Draft) V1.1 Fill in any blank cells. V1.2 
+  Improve descriptions in "Functionality" column. Detailed info - How each 
+  port is used. V2.0 Add a column to indicate which VMware software and 
+  version # is affected. If this information is available elsewhere, I have 
+  not found it, please notify me! Thank you Cameron Rake
+
+docs/Kurt/VMware
+  Copy of Kurt Bunker's VMware documentation.
+
+docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_config_max.pdf
+  Important cert study document - easy read for config maximums.
+
+/net/its/OPERATIONS/Kurt/VMWare/
+  Net share with Kurt Bunker's VMware documentation at UAA IT Services.
+
+p2v/
+  Physical to virtual
+  Use of VMware Convert to convert physical machines to virtual machines.
+
+vmware-temp-completed
+  Copy of C:\Documents and Settings\ray\Local Settings\Temp
+  Created on 2nd try of running converter 3.0 against the
+  ami-hq-rm windows 2000 workstation on June 7, 2007.
+  Run completed since excluded e:\ drive for additional hard drive space.
+  Archived for log info.
+
+vmware-temp-failed
+  Copy of C:\Documents and Settings\ray\Local Settings\Temp
+  Created on 1st try of running converter 3.0 against the
+  ami-hq-rm windows 2000 workstation on June 6, 2007.
+  Run failed since out of hard drive space.
+  Archived for log info.
+
+/usr/local/src/00TARBALLS/vmware/vmware-1.0.4/
+
+VMware-server-1.0.4-56528.tar.gz
+  VMware server 1.0.4
+  Working license key
+  Specify Virtual Machines directory on installation.
+
+VMware-workstation-6.0.1-55017.i386.tar.gz
+  VMware workstation 6.0.1
+  No working license key
+  Checks ~/vmware for virtual machines.
+
+
+Links
+=====
+VMware
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware
+
+VMware publications
+http://www.vmware.com/support/pubs
+
+VMware Build Info
+http://vsphere-land.com/vinfo/release-build-info
+
+VMware Server & Workstation Disk Files Explained
+http://www.petri.co.il/virtual_vmware_files_explained.htm
+
+VMware VCenter Converter
+Convert Physical Machines to Virtual Machines - Free!
+http://www.vmware.com/products/converter/
+
+Veeam Backup & Replication
+http://www.veeam.com/vmware-esx-backup.html
+
+VMware Server & Workstation Disk Files Explained
+http://www.petri.co.il/virtual_vmware_files_explained.htm
