@@ -3,7 +3,7 @@ Created Wed Apr 18 10:16:03 AKDT 2012
 Copyright (C) 2012 by Raymond E. Marcil <marcilr@gmail.com>
 
 
-VMware snapshots related links.
+VMware snapshots related links
 
 
 Links
