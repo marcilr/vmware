@@ -1,0 +1,264 @@
+snapshots.txt
+Created Wed Oct  5 09:46:55 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Snapshots
+
+
+Delete All
+==========
+In vSphere the you can use the Snapshot Manager to merge that latest
+snapshots back to the base vmdk.
+
+1. Run Snapshot Manager
+right-click [machine] > Snapshot > Snapshot Manager...
+
+2. Click Delete All to merge latest snaphost back to vmdk.
+
+Situation:
+  Snapshot 1 - 20GB
+  Snapshot 2 - 10GB
+  Snapshot 3 - 30GB
+
+When you choose "delete all" the following will happen:
+1. A helper snapshot is created which holds all changes
+2. Snapshot 2 will grow to 40GB at most
+3. Snapshot 1 will grow to 60GB at most
+4. Snapshot 1 will be committed to the original VMDK
+5. The helper is committed to the original
+6. All snapshot files are deleted
+
+In other words: Snapshot 3 is merged into Snapshot 2, Snapshot 2 is merged
+into Snapshot 1, Snapshot 1 is merged into the original flat.vmdk and
+afterwards all snapshot files are deleted.  This means that if you want to
+delete all snapshots at once you will need around 70GB of free disk-space in
+this particular situation and the size of the helper snapshot.  So think twice
+before you press the "delete all" button.
+
+So it comes down to the following:
+1. A single snapshot will not grow larger than it's parent disk.
+2. The disk files are not deleted until everything is consolidated.
+3. A snapshot will grow in 16MB chunks and every time it grows the VMFS
+   volume will be locked.
+
+Snapshots, the revision
+yellow-bricks.com/
+
+
+Wed Oct  5 09:46:55 AKDT 2011
+=============================
+Taking a snapshot of UAA ITS WebApps anc-bb-dev01 machine.  Working with the
+unstable Blackboard wiki plugin.  Want to take a snaphot before manipulating
+it.
+
+To take snapshot:
+1. In vSphere v4.1.0 build 345043 right-click anc-bb-dev01 and select:
+Snaphost > Take Snapshot...
+
+       Name: snapshot-20111005
+Description: Take snapshot prior to manipulation of blackboard wiki plugin.
+x Snapshot the virtual machine's memory
+x  Quiesce guest file system (Need VMware Tools installed)
+
+
+
+What is a snapshot?
+===================
+A snapshot preserves the state and data of a virtual machine at a specific
+point in time.
+
+The state includes the virtual machine's power state (for example, powered-on,
+powered-off, suspended).  The data includes all of the files that make up the
+virtual machine.  This includes disks, memory, and other devices, such as
+virtual network interface cards. 
+
+A virtual machine provides several operations for creating and managing
+snapshots and snapshot chains.  These operations let you create snapshots,
+revert to any snapshot in the chain, and remove snapshots. You can create
+extensive snapshot trees. 
+
+When creating a snapshot, there are several options you can specify:
+
+       Name: This is used to identify the snapshot.
+Description: This is used to describe the snapshot.
+     Memory: If the <memory> flag is 1 or true, a dump of the internal state
+             of the virtual machine is included in the snapshot.  Memory
+             snapshots take longer to create.
+
+    Quiesce: If the <quiesce> flag is 1 or true, and the virtual machine is
+             powered on when the snapshot is taken, VMware Tools is used to
+             quiesce the file system in the virtual machine.  Quiescing a file
+             system is a process of bringing the on-disk data of a physical or
+             virtual computer into a state suitable for backups.  This process
+             might include such operations as flushing dirty buffers from the
+             operating systems in-memory cache to disk, or other higher-level
+             application-specific tasks.
+
+       Note: Quiescing indicates pausing or altering the state of running
+             processes on a computer, particularly those that might modify
+             information stored on disk during a backup, to guarantee a
+             consistent and usable backup. 
+
+When a snapshot is created, it is comprised of these files:
+  <vm>-<number>.vmdk and <vm>-<number>-delta.vmdk
+
+  A collection of .vmdk and -delta.vmdk files for each virtual disk is
+  connected to the virtual machine at the time of the snapshot.  These files
+  can be referred to as child disks, redo logs, or delta links.  These child
+  disks can later be considered parent disks for future child disks.  From
+  the original parent disk, each child constitutes a redo log pointing back
+  from the present state of the virtual disk, one step at a time, to the
+  original.
+
+  Note: The <number> value may not be consistent across all child disks from
+  the same snapshot. The file names are chosen based on filename availability.
+
+  <vm>.vmsd
+
+  The .vmsd file is a database of the virtual machine's snapshot information
+  and the primary source of information for the snapshot manager.  The file
+  contains line entries which define the relationships between snapshots as
+  well as the child disks for each snapshot.
+
+  <vm>Snapshot<number>.vmsn
+ 
+  These files are the memory state at the time of the snapshot. 
+
+
+How do snapshots work?
+======================
+Our VMware API allows VMware and third-party products to perform operations
+with virtual machines and their snapshots.  This is a list of common
+operations that can be performed on virtual machines and snapshots using our
+API:
+
+o CreateSnapshot: Creates a new snapshot of a virtual machine.  As a side
+  effect, this updates the current snapshot.
+
+o RemoveSnapshot: Removes a snapshot and deletes any associated storage.
+
+o RemoveAllSnapshots: Remove all snapshots associated with a virtual machine.
+  If a virtual machine does not have any snapshots, then this operation simply
+  returns successfully.
+
+o RevertToSnapshot: Changes the execution state of a virtual machine to the
+  state of this snapshot.
+
+  (vSphere 5.0 only) Consolidate: Merges the hierarchy of redo logs.
+
+This is a high-level overview of how to create, remove, or revert snapshot
+requests that are processed within the VMware environment:
+
+1. A request to create, remove, or revert a snapshot for a virtual machine
+   is sent from the client to the server using the VMware API.
+
+2. The request is forwarded to the VMware ESX host that is currently hosting
+   the virtual machine in question.
+
+Note: This only occurs if the original request was sent to a different server,
+such as vCenter, which is managing the ESX host.
+
+3. If the snapshot includes the memory option, the ESX host writes the memory
+of the virtual machine to disk.
+
+Note: The length of time the ESX host takes to write the memory onto the disk
+is relative to the amount of memory the virtual machine is configured to use.
+
+4. If the snapshot includes the quiesce option, the ESX host requests the
+guest operating system to quiesce the disks via VMware Tools.
+
+Note: Depending on the guest operating system, the quiescing operation can be
+done by the sync driver, the vmsync module, or Microsoft's Volume Shadow Copy
+(VSS) service.  For more information on quiescing, see Troubleshooting Volume
+Shadow Copy (VSS) quiesce related issues (1007696) for VSS or A virtual
+machine can freeze under load when you take quiesced snapshots or use custom 
+quiescing scripts (5962168) for the SYNC driver.
+
+5. The ESX host makes the appropriate changes to the virtual machine's
+snapshot database (.vmsd file) and the changes are reflected in the snapshot
+manager of the virtual machine.
+
+Note: The operation to remove the snapshot entity in the snapshot manager
+completes before the changes are made to the child disks. The snapshot
+manager does not contain any snapshot entries while the virtual machine
+continues to run from the child disk.  For more information, see Committing
+snapshots when there are no snapshot entries in the snapshot manager
+(1002310).
+
+6. The ESX host calls a function similar to the Virtual Disk API functions
+to make changes to the child disks (-delta.vmdk and .vmdk files) and the
+disk chain.
+
+Note: During a snapshot removal, if the child disks are large in size, the
+operation may take a long time.  This can result in a timeout error message
+from either VirtualCenter or the VMware Infrastructure Client.  For more
+information about timeout error messages, see vCenter operation times out
+with the error: Operation failed since another task is in progress
+(1004790). 
+
+
+The child disk
+==============
+The child disk, which is created with a snapshot, is a sparse disk.  Sparse
+disks employ the copy-on-write (COW) mechanism, in which the virtual disk
+contains no data in places, until copied there by a write.  This optimization
+saves storage space. The grain is the unit of measure in which the sparse
+disk uses the copy-on-write mechanism.  Each grain is a block of sectors 
+containing virtual disk data.  The default size is 128 sectors or 64KB.
+
+
+Child disks and disk usage
+==========================
+It is important to note these points regarding the space utilization of
+child disks:
+
+o If a virtual machine is running off of a snapshot, it is making changes
+  to a child or sparse disk.  The more write operations made to this disk,
+  the larger it grows.
+
+o The space requirements of the child disk are in addition to the parent
+  disk on which it depends.  If a virtual machine has a 10 GB disk with
+  a child disk, the space used will be 10 GB + the child disk size.
+
+o Child disks have been known to grow large enough to fill an entire
+  datastore.
+
+o The speed at which child disks grow is directly dependent on the amount
+  of I/O being done to the disk.
+
+o The size of the child disk has a direct impact on the length of time it
+  takes to delete the snapshot associated to the child disk. 
+
+These Knowledge Base articles touch on the topic of child disks and disk
+usage:
+o No more space for the redo log error when attempting to start a virtual
+  machine (1002103)
+o Why snapshot removal can stop a virtual machine for long time (1002836)
+o Troubleshooting a datastore or VMFS volume that is full or near capacity
+  (1003412) 
+
+
+The disk chain
+==============
+Generally, when you create a snapshot for the first time, the first child
+disk is created from the parent disk.  Successive snapshots generate new
+child disks from the last child disk on the chain. The relationship can
+change if you have multiple branches in the snapshot chain. 
+
+<nice disk diagram here>
+
+vmware.com/
+
+
+
+Links
+=====
+Understanding virtual machine snapshots in VMware ESX
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1015180
+
+Restoring a Snapshot: Revert or Go To?
+http://www.vmware.com/support/ws5/doc/ws_preserve_sshot_revert_or_goto.html
+
+vSphere snapshots Considerations and Recommendations
+http://thevirtualheadline.com/2011/06/14/vsphere-snapshots-considerations-and-recommendations/
