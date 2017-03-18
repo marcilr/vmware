@@ -11,5 +11,8 @@ Filelist
 links.txt
   VMware vSphere related links
 
+svn_ext_val.txt
+  List of repo hierarchical directories to checkout under vsphere/
+
 vsphere.txt
   VMware vSphere
