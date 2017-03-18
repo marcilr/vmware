@@ -43,7 +43,7 @@ hands off requests for hardware services to the hypervisor."
 
 "Dell's lowend $349 netbook runs with consumer-friendly Ubuntu Linux."
 
-from: Why Windows Must Go Open Source, Information Week, p. 24
+--Why Windows Must Go Open Source, Information Week, p. 24
 
 
 
@@ -197,6 +197,9 @@ docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_config_max.pdf
 
 glossary.txt
   Glossary for VMware
+
+index.html
+  Index to VMware documentation
 
 links.txt
   VMware related links
