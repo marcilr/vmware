@@ -1,0 +1,110 @@
+vsphere.txt
+Created Thu Sep 10 10:38:32 AKDT 2009
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+
+The VMware Infrastructure Client was renamed VMwqare vSphere Client.
+Installed under winXP Version 2002 SP3 virtual machine.
+
+
+VMware vSphere Client
+=====================
+IP address/Name: anc-vmmgmt01.uaa.alaska.edu
+           user: remarcil   (Tested Aug 26, 2011)   
+           pass: new convoluted usual
+
+NOTE: vmconsole.uaa.alaska.edu is still up since it runs VMware v3 and is still 
+      distributing v3 licenses.  Will go away once everything gets updated.
+      (Sep 9, 2009 rem)
+
+
+
+Tue Jan  7 09:19:28 AKST 2014
+=============================
+Heard from GCI Dee McKinney that GCI Network Services will be updating from
+vsphere 5.1 to 5.5.  i.e. v5.5 will be the vsphere version to check out.
+
+
+Thu Sep 10 12:57:20 AKDT 2009
+=============================
+vCenter Server vmconsole.uaa.alaska.edu changed to anc-vmmgmt01.uaa.alaska.edu
+
+Installed VMware vSphere Client 4.0 still get connection error:
+
+vSphere Client cound not connect with the vCenter Server "vmconsole.uaa.alaska.edu".
+Details: A connection failure occured (Unable to connect to the remote server)
+
+
+Thu Sep 10 10:38:32 AKDT 2009
+=============================
+Not connecting to vmconsole.uaa.alaska.edu Jim Weller says latest 
+VMware Infrastructure client download from https://anc-vmmgmt01.uaa.alaska.edu/
+is needed.
+
+Launch VMware Infrastructure Client under winXP and get:
+
+Error Connecting
+VMware Infrastructure Client could not establish the initial connection with server
+"vmconsole.uaa.alaska.edu".
+Details: A connection failure occurred.
+
+boothite:~# vpnc-connect 
+VPNC started in background (pid: 30583)...
+boothite:~#
+
+Still get the same error with or without the vpnc connection.
+
+
+Filelist
+========
+clone.txt
+  Cloning virtual machines in vSphere.
+
+desktop.txt
+  Instructions to set standard wallpaper with color, domain, ip, mac, etc on virtual machine.
+
+
+history.txt
+  To view the machine history in vSphere:
+  1. Select virtual machine
+  2. Click Tasks & Events tab
+
+INSTALL
+  VMware vSphere Client install.  
+
+performance.txt
+  vSphere can be used to monitor the performance history of a virtual machine.
+  In vSphere select the virtual machine and click on the Performance tab
+  for a chart with details.  The CPU, Disk, Memory, Network, and System views 
+  can be selected.  
+
+recreate-machine.txt
+  Recreate uas-elive-prod01 virtual machine.
+
+snapshots.txt
+  Taking and deleting snapshots in vSphere.
+
+TODO
+  vSphere TODO items.
+
+VMwareTools-install.txt
+  Install VMware Tools.
+
+vRanger-Pro.txt
+  UAA ITS uses vRanger Pro to backup VMware virtual machines.
+
+
+Links
+=====
+VMware vSphere 4
+https://anc-vmmgmt01.uaa.alaska.edu/
+
+VMware vSphere 4.0 download
+https://anc-vmmgmt01.uaa.alaska.edu/client/VMware-viclient.exe
+
+VMware vSphere 4.0 Documentation
+http://communities.vmware.com/community/vmtn/vsphere/automationtools/vsphere_cli
+
+How to import virtual machines into ESXi using the vSphere Client
+http://www.crucial.com.au/blog/2009/11/21/how-to-import-virtual-machines-into-esxi-using-the-vsphere-client/
