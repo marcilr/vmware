@@ -1,0 +1,117 @@
+links.txt
+Created Mon Aug 29 10:35:22 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware links.
+
+
+Links
+=====
+Converter best practices
+http://vmware-land.com/Converter.html
+
+Details of What's New and Improved in VMware Infrastructure 3 version 3.5
+There are a few new things on here not discussed in class that are really good to
+know.
+Kurt (Thu, 10 Apr 2008 10:27:02 -0800)
+http://www.vmware.com/support/vi3/doc/whatsnew_esx35_vc25.html
+
+How to Change Default VMWare folder for new VMs?
+i.e. Change from ~/vmware/ directory.
+http://communities.vmware.com/thread/76504
+
+VMware
+http://www.vmware.com/
+
+VMware technical documentation
+http://www.vmware.com/support/
+
+VMware Back-Pedals On vRAM Scheme, Back To Per-Socket Pricing
+Posted by timothy on Tuesday August 28, @12:31PM
+from the old-ways-is-best-ways dept. 
+"VMware is back to more straightforwardly charging per physical processor."
+"But I think they mean per socket. (or maybe per physical processor, but not per core)"
+http://it.slashdot.org/story/12/08/28/169218/vmware-back-pedals-on-vram-scheme-back-to-per-socket-pricing
+
+VMware, a Falling Giant?
+Posted by Soulskill on Friday November 04, @01:15PM
+from the netcraft-yet-silent dept.
+http://it.slashdot.org/story/11/11/04/1712205/vmware-a-falling-giant
+
+vmware webaccess (Joe Watson - Aug 17, 2011)
+https://anc-vmmgmt01.uaa.alaska.edu/ui/
+
+VMware "Miles Ahead" of Microsoft Virtual Server
+  http://it.slashdot.org/article.pl?sid=06/09/28/1625207
+
+VMware 'miles ahead' of Microsoft Virtual Server, expert says
+  http://searchservervirtualization.techtarget.com/\
+    originalContent/0,289142,sid94_gci1218965,00.html
+
+Support and Subscription offerings for VMware Server:
+  http://www.vmware.com/support/services/
+
+Managing VMware Server with VMware VirtualCenter:
+  http://www.vmware.com/products/server/vc14.html
+
+RVL VMware HOWTO
+  http://cobweb.ecn.purdue.edu/~cromwell/vmware-howto.html
+  see: vmware-howto.html
+
+from: whatsnew_esx35_vc25.html above.
+Migrations using Storage VMotion must be administered through the Remote Command Line
+Interface (Remote CLI), which is available for download at the following location:
+http://www.vmware.com/download/download.do?downloadGroup=VI-RCLI
+
+ESX Server 3.x I/O Compatibility Guide
+http://www.vmware.com/support/vi3/doc/whatsnew_esx35_vc25.html
+
+Ultimate VMware link guide
+http://daemonb.blogspot.com/2007/04/ultimate-vmware-link-guide.html
+
+Download VMware Server
+Server 2.0 (Beta), Server 1.0.0-1.0.5
+http://www.vmware.com/download/server/
+
+VMware Server 2.0 Beta 2
+http://www.vmware.com/beta/server/index.html
+
+Linux: After Ubuntu, Windows Looks Increasingly Bad
+http://linux.slashdot.org/linux/07/06/06/1517241.shtml
+
+Accessing Virtual Hard Disks Outside of VMware Workstation for Linux
+Notes on vmware-mount.pl use.
+http://www.vmware.com/support/reference/linux/loopback_linux.html
+
+Using VMware Virtual Disk Manager
+Some good notes on using vmware-vdiskmanager
+http://www.vmware.com/support/ws45/doc/releasenotes_diskutil.html
+
+How to Mount VMware Disk Images under Linux
+Sat, 08/04/2007 - 23:42 jrelan
+Nice article
+http://legroom.net/2007/08/05/how-mount-vmware-disk-images-under-linux
+
+Welcome to Trivore VMware ESX Server v2.1.x hints 'n' tips
+@ http://trivore.com/vmware/
+http://trivore.com/vmware/esx21.html
+
+VMware Workstation 4.5
+Using Samba on a Linux Host
+http://www.vmware.com/support/ws45/doc/network_samba_ws.html
+
+HOWTO: VMware - Ubuntu to XP - Setup Samba File Sharing (4 Steps, no fuss)
+Setup Samba to share a folder on a Ubuntu host so your VMware server's XP
+guest can use it.
+http://ubuntuforums.org/showthread.php?s=6e7a1d2cf76ab6c0772385b0e299a58f&p=4032701
+
+Meet the Next Generation of Virtual Infrastructure Technology
+ESX Server 3i is the industry's rst hardware-integrated hypervisor built on a
+next-generation thin architecture, giving your organization an efficient foundation
+for building a dynamic, automated data center.
+http://www.vmware.com/vmworldnews/esx.html
+
+Linux in a window of Windows
+Nice VMware in a window with downloads.
+http://www.visoracle.com/download/debian/
