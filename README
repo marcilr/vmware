@@ -3,7 +3,7 @@ Created Thu Sep 28 13:53:51 AKDT 2006
 by Raymond E. Marcil <marcilr@gmail.com>
 
 
-Repository for vmware documentation
+VMware
 
 
 Fri Nov  4 14:16:52 AKDT 2011
@@ -193,6 +193,9 @@ docs/Kurt/VMware
 
 docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_config_max.pdf
   Important cert study document - easy read for config maximums.
+
+links.txt
+  VMware related links
 
 /net/its/OPERATIONS/Kurt/VMWare/
   Net share with Kurt Bunker's VMware documentation at UAA IT Services.
