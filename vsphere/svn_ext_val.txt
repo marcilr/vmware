@@ -1,0 +1,16 @@
+#
+# svn_ext_val.txt
+# Created Sun Jan 22 16:18:32 AKST 2012
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+
+
+#
+# List of repo hierarchical directories to checkout under vsphere/
+#
+# clone/       Cloning VMs in vSphere.
+# snapshots/   Taking snaphots of VMs.
+#
+../../vsphere/clone/clone           ./clone
+../../vsphere/docs/docs             ./docs
+../../vsphere/snapshots/snapshots   ./snapshots
