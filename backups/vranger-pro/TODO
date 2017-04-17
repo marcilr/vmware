@@ -1,0 +1,12 @@
+TODO
+Created Sun Jan 22 17:05:47 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
++++ Sun Jan 22 17:05:47 AKST 2012 - Need to use, test, and understand
+  vRanger Pro backup software on UAA ITS:
+
+  ip address        host
+  ---------------------------------------------
+  137.229.138.148   anc-backup01.uaa.alaska.edu
+  137.229.138.149   anc-backup02.uaa.alaska.edu
