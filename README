@@ -232,9 +232,49 @@ links.txt
 Makefile
   Install vmware docs to location web directory 
 
+mui/
+  Management Interface
+
 p2v/
   Physical to virtual
   Use of VMware Convert to convert physical machines to virtual machines.
+
+player/
+  Player for executing VMs on workstation.
+
+server/
+  Server
+
+src/
+  Source code
+
+tools/
+  VMware Tools is a suite of utilities that enhances the
+  performance of the virtual machine's guest operating system
+  and improves management of the virtual machine.  Without
+  VMware Tools installed in your guest operating system, guest
+  performance lacks important functionality.
+  http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=340
+
+uaa/
+  UAA VMware docs
+
+vcp5/
+  VMware Certified Professional 5
+
+vix/
+  API for programmatic control 
+
+vm/
+  Virtual Machine
+
+vmdk/
+  VMDK (Virtual Machine Disk) is a file format used for
+  virtual appliances developed for VMware products.  The
+  format is a container for virtual hard disk drives to be
+  used in virtual machines like VMware Workstation or
+  Virtualbox. 
+  http://en.wikipedia.org/wiki/VMDK
 
 vmware-temp-completed
   Copy of C:\Documents and Settings\ray\Local Settings\Temp
@@ -261,6 +301,21 @@ VMware-workstation-6.0.1-55017.i386.tar.gz
   VMware workstation 6.0.1
   No working license key
   Checks ~/vmware for virtual machines.
+
+vmx/
+  .vmx, <vmname>.vmx, This is the primary configuration file,
+  which stores settings chosen in the New Virtual Machine
+  Wizard or virtual machine settings editor.  If you created
+  the virtual machine under an earlier version of VMware
+  Workstation on a Linux host, this file may have a .cfg
+  extension
+  https://www.vmware.com/support/ws55/doc/ws_learning_files_in_a_vm.html
+
+vsphere/
+  VMware management utility
+
+workstation/
+  VMware Workstation
 
 
 Links
