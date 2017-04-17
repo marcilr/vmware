@@ -1,0 +1,22 @@
+links.txt
+Created Wed Mar 26 11:06:21 AKDT 2014
+Copyright (C) 2014 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Veeam related links
+
+
+Links
+=====
+Veeam Backup & Replication v7 for VMware and Hyper-V
+http://go.veeam.com/ppc-product.html
+
+VM Loses Connection During Snapshot Removal
+KB ID: 1681
+Product: Veeam Backup & Replication
+Version: 6.x
+Published: 2012-10-04
+Created: 2012-10-04
+Last Modified: 2013-04-16
+http://www.veeam.com/kb1681
+
