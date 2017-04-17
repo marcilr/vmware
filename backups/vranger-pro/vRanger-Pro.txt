@@ -1,0 +1,95 @@
+vRanger-Pro.txt
+Created Wed Nov 16 14:27:22 AKST 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Simplify your disaster recovery plans for vSphere with one-pass
+ESX / ESXi backup that includes granular restore capabilities across
+files, objects and applications.  Improve disaster recovery plans on
+site or at a remote site with efficient VMware replication and easier
+access during data protection efforts.
+
+Brian Slone said that vRanger Pro was on anc-backups machine:
+
+ip address        host
+---------------------------------------------
+137.229.138.148   anc-backup01.uaa.alaska.edu
+137.229.138.149   anc-backup02.uaa.alaska.edu
+
+
+Wed Jan 18 09:32:06 AKST 2012
+=============================
+From inspection with DNS Manager, in Windows 7 Pro SP1 64-bit ajoite virtual
+machine under VirtualBox on UAA ITS boothite debian squeeze 6.0.3 workstation:
+
+Run START > Administrative Tools > DNS get prompt for:
+Connect to DNS Server
+  This Computer
+  The following computer:
+    137.229.141.15
+x Connect to the specified computer now
+
+Found:
+
+ip address        host
+---------------------------------------------
+137.229.138.148   anc-backup01.uaa.alaska.edu
+137.229.138.149   anc-backup02.uaa.alaska.edu
+
+
+Backup & Recovery
+=================
+o vSphere 5 certified - exploits newly increased 59 streaming VDMK and 1 Terabyte
+  memory limits
+
+o One centralized installation provides VMware ESX and ESXi backup across your
+  entire vSphere environment
+
+o Native cataloging efficiently indexes file metadata for easy search and
+  one-step recovery
+
+o Active Block Mapping reads only active blocks from the image, minimizing backup
+  windows and storage needs
+
+o Distributed processing ensures you  avoid impact on host operations by sending
+  VM data through a single, central server
+
+o Backup jobs can automatically refresh to stay current with new VMs as they are
+  added in the environment
+
+
+Disaster Recovery
+=================
+o Virtual Appliance (VA) for ESXi data replication provides flexible and cost
+  effective Disaster Recovery (DR) capability
+
+o One centralized installation provides ESX and ESXi replication across your
+  entire vSphere environment.  
+
+o Quick, cost-effective recovery can be done on site or at remote sites
+
+o Easy backup of ESX and ESXi VMs to local repositories and replication of ESX
+  and ESXi systems  enables off-site recovery.
+
+o Flexibility to combine backup and replication jobs ensures you can meet SLAs
+  for recovery time and point objectives
+
+
+Application Support
+===================
+o Image-level backups are compatible also with object-level and
+  application-specific recovery; for example, you can use Quest's Recovery
+  Manager for Exchange with your vRanger backups for agentless, recovery of email
+  and other Exchange objects
+
+o Native VSS implementation ensures that applications are properly backed up and
+  ready to restore
+
+quest.com/
+
+
+Links
+=====
+Quest Software
+vRanger Pro backup software
+http://www.quest.com/vranger/
