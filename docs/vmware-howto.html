@@ -1,0 +1,528 @@
+<html><head><title>RVL VMware HOWTO</title></head><body>
+
+<h1>RVL VMware HOWTO</h1>
+
+<h3>Jump to topics in this page:</h3>
+<ul>
+	<li><a href="#whichhosts">Which hosts are VMware hosts?</a>
+	</li><li><a href="#installing">Installing VMware</a>
+	</li><li><a href="#where">Where are the VMware components on the host OS?</a>
+	</li><li><a href="#monitoring">Monitoring VMware virtual machines with
+		the graphical interface</a>
+	</li><li><a href="#network">How are the guests configured for networking?</a>
+	</li><li><a href="#users">How are the guests configured for user accounts and file systems?</a>
+	</li><li><a href="#createnew">How can I create a new virtual machine?</a>
+	</li><li><a href="#reboot">What to do after rebooting the host OS?</a>
+	</li><li><a href="#ifdead">What to do if the virtual machine processes die?</a>
+	</li><li><a href="#computeload">How big of a compute load is all of this?</a>
+	</li><li><a href="#more">How can I find out even more?</a>
+</li></ul>
+<hr>
+
+<h3><a name="whichhosts">Which hosts are VMware hosts?</a></h3>
+
+<ul>
+	<li>
+	The host OS is <tt>copacabana.ecn.purdue.edu</tt>
+	(the top of two large rack-mount servers).
+	</li><li>
+	The configuration is stored under <tt>/etc/vmware/</tt>
+	</li><li>
+	The guests are:<tt><br>
+	copavm1.ecn.purdue.edu  128.46.144.211<br>
+	copavm2.ecn.purdue.edu  128.46.144.212<br>
+	copavm3.ecn.purdue.edu  128.46.144.213<br>
+	copavm4.ecn.purdue.edu  128.46.144.214<br>
+	copavm5.ecn.purdue.edu  128.46.144.215<br>
+	copavm6.ecn.purdue.edu  128.46.144.216<br>
+	copavm7.ecn.purdue.edu  128.46.144.217<br>
+	copavm8.ecn.purdue.edu  128.46.144.218<br>
+	</tt>
+	The images of the guest drives are stored under
+	<tt>/var/lib/vmware/Virtual\ Machines/</tt>
+</li></ul>
+
+<hr>
+<h3><a name="installing">Installing VMware</a></h3>
+<hr>
+<p>
+VMware is already installed!
+However, as a reference:
+</p><ul>
+	<li>
+	Software is kept in <tt>/etc/vmware/software-archive/</tt>
+	</li><li>
+	Install the RPM:<br>
+	<tt><b># rpm -Uvh VMware-gsx-3.1.0-9089.i386.rpm</b></tt>
+	</li><li>
+	Configure VMware:<br>
+	<tt><b># vmware-config.pl</b></tt>
+	</li><li>
+	Extract the tar file:<br>
+	<tt><b># cd /tmp</b></tt><br>
+	<tt><b># tar xvfz VMware-mui-3.1.0-9089.tar.gz</b></tt>
+	</li><li>
+	Configure the web-based administrative interface:<br>
+	<tt><b># cd vmware-mui-distrib</b></tt><br>
+	<tt><b># ./vmware-install.pl</b></tt>
+	</li><li>
+	That last step should have had you run
+	<tt><b>vmware-config-mui.pl</b></tt>
+	but if it did not, do so now.
+</li></ul>
+<p></p>
+
+<hr>
+<h3><a name="where">Where are the VMware components on the host OS?</a></h3>
+<hr>
+<p>
+Note that we have GSX Version 3.1 Server, and there are three components:
+</p><ul>
+	<li>
+	<b>VMware</b> itself, what simulates the virtual hardware platforms.
+	</li><li>
+	<b>vmware-mui,</b> a graphical monitoring and administration
+	interface.
+	</li><li>
+	<b>vmware-console,</b> what lets you attach a virtual console
+	to a running virtual machine via the graphical interface.
+</li></ul>
+<ul>
+	<li>
+	Configuration files are in <tt><b>/etc/vmware*/</b></tt>
+	</li><li>
+	Virtual machine disk images and individual configuration files
+	are in<br>
+	<tt><b>/var/lib/vmware/Virtual\ Machines/<em><u>&lt;name&gt;</u></em></b></tt>
+	</li><li>
+	Helper programs are in <tt><b>/usr/lib/vmware*/</b></tt>
+	</li><li>
+	The main programs are in <tt><b>/usr/bin/vmware*</b></tt>
+</li></ul>
+
+<hr>
+<h3><a name="monitoring">Monitoring VMware virtual machines with</a>
+<a name="graphical">the graphical interface</a></h3>
+<h3>Note -- not working yet!</h3>
+<hr>
+
+<ul>
+	<li>
+	First, verify on the host OS that the web-based interface
+	is listening for you:<br>
+	<tt><b># lsof -i tcp:8333</b></tt>
+	</li><li>
+	Start a Mozilla browser (it seems to have some problems with
+	Konqueror) and direct it to:<br>
+	<tt><b>https://copacabana:8333/</b></tt>
+	</li><li>
+	Authenticate there as <tt>root</tt>
+</li></ul>
+
+<hr>
+<h3><a name="network">How are the guests configured for networking?</a></h3>
+<hr>
+<ul>
+	<li>
+	The guests have publically routable IP addresses resolving to
+	ECN hostnames.
+	They have full access to the RVL Ethernet via the host's Ethernet.
+	</li><li>
+	VMware provides the following illusion:
+<pre>   +-----------------------------------------------------+
+   |                                                     |
+   |            +--------------------+                   |
+   |            |                    |                   |
+   | HostOS ----+ Ethernet LAN       |    +----------+   |
+   |            | implemented with   |    |  2-port  |   |
+   | Guest1 ----+ a hub.  All hosts  +----+ Ethernet +---+== &lt;-- exterior
+   |            | see all frames on  |    |  switch  |   |       Ethernet
+   | Guest2 ----+ this hub.  All     |    +----------+   |         port
+   |            | hosts have unique  |                   |
+   | ..etc..    | MAC/HW addresses.  |                   |
+   |            +--------------------+                   |
+   |                                                     |
+   +-------------------------+---------------------------+
+                             |
+                             |
+        All these components contained within
+             host computer's system case
+ ...
+</pre>
+	</li><li>
+	<b>Frames staying within the box, not forwarded by the switch:</b>
+	Frames between the host and a guest, or between any two hosts.
+	Any "internal" (host or guest) OS can see any of these frames.
+	</li><li>
+	<b>Frames forwarded by the switch, leaving or entering the box,
+	and visible to hosts outside:</b>
+	<ul>
+		<li>
+		Unicast frames between any external IP node and an
+		internal host.
+		</li><li>
+		IP broadcasts, which are sent as MAC broadcasts.
+		</li><li>
+		IP multicasts, which are sent as MAC multicasts.
+		</li><li>
+		Any non-IP MAC broadcast or multicast.
+	</li></ul>
+</li></ul>
+
+<hr>
+<h3><a name="users">How are the guests configured for user accounts and file systems?</a></h3>
+<hr>
+<ul>
+	<li>
+	The guests mount the host's <tt>/home</tt> as their <tt>/home</tt>
+	so that a user's environment will be identical across all guests
+	and the host.
+	</li><li>
+	The guests also mount the host's <tt>/usr/local</tt> as their
+	<tt>/usr/local,</tt>
+	so that any software installed in that area on the guest will
+	be available to all guests without duplication of disk storage.
+	</li><li>
+	I have looked into using LDAPS for remote authentication, so there
+	could be a single LDAPS authentication service running on the host OS.
+	So far, I have not been successful in setting up an LDAP/LDAPS
+	server, OpenLDAP seems to assume a lot of knowledge of X.500.
+	Until then, users will need to run <tt>passwd</tt> on all guests
+	and the host.
+</li></ul>
+
+<hr>
+<h3><a name="createnew">How can I create a new virtual machine?</a></h3>
+<hr>
+<p>
+The following is a brute-force method, which takes advantage of
+the assumption that an existing machine is the product of a lot
+of careful configuration work.
+It assumes that two machines have been created, and we are making
+the third.
+And of course, all this must be done on the host OS!
+</p>
+<p>
+First, clone the filesystem images and do some reconfiguration:
+</p>
+<ol>
+
+	<li>
+	Create a new directory:<br>
+	<tt><b># cd /var/lib/vmware/Virtual\ Machines</b></tt><br>
+	<tt><b># mkdir "Virtual 03"</b></tt>
+
+	</li><li>
+	Copy the files over.
+	The following scripting trickery changes filename components
+	as needed.
+	Change the "01" and "03" as needed, and watch the direction
+	of those quote marks!<br>
+	<tt><b># for F in Virtual\ 01/*</b></tt><br>
+	<tt><b>&gt; do</b></tt><br>
+	<tt><b>&gt; &nbsp;&nbsp; cp -av "$F" "`echo $F | sed 's/Virtual 01/Virtual 03/g'`"</b></tt><br>
+	<tt><b>&gt; done</b></tt><br>
+	Be patient, this will take a while...
+
+	</li><li>
+	Change the first of two files that specify the disk images:<br>
+	<tt><b># cd Virtual\ 03</b></tt><br>
+	<tt><b># vi Virtual\ 03.vmdk</b></tt><br>
+	Globally change "Virtual 01" to "Virtual 03" by typing:<br>
+	<tt><b>:%s/Virtual 01/Virtual 03/g</b></tt><br>
+	Save your changes and exit the editor.
+
+	</li><li>
+	Now edit the other file:<br>
+	<tt><b># vi Virtual\ 03.vmx</b></tt><br>
+	Globally change "Virtual 01" to "Virtual 03" by typing:<br>
+	<tt><b>:%s/Virtual 01/Virtual 03/g</b></tt><br>
+
+	</li><li>
+	Delete the write-lock file, if it exists:<br>
+	<tt><b># rm Virtual\ 03.vmdk.WRITELOCK</b></tt>
+
+	</li><li>
+	Edit the file <tt><b>/etc/vmware/vm-list</b></tt> to add the
+	obviously needed line:<br>
+	<tt><b>config "/var/lib/vmware/Virtual Machines/Virtual 03/Virtual 03.vmx"</b></tt>
+
+</li></ol>
+
+<p>
+Now, bring up the new machine to single-user mode only:
+</p>
+<ol>
+	<li>
+	Go to the console of the host OS.
+	If it is not in graphical mode, first login as root and run:<br>
+	<tt><b># init 5</b></tt>
+
+	</li><li>
+	Login under X using your personal account.
+
+	</li><li>
+	Become root:<br>
+	<tt><b>$ su</b></tt>
+
+	</li><li>
+	Run VMware as root.
+	Be patient, it will take several seconds for the graphical interface
+	to appear!<br>
+	<tt><b># vmware &amp;</b></tt>
+
+	</li><li>
+	When you get the "Connect to host" window, make sure that
+	the "Local host" button is selected, then click "OK".
+
+	</li><li>
+	You will see the virtual machine you just created at the
+	end of the list in the inventory in the left-most pane
+	(click the "Show/Hide Inventory" button if needed).
+	It will have a name that is a duplicate of a name above.
+	Right-click that last entry, select "Rename", and give it
+	the appropriate name.
+
+	</li><li>
+	Click <b>Start this virtual machine,</b>
+	and agree to "Create a new identifier".
+
+	</li><li>
+	When the VM starts to boot, you must <b><em>quickly</em></b>
+	click within the black console window (to get focus inside
+	that window), and then be ready to hit the down and up arrow
+	keys when the LILO screen appears, so the system does not boot
+	in the normal way.
+
+	</li><li>
+	Tell LILO to boot into single-user mode:<br>
+	<tt><b>linux S</b></tt>
+
+	</li><li>
+	It will boot into single-user mode, so you are root on the console.
+	You will be editing a couple of files, ignore the warning about
+	being unable to write to $HOME.
+
+	</li><li>
+	Edit <tt><b>/etc/sysconfig/network</b></tt> and change this line:<br>
+	<tt><b>HOSTNAME=<em><u>oldname</u></em>.ecn.purdue.edu</b></tt>
+
+	</li><li>
+	Edit <tt><b>/etc/sysconfig/network-scripts/ifcfg-eth0</b></tt>
+	and change this line:<br>
+	<tt><b>IPADDR=128.46.144.<em><u>123</u></em></b></tt>
+
+	</li><li>
+	Shut it down cleanly with <tt><b>halt</b></tt> so all file system
+	changes are flushed to the virtual disk.
+	It will be ready for starting from the web-based administrative
+	interface.
+
+</li></ol>
+<p>
+Starting the new machine
+</p>
+<ol>
+	<li>
+	You should be able to start the new machine with
+	<a href="#graphical">the graphical interface, see above</a>
+	</li><li>
+	Alternatively, careful reading of
+	<tt><b>/etc/init.d/vmware</b></tt>
+	revealed that if you correctly made the change to
+	<tt><b>/etc/vmware/vm-list</b></tt>,
+	then the new machine <em>should</em> be started by the
+	<tt><b>vmware-serverd</b></tt> daemon.
+	Send it a kill signal, forcing it to restart:<br>
+	<tt><b># killall vmware-serverd</b></tt><br>
+	Have patience, it may take up to three minutes to start
+	the process of booting each guest.  You could investigate
+	what's running with this:<br>
+	<tt><b># ps axuw | grep vmware-vmx</b></tt><br>
+	</li><li>
+	Finally, here is a <em>really</em> brute-force way of getting a
+	virtual machine up and running.
+	Again, change the "03" as needed:<br>
+	<tt><b># /usr/lib/vmware/bin/vmware-vmx \</b></tt><br>
+	<tt><b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -C /var/lib/vmware/Virtual\ Machines/Virtual\ 03/Virtual\ 03.vmx -@ "" &amp;</b></tt>
+</li></ol>
+
+<hr>
+<h3><a name="reboot">What to do after rebooting the host OS?</a></h3>
+<hr>
+
+<p>
+When Mandrake boots, it re-creates <tt>/boot/kernel.h</tt>,
+which normally is a very good thing.
+However, it makes VMware believe that it has not yet been configured under
+this kernel, even though it is likely the very same kernel that was
+running before the last shutdown.
+<b><em>This means that the guest machines probably will not come up after a
+reboot of the host OS without manual intervention --</em></b>
+probably not that big of a deal because the host OS should not need
+frequent rebooting.
+To work around this issue:
+</p><ol>
+	<li>
+	First verify that no guest machines are running -- if you do see
+	the expected set of guest OS processes, do nothing!<br>
+	<tt><b># ps axuw | egrep 'PID|vmware-vmx'</b></tt>
+	</li><li>
+	Make sure that the VMware software is really shut down.
+	First, stop the VMware services with the boot script:<br>
+	<tt><b># /etc/init.d/vmware stop</b></tt>
+	</li><li>
+	You will likely find that some process survives the shutdown,
+	probably <tt>vmware-serverd</tt> -- shut down any surviving
+	processing, changing <tt>vmware-serverd</tt> as needed in
+	the following:<br>
+	<tt><b># ps axuw | egrep 'PID|vmware'</b></tt><br>
+	<tt><b># pkill -TERM vmware-serverd</b></tt><br>
+	<tt><b># pkill -KILL vmware-serverd</b></tt>
+	</li><li>
+	Reconfigure VMware for operation under the "new" kernel.
+	You should be able to simply agree with all the choices,
+	but do make sure that it builds and loads the kernel modules
+	as needed:<br>
+	<tt><b># vmware-config.pl</b></tt>
+	</li><li>
+	At this point you should find that VMware has been started,
+	but check with the following command and use the boot script
+	if needed:<br>
+	<tt><b># ps axuw | egrep 'PID|vmware-vmx'</b></tt>
+	</li><li>
+	The guest machines will come up one at a time, a new one starting
+	every three minutes in the reverse of the order they're listed
+	in <tt>/etc/vmware/vm-list.</tt>
+	While you're waiting, you could type the following at a shell
+	prompt to monitor their process:<br>
+	<tt><b># while true</b></tt><br>
+	<tt><b>&gt; do</b></tt><br>
+	<tt><b>&gt; &nbsp;&nbsp;&nbsp;  clear</b></tt><br>
+	<tt><b>&gt; &nbsp;&nbsp;&nbsp; uptime</b></tt><br>
+	<tt><b>&gt; &nbsp;&nbsp;&nbsp;  ps axuw | egrep 'PID|vmware-vmx | grep -v grep</b></tt><br>
+	<tt><b>&gt; &nbsp;&nbsp;&nbsp;  sleep 10</b></tt><br>
+	<tt><b>&gt; done</b></tt><br>
+</li></ol>
+<p></p>
+
+<hr>
+<h3><a name="ifdead">What to do if the virtual machine processes die?</a></h3>
+<hr>
+
+<p>
+One alternative is to re-start one machine with the above command.
+But that's not really the best way if it's a general die-off....
+</p>
+<p>
+To really shutdown down all of them cleanly and restart, at least
+until I get the <tt>vmware-mui</tt> interface running correctly:
+</p><ol>
+	<li>
+	Shut down all the running machines:<br>
+	<tt><b># for I in 1 2 3 4 5 6 7 8</b></tt><br>
+	<tt><b>&gt; do</b></tt><br>
+	<tt><b>&gt; &nbsp;&nbsp; ssh 128.46.144.21${I} halt</b></tt><br>
+	<tt><b>&gt; done</b></tt>
+	</li><li>
+	Make sure the VMware daemons are shut down:<br>
+	<tt><b># /etc/init.d/vmware stop</b></tt>
+	</li><li>
+	Note that the above will not kill off all the VMware processes,
+	I think this is due to differences between the expected
+	boot scripts and those found on Mandrake 10.X.
+	So make sure:<br>
+	<tt><b># pkill -TERM vmware-serverd</b></tt><br>
+	<tt><b># pkill -KILL vmware-serverd</b></tt><br>
+	<tt><b># ps axuw | grep vm</b></tt><br>
+	You should see nothing here.
+	</li><li>
+	There may be a bunch of lock files left laying around,
+	get rid of them now if needed.
+	Be careful with the last two commands!<br>
+	<tt><b># cd /var/run/vmware</b></tt><br>
+	<tt><b># rm %2f*</b></tt><br>
+	<tt><b># rm serverd-rendezvous</b></tt><br>
+	<tt><b># rm vmware%2dserverd</b></tt><br>
+	<tt><b># rm -r root/*</b></tt><br>
+	<tt><b># rm -r httpd/*</b></tt>
+	</li><li>
+	OK, <em>now</em> you should be ready to restart the VMware daemons:<br>
+	<tt><b># /etc/init.d/vmware start</b></tt>
+	</li><li>
+	Now you need to be very patient.
+	There should be a process <tt><b>vmware-serverd</b></tt>
+	which will have read the file <tt><b>/etc/vmware/vm-list</b></tt>
+	and will be starting the specified virtual machines.
+	However, it will only start one every three minutes, to keep
+	from overwhelming the host OS by trying to start all the daemons
+	and all the guest operating systems simultaneously.
+	Give it about five minutes, and see if any are running:<br>
+	<tt><b># ps axuw | grep vmx</b></tt>
+	</li><li>
+	Now wait another three to five minutes and look again:<br>
+	<tt><b># ps axuw | grep vmx</b></tt>
+	</li><li>
+	You should see the virtual machines starting,
+	in the reverse of the order that they're listed in
+	<tt><b>/etc/vmware/vm-list.</b></tt>
+	If so, good, just continue to be patient!
+	If not, well, go back to the first step...
+</li></ol>
+
+<p>
+Another trick for general troubleshooting is to use <tt><b>top</b></tt>
+to watch the running virtual machine emulators, the processes running
+the command <tt><b>vmware-vmx.</b></tt>
+Here's a useful trick:
+</p><ol>
+	<li>
+	Find the list of numeric PID's:<br>
+	<tt><b># ps axuw | grep vmware-vmx</b></tt>
+	</li><li>
+	Now ask for just those PID's, changing the numeric PID's as
+	needed in the following:<br>
+	<tt><b># top -p 22824,22865,22907,22948,23010,23049,23093,23102</b></tt>
+</li></ol>
+
+<hr>
+<h3><a name="computeload">How big of a compute load is all of this?</a></h3>
+<hr>
+
+<ul>
+	<li>
+	Not as bad as you might think.
+	Each running virtual machine seems to take 5-7% of the available
+	CPU cycles when it's mostly idle.
+	2-3 times that when it's running <tt>fsck</tt> (at which point
+	the processing is probably blocked waiting on I/O).
+	</li><li>
+	Virtual machines just sitting waiting for a login seem to take
+	about 4% of the available RAM.
+	</li><li>
+	But remember, anything that pegs the CPU on one guest will peg
+	the one real CPU.
+	All the guests, plus the host OS, must share the RAM and CPU cycles.
+	</li><li>
+	With eight virtual machines, expect a load average around 10-12!
+</li></ul>
+
+<hr>
+<h3><a name="more">How can I find out even more?</a></h3>
+<hr>
+
+<ul>
+	<li>
+	GSX Server 3.1 Documentation (several large PDF files)
+	<a href="http://www.vmware.com/support/gsx3/doc/">
+		http://www.vmware.com/support/gsx3/doc/</a>
+	</li><li>
+	VMware Knowledge Base (searchable trouble reports and how-to stuff)
+	<a href="http://www.vmware.com/kb">
+		http://www.vmware.com/kb</a>
+
+</li></ul>
+
+
+
+</body></html>
