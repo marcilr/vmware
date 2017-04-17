@@ -1,0 +1,21 @@
+login.txt
+Created Wed Aug 17 08:07:20 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Login to anc-esx01 to anc-esx05 with sysmgr account.
+Then su to root.
+
+
+user: sysmgr  <== Remote login.
+
+
+UAA ITS ESX servers
+===================
+anc-esx01.uaa.alaska.edu   137.229.138.231
+anc-esx02.uaa.alaska.edu   137.229.138.232
+anc-esx03.uaa.alaska.edu   137.229.138.233
+anc-esx04.uaa.alaska.edu   137.229.138.234
+anc-esx05.uaa.alaska.edu   137.229.138.235
+
+
