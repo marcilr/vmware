@@ -1,0 +1,55 @@
+vmware-cmd.txt
+Created Tue Aug 30 11:33:50 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+[root@anc-esx04 sysmgr]# vmware --version
+VMware ESX 4.1.0 build-348481
+[root@anc-esx04 sysmgr]# 
+
+[root@anc-esx04 sysmgr]# vmware-cmd -help
+usage: vmware-cmd [options]
+
+options:
+  -h, --help         show this help message and exit
+  -v                 Verbose.
+  -q                 Quiet. Minimal output.
+
+  Connection Options:
+    -H <host>        specifies an alternative host (if set, -U and -P must
+                     also be set)
+    -O <port>        specifies an alternative port
+    -U <username>    specifies a user
+    -P <password>    specifies a password
+
+  Server Operations:
+    /usr/bin/vmware-cmd -l
+    /usr/bin/vmware-cmd -s listvms                                              
+    /usr/bin/vmware-cmd -s register <config_file_path>                          
+    /usr/bin/vmware-cmd -s unregister <config_file_path>                        
+
+  VM Operations:
+    /usr/bin/vmware-cmd <cfg> getstate                                          
+    /usr/bin/vmware-cmd <cfg> start [soft|hard|trysoft]                         
+    /usr/bin/vmware-cmd <cfg> stop [soft|hard|trysoft]                          
+    /usr/bin/vmware-cmd <cfg> reset [soft|hard|trysoft]                         
+    /usr/bin/vmware-cmd <cfg> suspend [soft|hard|trysoft]                       
+    /usr/bin/vmware-cmd <cfg> getconfig <variable>                              
+    /usr/bin/vmware-cmd <cfg> setguestinfo <variable> <value>                   
+    /usr/bin/vmware-cmd <cfg> getguestinfo <variable>                           
+    /usr/bin/vmware-cmd <cfg> getproductinfo <product_info>                     
+    /usr/bin/vmware-cmd <cfg> connectdevice <device_name>                       
+    /usr/bin/vmware-cmd <cfg> disconnectdevice <device_name>                    
+    /usr/bin/vmware-cmd <cfg> getid                                             
+    /usr/bin/vmware-cmd <cfg> getconfigfile                                     
+    /usr/bin/vmware-cmd <cfg> getheartbeat                                      
+    /usr/bin/vmware-cmd <cfg> getuptime                                         
+    /usr/bin/vmware-cmd <cfg> gettoolslastactive                                
+    /usr/bin/vmware-cmd <cfg> hassnapshot                                       
+    /usr/bin/vmware-cmd <cfg> createsnapshot <name> <description> <quiesce> <memory> 
+    /usr/bin/vmware-cmd <cfg> revertsnapshot                                    
+    /usr/bin/vmware-cmd <cfg> removesnapshots                                   
+    /usr/bin/vmware-cmd <cfg> answer                                            
+[root@anc-esx04 sysmgr]#
+
+
