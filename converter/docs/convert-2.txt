@@ -1,0 +1,49 @@
+convert-2.txt
+Created Tue Jan 25 11:19:14 AKST 2011
+by Raymond E. Marcil
+
+
+To convert a vSphere virtual machine (at UAA ITS):
+
+1. Run VMware vCenter Converter Standalone client (v4.3.0 build-292238) on windows.
+2. Click "Convert Machine"
+3. At Source System:
+  Select source type: Powered-on machine
+  Specify the powered-on machine
+    This local machine
+  x A remote machine
+    IP address or name: 137.229.141.134 (anc-visual-studio vm)
+    User name: axrm
+    Password:  the convoluted usual
+    OS Family: Windows  (could select Linux)
+                  
+4. At Destination System
+  Source: 137.229.141.134 (anc-visual-studio)
+  Destination: \\137.229.156.181\exports (VMware Player 3.0.x)
+
+  /exports/anc-visual-studio -> /net/its/Software/eLive/anc-visual-studio
+
+  
+  Select destination type: VMware Workstation or other VMware virtual machine
+                           Creates a new virtual machine for use on VMware Workstation,
+                           VMware Player, VMware Fusion or other VMware product.
+
+  Select VMware product:   VMware Player 3.0.x
+
+  Virtual machine details
+    Name: anc-visual-studio.uaa.alaska.edu
+
+  Select a location for the virtual machine:
+    \\137.229.156.181\exports     (samba export on boothite)
+
+  Enter credentails
+    Provide credentails to be used when connectioning to the network share of the 
+    destination virutal machine.
+
+  User name: marcilr
+  Password:  the usual
+
+click Next ==> Only 37GB available on malachite.
+               Not enough space for 80GB (C: 40GB + E: 80GB)
+
+Need to bring in spare 2TB drive for this process.
