@@ -1,0 +1,77 @@
+esx-server-3i.txt
+Created Mon Jan  7 17:08:45 AKST 2008
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+More On VMware ESX Server 3i
+Category:Virtualization
+Posted By Michel Roth
+On Tuesday 18 September 2007
+
+
+Now that the dust has settled a bit around VMware announcing their integrated hypervisor 
+VMware ESX Server 3i , more information is starting to leak out. From the start of the 
+rumors Dell seemed to be the first big player to come out with a special server just for 
+VMware ESX Server 3i. Well it seems the rumor was indeed true. At VMworld, when ESXi was 
+announced VMware indeed used a new Dell server specially equipped for (VMware ESX Server 
+3i ) virtual workloads. This server is now being called "VESO" and has a pretty nice 
+hardware stup: 2 x AMD quad-core Opteron 16 memory slots, 4 PCI slots and four NICs.
+
+At the Direct2Dell.com there is a five minute webcast where David Schmidt shows of the 
+new server. Not much to see really but worth a watch anyway. If still crave more 
+information, VMware also has published the slidedeck that was used for the VMworld 
+session where Vmware ESX Server 3i was introduced. Check that out here. 
+from: http://www.thincomputing.net/newsitem3558.html
+
+'There's been a lot of change over at Dell, what with Dell 2.0, and a lot of 
+rethinking about what should be in a system," Iams said. "By gaining a foothold 
+in the virtualization space," Iams said, Dell could "find a way to break away from 
+the pack."
+
+Joe Clabby, president of Clabby Analytics, echoed that assessment. "Dell is not a 
+leader in blades," he said. If Dell were able to successfully develop a 
+virtualization-specific server, "it gives them a way to get back in and play without 
+having to fight" and devote engineering resources to a viable blade platform.
+
+Clabby added that, if true, VESO would represent a bold move for the company. "We 
+all know that Dell is a Windows company," Clabby said, "and we're getting to know 
+Dell as a Linux company." Embedding VMware on to its servers would present a third 
+approach that "wouldn't have any of the bulk of an OS [i.e., Windows], or any of the 
+integration problems of Linux, and would let you create these sorts of utility 
+servers that you that let you easily build up and tear down applications."
+
+"It's an incredibly obvious direction for the server vendors to go down," said 
+Illuminata's Haff. If the Dell VESO rumors are in fact true, Haff said, "and Dell 
+does any OK job of it, how could any x86 vendor not go down that 
+road?"'
+from: techtarget.com/
+
+
+Links
+=====
+Meet the Next Generation of Virtual Infrastructure Technology
+ESX Server 3i is the industry's rst hardware-integrated hypervisor built on a 
+next-generation thin architecture, giving your organization an efficient 
+foundation for building a dynamic, automated data center.
+http://www.vmware.com/vmworldnews/esx.html
+
+VESO: How Dell Will Simplify Virtualization
+http://direct2dell.com/one2one/archive/2007/09/13/29651.aspx
+
+New Dell 'VESO' server built on VMware, sources say
+http://searchservervirtualization.techtarget.com/originalContent/\
+0,289142,sid94_gci1263037,00.html
+
+[VMworld 07] VESO: Dell's AMD Quad-Core Server Made for Virtualisation 
+with up to 128GB Memory, 4 PCI Slots, 20 Ethernet Ports and an Embedded 
+Virtual Server!
+* 32MB ESX 3i hypervisor in flash memory. 
+* 128 GB memory, 4 PCI slots
+* Up to 20 network interfaces, 10 Gbits/s option coming
+* You don't need hard drive!
+Nice pic:)
+http://www.uberpulse.com/us/2007/09/vmworld_07_dell_unveils_vizo_\
+a_server_made_for_virtualisation.php
+
+Dell | VMware deliver the Power of Virtualization.
+http://www.dell.com/content/topics/global.aspx/alliances/en/vmware?c=us&cs=555&l=en&s=biz
