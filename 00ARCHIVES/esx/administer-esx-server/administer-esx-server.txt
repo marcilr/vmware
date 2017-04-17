@@ -1,0 +1,180 @@
+administer-esx-server.txt
+Created Wed Aug 17 08:56:43 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Five Ways to Administer a VMware ESX Server:
+1. Console access to the Service Console.  i.e. Access in machine room.
+
+2. SSH to the Service Console.  <== Sweet access via ssh to:
+anc-esx01.uaa.alaska.edu   137.229.138.231
+anc-esx02.uaa.alaska.edu   137.229.138.232
+anc-esx03.uaa.alaska.edu   137.229.138.233
+anc-esx04.uaa.alaska.edu   137.229.138.234
+anc-esx05.uaa.alaska.edu   137.229.138.235
+
+Login with sysmgr then su to root.
+
+3. VMware Virtual Infrastructure (VI) Web Access to the ESX Server.
+Web access urls to ESX Servers or vCenterServer?
+
+vSphere Web Access
+------------------
+https://anc-vmmgmt01.uaa.alaska.edu/ui/
+remarcil/new convoluted usual.
+
+
+4. VMware Virtual Infrastructure Client (VI Client) to the Server.
+
+Can use vSphere to access individual ESX servers:
+
+anc-esx01.uaa.alaska.edu   137.229.138.231
+anc-esx02.uaa.alaska.edu   137.229.138.232
+anc-esx03.uaa.alaska.edu   137.229.138.233
+anc-esx04.uaa.alaska.edu   137.229.138.234
+anc-esx05.uaa.alaska.edu   137.229.138.235
+
+Using root account for access.
+
+
+5. VMware Virtual Infrastructure Client (VI Client) to the Virtual Center Server (VC Server)
+
+This is the ticket using vSphere to access vCenterServer at:
+
+anc-vmmgmt01.uaa.alaska.edu   137.229.138.230
+
+
+
+
+Five Ways to Administer a VMware ESX Server
+by David Davis, vExpert, VCP, CCIE 9369 - December 23, 2008 
+===========================================================
+
+VMware ESX server is an amazing and complex product.  It combines a Linux Service console with 
+the power to run multiple virtual machine operating systems, all on the same server.  There are 
+a number of ways to administer ESX.  Perhaps you are considering VMware ESX server or maybe you 
+have it installed but want to learn more about administering it.  Either way, this article is 
+for you. Let's find out the 5 different ways you can administer a VMware ESX Server.
+
+
+1. Console access to the Service Console
+
+Just like any other operating system, you can access the console of the VMware ESX Server. 
+From the console, you can access a Linux login prompt that to the ESX Service Console.  What 
+you won't get is any kind of GUI interface.  To use this form of management for your ESX server, 
+you will have to have a good knowledge of Linux as well as some of the proprietary VMware ESX 
+commands and terminology. Normally, the console of an ESX server looks like this:
+
+  5_ways_to_adminster_esx_server_01.jpg
+
+If you press Alt-F1, you can get access to the Linux login prompt of the ESX service console 
+and login to a command prompt, like this:
+
+  5_ways_to_adminster_esx_server_02.jpg
+
+The disadvantages to this mode is 1) you must be at the console (or connect using an IP KVM) 
+and 2) you must know Linux to accomplish your task (no GUI).
+
+
+2. SSH to the Service Console
+
+You can SSH to the console prompt of an ESX server and receive the same Linux text console 
+access as I showed above.  Telnet is not allowed.  To use this method, the ESX server must 
+be working on the network and you must have an SSH client on your PC to connect.  Again, in 
+this mode, you don't get a GUI interface.
+
+  5_ways_to_adminster_esx_server_02_5.jpg
+
+
+3. VMware Virtual Infrastructure (VI) Web Access to the ESX Server
+
+The simplest way to get access to GUI administration screen of a VMware ESX server is using 
+the VMware Virtual Infrastructure (VI) Web Access interface.  This is installed and enabled 
+by default.  To get to it, all you need is a PC on the network, a web browser, the IP address 
+of the ESX server, and a valid login. Accessing it is as simple as opening your web browser 
+and entering the IP address (or DNS name) of the ESX server.  What you will get is a Welcome 
+screen, showing your administrative options.
+
+  5_ways_to_adminster_esx_server_03.jpg
+
+Click on Login to Web Access to see web login screen:
+  5_ways_to_adminster_esx_server_04.jpg
+
+What you will see is this:
+  5_ways_to_adminster_esx_server_05.jpg
+
+This is the VMware VI Web Access interface.  The benefit to using this is that you get a GUI 
+client for your ESX server without having to install a client on your local machine.  The 
+downside to the web interface is that you can only perform basic ESX functions like controlling 
+existing machines (start/stop/pause) and console remote access.  You cannot add new VMs, work 
+with VM storage, or VM networks.  Still, this is a great interface if you just need to check the 
+status of your ESX VMs, restart a VM, or use console remote control.
+
+
+4. VMware Virtual Infrastructure Client (VI Client) to the Server
+
+The absolute best way to remotely administer your VMware ESX server is the Virtual Infrastructure 
+(VI) Client.  This is an installable client that provides you full access to administer your ESX 
+server.  This client can easily be downloaded and installed from the initial ESX Welcome screen,
+by clicking here:
+
+  5_ways_to_adminster_esx_server_06.jpg
+
+This will prompt you to Run or Save the VMware-viclient.exe installation program.  I suggest 
+running it.
+
+  5_ways_to_adminster_esx_server_07.jpg
+
+The installation is simple and straightforward.  When it is complete, you can run the VI Client 
+from the desktop icon that was created.
+
+  5_ways_to_adminster_esx_server_08.jpg
+
+From here, you will login to the VI Client with your server name/IP, username, and password.
+  5_ways_to_adminster_esx_server_09.jpg
+
+Here is what the VI Client looks like, once you login:
+
+  5_ways_to_adminster_esx_server_10.jpg
+
+The benefits to the VI client are that you have full access to do whatever is needed on the 
+ESX Server and you get a GUI client to do it in.  The only downside is that you must install the 
+VI client application to do this.  However, the installation is negligible and the VI client is 
+the absolute best way to administer your ESX Server.  Even better, the VI client can be used with
+the VMware Virtual Center Server - which brings us to administration option #5.
+
+NOTE: The VI Client was uses to access previous versions of VirtualCenter and ESX/ESXi.
+      Access is currently throught the vSphere Client.
+
+
+5. VMware Virtual Infrastructure Client (VI Client) to the Virtual Center Server (VC Server)
+
+The same VI Client that can be used to administer a single ESX server can also be used to 
+administer your entire data center of VMware ESX servers.  Instead of pointing the VI client to 
+the name/IP of your ESX server, all you have to do is to point it to the name/IP of your Virtual 
+Center (VC) server.  This, of course, assumes that you have VC up and running.  Also, you will 
+have to login with a VC server user account (a Windows account) instead of ESX Linux account. 
+Here is what it looks like:
+
+  5_ways_to_adminster_esx_server_11.jpg
+
+From this VI VC interface, you can manage all ESX servers, VM storage, VM networks, and more. 
+Virtual Center, of course, is an optional product that requires additional licenses and hardware.
+
+Summary
+=======
+In summary, VMware ESX server is an amazing product with a number of different administrative 
+options. In this article, we learned how you can administer your ESX server from the console, 
+through SSH, using the Web interface, using the VI Client directly to the server, and finally, 
+using the VI client with Virtual Center.  In my opinion, using the VI client is just about 
+always going to be the best option for you.  However, there are situations where you may need 
+to use the Linux CLI interface to administer and troubleshoot your ESX server.
+
+petri.co.il/
+
+
+Links
+=====
+Five Ways to Administer a VMware ESX Server
+by David Davis, vExpert, VCP, CCIE 9369 - December 23, 2008
+http://www.petri.co.il/5_ways_to_adminster_esx_server.htm
