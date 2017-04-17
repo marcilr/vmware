@@ -1,0 +1,60 @@
+TODO
+Created Fri Apr 11 08:33:07 AKDT 2008
+by Raymond E. Marcil
+
+
+FIXME: Jim Weller did track down how to set the HA latency.  Need to record here.
+
+Need to determine how to set HA latency to 60 seconds from the default
+of 15 seconds.  This concerns isolation of the VM from the VirtualCenter.
+ 
+
+Configuration Maximums
+======================
+From: 	   Kurtis Bunker <axkab@uaa.alaska.edu>
+To: 	   VMware_Admins <VMware_Admins@uaa.alaska.edu>
+Subject:   Important cert study document - easy read for config maximums
+Date:      Thu, 10 Apr 2008 11:30:04 -0800
+
+http://www.vmware.com/pdf/vi3_35/esx_3/r35/vi3_35_25_config_max.pdf
+see: docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_config_max.pdf
+
+
+Assigned Reading
+================
+Reading scheduled by UAA ITS Kurtis Bunker for May 2008. These are the continued 
+build out sessions, but shorter.  I am going to "assign" following White papers 
+for the sessions for discussion on Best practices and how we want to design our cluster.
+
+Monday 14th
+===========
+ESX Server 3 Installation Guide (120 pages)
+ESX Server 3.5 and VirtualCenter 2.5
+docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_installation_guide.pdf 
+
+Wednesday 16th
+==============
+SAN Configuration Guide (138 pages)
+ESX Server 3.0.1 and VirtualCenter 2.01
+docs/Kurt/VMware/White_Papers/3.01/vi3_301_201_san_cfg.pdf
+
+Thursday 17th
+=============
+Server Configuration Guide
+ESX Server 3.0.1 and VirtualCenter 2.0.1 (308 pages)
+docs/Kurt/VMware/White_Papers/3.01/vi3_301_201_server_config.pdf
+
+Friday 18th
+===========
+ESX Server 3 Patch Management Guide (48 pages)
+ESX Server 3.5
+docs/Kurt/VMWare/White_Papers/3.5/vi3_35_25_esxupdate.pdf
+
+
+from: //UAAFS01/its$/OPERATIONS/Kurt/VMware/White_Papers/
+mounted on UAA ITS boothite workstation: 
+  /net/its/OPERATIONS/Kurt/VMware/White_Papers/
+
+NOTE: Some documents VMware, like the SAN Configuration Guide and 
+Server Configuration Guide have not made if from the VMware v3.0.1 
+to v3.5 documentation yet.
