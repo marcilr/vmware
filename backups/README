@@ -1,0 +1,21 @@
+README
+Created Mon Apr 17 15:14:18 AKDT 2017
+Copyright (C) 2017 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+backups.txt
+  Backups for VMware
+
+links.txt
+  Backups related links
+
+veeam/
+  Veeam Backup & Replication v7 for VMware and Hyper-V
+  http://go.veeam.com/ppc-product.html
+
+vranger-pro/
+  Quest Software
+  vRanger Pro backup software
+  http://www.quest.com/vranger/
