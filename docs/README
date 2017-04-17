@@ -1,0 +1,55 @@
+README
+Created Fri Jan 20 20:53:21 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware documentation.
+
+
+Filelist
+========
+awesome-vmware-hacks-20100301.eml
+awesome-vmware-hacks-20100301.txt
+  o Use Petool.exe to add windows drivers to vmware converter CD.
+  o Put esxi on a keychain (8 million pages tell how to do this)
+  o Boot vmware esxi from USB keychain in vmware workstation using PLoP iso.  We used 
+    this to pre-build our boot keychains using vmware workstation.
+  Jim Weller - L33t H4xx0r  !!
+
+best-practices.txt
+  VMware Best Practices as Standard Build
+
+files.pdf
+files.txt
+  VMware Workstation 5.5 What Files Make Up a Virtual Machine?
+  https://www.vmware.com/support/ws55/doc/ws_learning_files_in_a_vm.html
+
+mac-os-x.txt
+  Wow, looks like Mac OS X under VMware is possible.
+
+maximums.txt
+  VMware maximums.
+
+samba.txt
+  Working on creating a samba share to share files with Windows XP
+  under VMware.
+
+vmware-firewall-ports-v1.0.xls
+  Comprehensive list of known ports & protocols used for all VMware communications with nice 
+  visio diagram.
+  http://communities.vmware.com/docs/DOC-5401
+
+vmware-howto.html
+  RVL VMware HOWTO
+  https://engineering.purdue.edu/~cromwell/vmware-howto.html
+
+vmware-notes.txt
+  VMware notes for my own reference.
+
+  Please enter your 20-character serial number.
+    Type XXXXX-XXXXX-XXXXX-XXXXX or 'Enter' to cancel:  
+    91121-YMM68-28KFN-4UP
+
+  Serial: 91121-YMM68-28KFN-4UPJM
+    marcilr/docs/software/vmware/20071012-vmware-kurt.txt
+
