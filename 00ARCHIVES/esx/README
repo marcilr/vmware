@@ -1,0 +1,25 @@
+README
+Created Tue Jan 24 07:30:07 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware ESX server.
+
+
+VMDirectPath
+============
+VMDirectPath can be used to allow a VM access to a PCI device.
+Only one VM per PCI device though.
+
+"You CAN do direct drive pass-through to specific VMs, but it
+requires the motherboard to support  VT-D (for Intel) or IOMMU
+(for AMD).  Beyond that I don't think there are any other
+requirements for that."
+
+overclock.net/
+
+
+Links
+=====
+A couple ESXi Questions 
+http://www.overclock.net/t/1112654/a-couple-esxi-questions
