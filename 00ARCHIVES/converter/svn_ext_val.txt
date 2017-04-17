@@ -1,0 +1,13 @@
+#
+# svn_ext_val.txt
+# Created Sun Jan 22 15:52:38 AKST 2012
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+
+
+#
+# List of repo hierarchical directories to checkout under converter/
+#
+# docs/   Converter documentation.
+#
+../../converter/docs/docs   ./docs
