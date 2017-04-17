@@ -1,0 +1,42 @@
+README
+Created Sat Jan 21 11:51:33 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+cli.txt
+  ESX command line interface. 
+
+clone-n-copy.txt
+  Clone n' copy technique:
+  I.  Clone Virtual Machine with VMware vSphere Client
+  II. Copy Clone Using VMware Converter.
+
+copy-disk.txt
+  Copying disk from one vm to another on the ESX Server console.
+
+esx-server-3i.txt
+  More On VMware ESX Server 3i
+
+esx-virtualcenter-disconnect.txt 
+  Changing the VM isolation response.
+
+export-machine.txt
+  Notes on attempting to export virtual machine from 
+  VMware ESX 4.1.0 build-348481 anc-esx01
+
+login.txt
+  Login to anc-esx01 to anc-esx05 with sysmgr account.
+  Then su to root.
+
+stop-vm-copy-files.txt
+  Stopping a VM and Releasing Files
+  http://vikashkumarroy.blogspot.com/2008/03/stopping-vm-and-releasing-files.html
+
+version.txt
+  Determine ESX Server version.
+
+vmware-cmd.txt
+  vmware-cmd syntax at ESX command line.
+
