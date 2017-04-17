@@ -1,0 +1,66 @@
+links.txt
+Created Mon Jun 15 14:32:16 AKDT 2015
+Copyright (C) 2015 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware vCenter Converter relates links
+
+
+Links
+=====
+Download VMware vCenter Converter Standalone
+Automate and simplify physical to virtual machine conversions as well as
+conversions between virtual machine formats with VMware vCenter Converter.
+Use the intuitive wizard-driven interface of VMware vCenter Converter to
+convert your physical machines to virtual machines.
+https://my.vmware.com/group/vmware/info?slug=infrastructure_operations_management/vmware_vcenter_converter_standalone/6_0
+
+Enabling the use of a non-root user for hot cloning of
+a Linux source machine (1008164)
+Password less sudu with /etc/sudoers of:
+username ALL=(ALL) NOPASSWD: ALL
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1008164
+
+P2V Conversion Using VMware vCenter Converter Standalone
+by Jeff Staten - September 17, 2013
+A bit old...i.e. non-working v5.1
+Once you have your VMware private cloud system all set up, you will likely
+want to convert any physical machines that you have to virtual machines on
+your cloud system.  To help you with this task, VMware created their VMware
+vCenter Converter Standalone.  The VMware converter will login to your
+Windows or Linux system and copy the entire machine over into a new virtual
+machine on a host maintained by your vCenter.
+http://www.uptimemadeeasy.com/vmware/p2v-conversion-using-vmware-vcenter-converter-standalone/
+
+How to Add a User and Grant Root Privileges on CentOS 6.5
+For rmarcil account on development-ray this did not work with
+VMware vCenter Converter Standalone 6.0.0
+http://www.liquidweb.com/kb/how-to-add-a-user-and-grant-root-privileges-on-centos-6-5/
+
+Using StandAlone Converter with SSH Tunnel and keys, no passwords
+MadCow1 Apr 21, 2015 8:59 AM
+The workaround is this - edit your sshd_config file and set:
+  PasswordAuthentication yes
+  PermitRootLogin yes
+More seriously - Converter does not support SSH key login,
+you have to use password.
+https://communities.vmware.com/thread/508799
+
+VMWare Converter How to Guide
+Details of converter v4.0.1
+https://kb.swivelsecure.com/wiki/index.php/VMWare_Converter_How_to_Guide
+
+VMware vCenter Converter Standalone 6.0 Release Notes
+VMware vCenter Converter Standalone 6.0 | 14 May 2015 | Build 2716716
+https://www.vmware.com/support/converter/doc/conv_sa_60_rel_notes.html
+
+VMware vCenter Converter Standalone Documentation
+Release 6.0, 5/14/2015 | Build 2716716
+VMware vCenter Converter Standalone 6.0 Release Notes 
+VMware vCenter Converter Standalone 6.0 User's Guide
+https://www.vmware.com/support/pubs/converter_pubs.html
+
+VMware vCenter Converter Standalone
+User's Guide
+vCenter Converter Standalone 6.0
+https://www.vmware.com/pdf/convsa_60_guide.pdf
