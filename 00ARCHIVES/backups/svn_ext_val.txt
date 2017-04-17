@@ -1,0 +1,27 @@
+#
+# svn_ext_val.txt
+# Created Wed Mar 26 11:31:38 AKDT 2014
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+
+
+#
+# List of repo hierarchical directories to checkout under backup/
+#
+# veeam/          Backup & Replication provides fast, flexible, and reliable
+#                 recovery of virtualized applications and data.  It unifies
+#                 backup and replication in a single solution, increases the
+#                 value of backup and reinvents data protection for VMware
+#                 vSphere and Microsoft Hyper-V virtual environments.  This
+#                 Modern Data Protection solution supports your entire virtual
+#                 infrastructure with industry leading features, such as
+#                 instant file level recovery and streamlined VM recovery,
+#                 2-in-1 backup & replication, built-in de-duplication and
+#                 compression, and much more.
+#                 http://go.veeam.com/ppc-product.html
+#
+# vranger-pro/    vRanger Pro backup software
+#                 http://www.quest.com/vranger/
+#
+../../backup/veeam/veeam               ./veeam
+../../backup/vranger-pro/vranger-pro   ./vranger-pro
