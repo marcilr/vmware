@@ -1,0 +1,15 @@
+#
+# svn_ext_val.txt
+# Created Sat Jan 21 11:49:56 AKST 2012
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+
+
+#
+# List of subversion repositories to checkout under esx/
+#
+# administer-esx-server/   Five Ways to Administer a VMware ESX Server
+# docs/                    ESX documentation
+#
+../../esx/administer-esx-server/administer-esx-server   ./administer-esx-server
+../../esx/docs/docs                                     ./docs
