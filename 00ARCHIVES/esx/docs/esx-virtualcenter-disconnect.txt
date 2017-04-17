@@ -1,0 +1,40 @@
+esx-virtualcenter-disconnect.txt 
+Created Thu Apr 10 16:44:32 AKDT 2008
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Working changing the VM isolation response.
+
+
+If your gateway is not pingable you can't use its IP address for isolation detection.
+You'll have to specify some other IP for this purpose using the HA advanced option 
+(das.isolationaddress).
+http://communities.vmware.com/thread/110818
+
+
+ftcli vmware
+/opt/LGTOaam512/bin/ftcli
+This utility allows you to view the active nodes in an HA cluster and the managed IP 
+addresses. This utility will help you determine whether the HA agent is in a running 
+state and which IP addresses are visible between those managed hosts.
+http://b2v.co.uk/b2vguide2vmware3.htm
+
+
+
+"However Host disconnected from Virtual center and Host not responding are quite different.
+
+NB:The VirtualCenter Server tries to reconnect to a managed host if the connection is lost. 
+You can define how long VirtualCenter tries to re-establish the connection. This feature is 
+not available When the VI Client is connected directly to an ESX Server. Host not 
+responding means Virtual center no longer recieves Heart Beat. This could be because host 
+has failed or Virtual center agent has crashed. Host failure detection occurs every 15 
+seconds, if there is no response within 12-14 secs window, Host declares itself isolated. 
+However during the same interval default isolation response applies on VMs, which is 
+shutting down VMs. However if the network is restored in the same window VMs are shutdown 
+but not failed over. BUT If the Network is restored before 12 sec, Host is not considered 
+as isolated."
+
+Links:
+=====
+VMHA & Special Situations:
+http://vmzare.wordpress.com/2007/03/31/resource-mgmt-guide-03/
