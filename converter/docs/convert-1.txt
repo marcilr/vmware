@@ -1,0 +1,169 @@
+convert-1.txt
+Created Thu Jan  3 11:08:07 AKST 2008
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Notes on workstation conversion.
+
+
+p2v VMware Convert utility
+==========================
+Used for convertion of Windows box to vmware.
+I had downloaded the latest VMware-converter-3.0.1-44480.exe
+installer.  Installed to D:\SW\VMware without a hitch.
+
+1. Download VMware Converter and convert your physical machines 
+   to virtual machines in minutes.
+2. Download VMware Server and host your new virtual machines.
+
+
+Ran VMware converter utility on ami-hq-rm windows 2000
+workstation. 
+
+For drives (shrunk d & e): 
+c: 11.72GB maintain size
+d:  7.60GB min size
+e:  5.08GB min size         
+
+Imported machine to:
+  VMWare standalone virtual machine.
+  (Workstation, VMware Server, or VMware Player)
+
+Virtual machine name: ami-hq-rm
+Location: E:\ray\vmware
+
+Type of virtual machine to creat:
+* Workstation 5.x, VMWare Server 1.x, VMware Server 2.0,
+VMware Player
+
+Disk Space Allocation:
+* Allow virtual disk files to grow
+
+How many NICS do you want to have: 1
+
+
+Source
+------
+Source:                Physical machine (local)
+Disk Options:          Copy selected volumes and resize
+
+Destination:
+Name:                  ami-hq-rm
+
+Customization
+Guest Customization:   No
+
+ID: 1
+Description: Import Physical Machine
+Destination: E:\ray\vmware
+Progress: 82%
+Status: !Failed
+Start Time: 06/06/2007 04:18:23 PM
+End Time: 06/06/2007 07:15:28 PM
+
+
+Log Information
+    04:18:24 PM                Step 1 : Connecting to VMware Converter Agent on localhost
+    04:18:24 PM                Step 2 : Creating target virtual machine and importing data
+    04:18:25 PM                        Configuring parameters for the target virtual machine...
+    04:18:26 PM                        Creating target virtual machine...
+    04:18:28 PM                        Taking a snapshot of the volume...
+    04:18:46 PM                        Cloning source volume c: into target virtual machine...
+    04:53:51 PM                        Formatting target volume d:...
+    04:53:59 PM                        Taking a snapshot of the volume...
+    04:54:05 PM                        Cloning source volume d: into target virtual machine...
+    06:28:58 PM                        Formatting target volume e:...
+    06:29:04 PM                        Taking a snapshot of the volume...
+    06:29:18 PM                        Cloning source volume e: into target virtual machine...
+    07:15:28 PM                                ERROR: There is not enough space on the disk
+
+Note: VMware Converter Agent logs can be found on localhost at
+        C:\WINDOWS\Temp\vmware-temp\vmware-converter*
+      VMware Converter Client logs on this computer can be exported, or found
+        at "C:\Documents and Settings\ray\Local Settings\Temp\vmware-temp\vmware-client*"
+      VMware Converter logs are stored on a temporary basis, and should be retrieved
+        as soon as possible.
+
+Definately ran out of space working on the e:\ with the www directory. Of course I
+was creating the image on the e:\ drive so it might have tried to create an image
+of the image. Recursion.
+
+Anyway, will give it another try without the e:\ drive in the list.
+
+
+Thu Jun 07 11:14:20 AKDT 2007
+=============================
+Reran ami-hq-rm windows 2000 workstation conversion and excluded e: drive that
+maxed out space. Same parameters otherwise.
+
+
+ID: 1
+Description: Import Physical Machine
+Destination: E:\ray\vmware
+Progress: 100%
+Status: Completed
+Start Time: 06/07/2007 08:27:55 AM
+End Time: 06/07/2007 06/07/2007 10:49.21 AM
+
+Log Information
+    08:27:55 AM                Step 1 : Connecting to VMware Converter Agent on localhost
+    08:27:55 AM                Step 2 : Creating target virtual machine and importing data
+    08:27:57 AM                        Configuring parameters for the target virtual machine...
+    08:27:57 AM                        Creating target virtual machine...
+    08:28:01 AM                        Taking a snapshot of the volume...
+    08:28:06 AM                        Cloning source volume c: into target virtual machine...
+    09:00:21 AM                        Formatting target volume d:...
+    09:00:32 AM                        Taking a snapshot of the volume...
+    09:00:36 AM                        Cloning source volume d: into target virtual machine...
+    10:48:32 AM                        Updating boot sectors...
+    10:48:34 AM                        Skipping boot.ini update...
+    10:48:34 AM                        Adjusting drive letter mappings...
+    10:48:43 AM                Step 3 : Preparing target virtual machine
+
+Note: VMware Converter Agent logs can be found on localhost at
+        C:\WINDOWS\Temp\vmware-temp\vmware-converter*
+      VMware Converter Client logs on this computer can be exported, or found
+        at "C:\Documents and Settings\ray\Local Settings\Temp\vmware-temp\vmware-client*"
+      VMware Converter logs are stored on a temporary basis, and should be retrieved
+      as soon as possible.
+
+$ cd /cygdrive/e/ray/vmware
+
+$ du -m ami-hq-rm/
+18062   ami-hq-rm/    # Looks like a solid 18GB image.
+total 18495172
+
+$ ls -l ami-hq-rm/
+-rwx------+ 1 ray ???????? 18939052032 Jun  7 10:49 ami-hq-rm.vmdk
+-rwx------+ 1 ray ????????         742 Jun  7 08:27 ami-hq-rm.vmx
+
+
+Tue Jun 19 17:08:15 AKDT 2007
+=============================
+Reran again with above parameters. To get new snapshot.
+
+
+Wed Jun 20 15:36:19 AKDT 2007
+=============================
+Reran again with above parameters. To get new snapshot.
+
+
+Wed Jul 11 08:05:07 AKDT 2007
+=============================
+Reran again with above parameters. This includes the C:\ and D:\
+drives. Excludes E:\ drive for space issue.
+
+ID: 5
+Description: Import a physical machine
+Source: local machine
+Destination: E:\ray\vmware    # 18.5GB total size
+Progress: 100%
+Status: Completed
+Start Time: 07/11/2007 08:16:10 AM
+End Time: 07/11/2007 09:16:10 AM
+
+drive    total size   free space
+================================
+C:       11.7GB       956MB
+D:       19.5GB       11.8GB
+E:       34.1GB       28.8GB   # 10.3GB free after above conversion run.
