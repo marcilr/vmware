@@ -1,0 +1,237 @@
+v2v.txt
+Created Tue Sep 21 09:16:20 AKDT 2010
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Tue Aug 30 09:38:05 AKDT 2011
+=============================
+Converting anc-itcc-reports virtual machine, from VMware ESX 4.1.0 build-348481,
+to VMware Workstation 7.1.4 build-385536.  Need to fix UAA Callcenter's unstable
+ITCC Wallboard.
+
+1. Installed VMware vCenter Converter Standalone 4.3.0 build-29228 on
+blossite-win7-x64 virtual machine.
+
+2. Run VMware vCenter Converter Standalone 4.3
+
+3. Click "Convert Machine"
+
+4. At "Source System"
+Select the source system you want to convert
+
+Source: anc-esx01.uaa.alaska.edu     Destination: none
+
+Select Source type: VMware Infrastructure virtual machine
+                    Convert a virtual machine from VMware VirtualCenter or VMware ESX Server.
+
+Specify server connection information:
+   Server: anc-esx01.uaa.alaska.edu (137.229.138.231)
+User name: sysmgr
+ Password: ***
+
+click Next
+
+5. At "Source Machine"
+Select the virtual machine you want to convert
+
+Source: anc-esx04.uaa.alaska.edu     Destination: none
+
+Inventory for anc-esx01.uaa.alaska.edu     
+
+VM name              Power state
+--------------------------------
+Stream               Running
+...
+anc-itcc-reports     Running
+...
+web04                Running
+
+NOTE: Found anc-itcc-reports on anc-esx04 by brute force inspection.
+
+"Cannot convert a powered-on machine."
+
+
+
+Tue Sep 21 09:16:20 AKDT 2010
+=============================
+Working on conversion of UAA ITS anc-visual-studio (137.229.141.134) 
+virtual machine from vCenter to VMware Player virtual machine.
+
+1. Installed VMware vCenter Converter Standalone 4.3 on spangolite
+laptop (windows 7 pro x64).
+
+2. Run VMware vCenter Converter Standalone 4.3
+
+3. Connect to server
+Administration > Connect to another server...  <== This fails (Sep 20, 2010)
+
+  Connect to local server
+x Enter the IP address or host name of the Converter 
+Ip address or name: 137.229.138.230
+User name: UAAACTDIR\axrm
+Password: convoluted usual
+
+Login Close
+
+click Login
+...
+Failed to connect to VMware vCenter Converter Standalone server at
+137.229.138.20 on port 443.
+
+Check your network connection and try again. Invalid response code: 400
+Bad Request.
+
+anc-vmmgmt01.uaa.alaska.edu definately not converted to with VMware vCenter Converter 
+Standalone to run against.
+
+
+4. Connect to server
+Administration > Connect to another server...
+
+x Connect to local server     <== This works (Sep 20, 2010)
+  Enter the IP address or host name of the Converter
+
+5. Start conversion
+click Convert Machine
+
+6. At "Conversion" window:
+Select source type:
+  Powered-on machine
+  Convert any powered-on physical or virtual machine
+
+  VMware Infrastructure virtual machine  <== Type selected (Sep 20, 2010)
+  Convert a virtual machine from VMware VirtualCenter or VMware ESX Server
+
+    Specify connection information
+    Server:      137.229.141.134 (anc-visual-studio)
+    User name:   uaa.alaska.edu\axrm or UAAACTDIR\axrm
+    Password:    convoluted usual
+
+  VMware Workstation or other VMware virtual machine.
+  Convert a virtual machine from VMware workstation, VMware Player, VMware Fusion 
+  or other VMware product.
+
+  Backup image or third-party virtual machine.
+  Convert a backup image or a third-party virtual machine.
+
+  Hyper-V Server
+  Convert a virtual machine from Microsoft Hyper-V Server.
+
+click Next
+
+Get error: 
+  "Unable to contact the specified host '137.229.141.134'.  The host might not be available 
+on the network, there might be a network configuration problem, or the management services 
+on this host are not responding."
+
+Able to resolve this error by installing VMware vCenter Converter Standalone server 
+on 137.229.141.134 (anc-visual-studio).
+
+click Next
+
+Now get error:
+  "Unable to recognize the server type or version when connecting to the 
+host '137.229.141.134'.
+
+
+6. Next try given source type "VMware Infrastructure virtual machine" failed.
+
+At "Conversion" window:
+
+Select source type:
+  Powered-on machine
+  Convert any powered-on physical or virtual machine
+
+    Specify connection information
+    Server:      137.229.141.134 (anc-visual-studio)
+    User name:   uaa.alaska.edu\axrm or UAAACTDIR\axrm
+    Password:    convoluted usual
+    OS Family:   Windows
+
+7. At "Destination System"
+
+Select destination type:
+
+  VMware Infrastructure virtual machine
+  Creates a new virtual machine for use on a VMware Infrastructure product.
+
+x VMware Workstation or other VMware virtual machine
+  Creates a new virtual machine for use on VMware Workstation, VMware Player,
+  VMware Fusion or other VMware product.
+
+Select VMware product:
+  VMware Workstation 7.0.x
+  VMware Workstation 6.5.x
+  VMware Workstation 6.0.x
+  VMware Workstation 5.x
+  VMware Fusion 3.x
+  VMware Fusion 2.x
+  VMware Fusion 1.x
+  VMware Player 3.0.x <== Using VMware Player v3.0.1 build-227600 (boothite Sep 21, 2010)
+  VMware Player 2.5.x
+  VMware Player 2.0.x
+  VMware Player 1.x
+  VMware Server 2.x
+  VMware Server 1.x
+
+Virtual machine details
+  Name: anc-visual-studio.uaa.alaska.edu
+ 
+Select a location for the virtual machine:
+  Y:\anc-visual-studio  ==> \\anc-filesrv\employeehome$\30020598\anc-visual-studio
+
+Important: The distination must be a valid network path accessible to VMware
+           vCenter Converter Standalone agent.
+
+Enter credentials
+  Provide credentials to be used when connecting to the network share of the 
+  destination virtual machine.
+  
+  User name:   uaa.alaska.edu\axrm or UAAACTDIR\axrm
+  Password:    convoluted usual
+
+click Next
+
+"Error: Destination specified as a (local) drive.
+Please specify a UNC path such as:  \\machine\sharename"
+
+Updated to:
+Select a location for the virtual machine:
+  \\anc-filesrv01\employeehome$\30020598\anc-visual-studio
+
+click Next
+
+"Multiple connections to 'anc-filesrv01' by the same user, using more than one 
+user name, are not allowed.  Disconnect all previous connections to the host
+and try again."
+
+Disconnected \\anc-filesrv01\employeehome$\30020598\ mounts.
+
+Get same error as previous.
+
+Created C:\anc-visual-studio share on spangolite which I shared to axrm.
+Use of \\SPANGOLITE\anc-visual-studio for target worked.  However
+C: and E; drives on anc-visual-studio are 40GB each.  Not certain
+the virtual machine will fit.
+
+Jim Weller advised sdelete to remove 0'd blocks for thin provisioning.
+
+Resized drives in vCenter vConverter to:
+
+    C:   30GB
+    E:   20GB
+Total:   50GB  <== Should fit on spangolite's spare C: 64.7GB
+
+click Next, Next, Finish
+
+Start time:   9/21/10 10:42:20AM
+Estimated time remaining:   1 hours 3 minutes
+
+
+
+VMware vSphere Client
+=====================
+Checking vSphere Client for connection details.
+
+IP address/Name: anc-vmmgmt01.uaa.alaska.edu (137.229.138.230)
+
