@@ -1,0 +1,88 @@
+#
+# svn_ext_val.txt
+# Created Wed Jan  4 11:59:10 AKST 2012
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+
+
+#
+# List of repo hierarchical directories to checkout under vmware/
+#
+# 00ARCHIVES/     Archived files
+#
+# backup/         VM backup
+#
+# converter/      Use the intuitive wizard-driven interface of VMware vCenter
+#                 Converter to transform your physical machines to virtual
+#                 machines.
+#
+# docs/           VMware documentation
+#                 http://www.vmware.com/products/converter/
+#
+# esx/            Previous ESX Hypervisor
+#
+# esxi/           VMware vSphere Hypervisor: Bare Metal Hypervisor
+#                 http://www.vmware.com/products/vsphere-hypervisor/overview.html
+#
+# mui/            Management Interface
+# p2v/            Physical to virtual
+# player/         Player for executing VMs on workstation.
+# server/         Server
+# src/            Source code
+#
+# tools/          VMware Tools is a suite of utilities that enhances the
+#                 performance of the virtual machine's guest operating system
+#                 and improves management of the virtual machine.  Without
+#                 VMware Tools installed in your guest operating system, guest
+#                 performance lacks important functionality.
+#                 http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=340
+#
+# uaa/            UAA VMware docs
+# vcp5/           VMware Certified Professional 5
+#
+# veeam/          Veeam - backup & replication
+#                 http://www.veeam.com/
+#
+# vix/            API for programmatic control 
+# vm/             Virtual Machine
+#
+# vmdk/           VMDK (Virtual Machine Disk) is a file format used for
+#                 virtual appliances developed for VMware products.  The
+#                 format is a container for virtual hard disk drives to be
+#                 used in virtual machines like VMware Workstation or
+#                 Virtualbox. 
+#                 http://en.wikipedia.org/wiki/VMDK
+#
+# vmx/            .vmx, <vmname>.vmx, This is the primary configuration file,
+#                 which stores settings chosen in the New Virtual Machine
+#                 Wizard or virtual machine settings editor.  If you created
+#                 the virtual machine under an earlier version of VMware
+#                 Workstation on a Linux host, this file may have a .cfg
+#                 extension
+#                 https://www.vmware.com/support/ws55/doc/ws_learning_files_in_a_vm.html
+#
+# src/            Source code
+# vsphere/        VMware management utility.
+# workstation/    VMware Workstation
+#
+../../vmware/00ARCHIVES/00ARCHIVES     ./00ARCHIVES
+../../vmware/backup/backup             ./backup
+../../vmware/converter/converter       ./converter
+../../vmware/docs/docs                 ./docs
+../../vmware/esx/esx                   ./esx
+../../vmware/esxi/esxi                 ./esxi
+../../vmware/mui/mui                   ./mui
+../../vmware/p2v/p2v                   ./p2v
+../../vmware/player/player             ./player
+../../vmware/server/server             ./server
+../../vmware/src/src                   ./src
+../../vmware/tools/tools               ./tools
+../../vmware/uaa/uaa                   ./uaa
+../../vmware/vcp5/vcp5                 ./vcp5
+../../vmware/veeam/veeam               ./veeam
+../../vmware/vix/vix                   ./vix
+../../vmware/vm/vm                     ./vm
+../../vmware/vmdk/vmdk                 ./vmdk
+../../vmware/vmx/vmx                   ./vmx
+../../vmware/vsphere/vsphere           ./vsphere
+../../vmware/workstation/workstation   ./workstation
