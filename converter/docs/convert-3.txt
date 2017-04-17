@@ -1,0 +1,283 @@
+convert-3.txt
+Created Mon Jun 15 13:42:30 AKDT 2015
+Copyright (C) 2015 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Converting a centos 6.4 box for work at GCI Network Services, OSS
+for use with VMware.
+
+
+Tue Jun 16 13:07:22 AKDT 2015
+=============================
+Per discussion with Jerry Buttitta OSS is running vCenter v5.1.
+The VMware hardware will be updated within a month and software to then
+follow.  i.e. v5.1 will be updated within the next few months but no time
+soon.
+
+
+Mon Jun 15 14:49:37 AKDT 2015
+=============================
+1. Install VMware vCenter Converter Standalone 6.0.0 
+(VMware-converter-en-6.0.0-2716716.exe) on windows machine of choice.
+
+I installed on rmarcil1 Win 7 pro machine.
+
+When prompted for Setup Type select "Local Installation":
+
+x Local Installation
+  Install Converter on this machine.  Use this option to create and manage
+  convertion tasks from this local machine only.
+
+  Client-Server Installation (advanced)
+  Set up a client-server model for Converter.  Use this option to install
+  the server, client or the agent on this machine.
+
+click Next
+click Install
+...
+click Finish
+
+
+2. Root vs. sudo
+By default, VMware vCenter Converter Standalone requires a root
+login to the source machine for Linux conversion tasks.  However,
+you can also use non-root credentials after enabling the use of
+sudo and modifying the source machine to allow the sudo command
+to be executed.[1]
+
+NOTE: Could not get converter to work with account in
+      /etc/sudoers account on developmen-ray centos 6.5 box
+      June 15, 2015.
+
+Since sudo did not work opted to temporarily enable root login:
+
+i. In /etc/ssh/sshd_config set:
+   PasswordAuthentication yes    <=== Was already set.
+   PermitRootLogin yes           <=== Updated "no" to "yes"
+
+ii. Restart sshd to read new config:
+[root@development-ray ssh]# service sshd restart
+
+
+3. Convert CentOS 6.5 system to VMware.
+
+i. Run the VMware vCenter Converter Standalone Client
+on windows to convert the remote centos box:
+
+START > VMware vCenter Converter Standalone Client
+
+ii. At VMware vCenter Converter Standalone
+click Convert machine
+  
+iii. At Source SystemSelect source type: 
+x Powered-on machine
+  VMware Infrasture virtual machine
+  VMware Workstation virtual machine
+  Backup image or third-party virtual machine
+  Hyper-V server
+
+Specify the powered-on machine
+  This local mahine
+x A remote machine
+  Ip address or name: 192.168.56.48
+  User name: root
+  Password: ***
+  OS Family:   Windows
+             x Linux
+click Next
+
+iv. At Destinition System
+Enter the VMware server (ESXi) server details.
+
+  Source: 192.168.56.48 (centos 6.5 64 bit)    Destination: none
+  Destination type: VMware Infrastructure virtual machine
+                    Creates a new virtual machine for use on a 
+                    VMware Infrastructure product.
+
+VM Infrastructure server details
+  Server:
+  User name:
+  Password:  
+
+
+Configuration of machine for sudo rather than root access
+=========================================================
+NOTE: This did not work on GCI Network Services, OSS
+development-ray (192.168.56.48) centos 6.5 June 15, 2015.
+
+
+On development-ray CentOS 6.5 ran visudo to configure sudoers:
+
+[rmarcil@development-ray ~]$ su
+Password:
+[root@development-ray rmarcil]# visudo   <=== Launches vim by default.
+
+i. Comment out the following entry:
+Defaults requiretty
+
+In case the file contains this entry, comment it out.
+
+
+ii. Add rmarcil account (or whatever account to use) 
+for passwordless sudo:
+...
+##
+## Give rmarcil account all privs
+## The first prompts for passwords.
+## The second does not.
+##
+##rmarcil    ALL=(ALL)    ALL
+rmarcil    ALL=(ALL)    NOPASSWD:ALL
+...
+ESC:wq     <=== To save and quit.
+
+[root@development-ray rmarcil]# exit
+exit
+[rmarcil@development-ray ~]$
+
+Test passwordless sudo:
+[rmarcil@development-ray ~]$ sudo touch /foo
+[rmarcil@development-ray ~]$ ls -l /foo
+-rw-r--r-- 1 root root 0 Jun 15 15:06 /foo
+[rmarcil@development-ray ~]$ sudo rm /foo
+
+sudo privs are good.
+
+i. Run the VMware vCenter Converter Standalone Client
+on windows to convert the remote centos box:
+
+START > VMware vCenter Converter Standalone Client
+
+ii. click Convert Machine
+
+iii. At Source System popup:
+
+Select source type: 
+x Powered-on machine
+  VMware Infrasture virtual machine
+  VMware Workstation virtual machine
+  Backup image or third-party virtual machine
+  Hyper-V server
+
+Specify the powered-on machine
+  This local mahine
+x A remote machine
+  Ip address or name: 192.168.56.48
+  User name: rmarcil
+  Password: ***
+  OS Family:   Windows
+             x Linux
+click Next
+
+Retrieving source machine information...
+
+o Using crypto keys and the plain password failed.
+Reset plain text password.
+
+o Now get error:
+The user 'rmarcil' does not have root privileges on the source machine.
+
+Could not get rmarcil centos account to work with converter on win 7 pro.
+
+
+Convert from existing machine
+=============================
+The Configure machine button always conversion from an existing machine:
+o VMware Infrastructure virtual machine
+o VMware Workstation or other VMware virtual machine
+
+i. At VMware vCenter Standalone
+click Configure machine
+
+ii. At Source system popup
+Select the virtual machine type you want to configure
+
+Select source type:
+VMware Infrastructure virtual machine
+    Configure a virtual machine from VMware vCenter or VMware ESX/ESXi
+
+    Specify server connection information
+    Server:    <blank>
+    User name: <blank>
+    Password:  <blank>
+
+VMware Workstation or other VMware virtual machine
+    Configure a virtual machine from VMware Workstation, VMware Player,
+    VMware Fusion or other VMware Product.
+
+    Browse for source virtual machine or image
+    Virtual machine file: <blank>
+
+
+Filelist
+========
+convsa_60_guide.pdf
+  VMware vCenter Converter Standalone
+  User's Guide
+  vCenter Converter Standalone 6.0
+  pages: 104
+  https://www.vmware.com/pdf/convsa_60_guide.pdf
+
+VMware-converter-en-6.0.0-2716716.exe
+  VMware vCenter Converter Standalone 6.0.0
+  2015-05-14 | 6.0.0 | 168.52 MB | .exe
+  An executable that includes all
+  VMware vCenter Converter Standalone 6.0.0 software components.
+  MD5SUM:  f64589b50f416ebf5de547a402b091cb
+  SHA1SUM: 70cd5feac1a624d34f44d9135bd4860fb788620a
+  ...
+  For use with CentOS 6-7.
+  ...
+  https://developercenter.vmware.com/web/sdk/60/vcenter-converter
+
+VMware-vCenter-Converter-Standalone-6.0-Release-Notes.pdf
+  Release Notes
+  VMware vCenter Converter Standalone 6.0 | 14 May 2015 | Build 2716716
+  ...
+  Support for additional guest operating systems: Red Hat Enterprise Linux 7,
+  Ubuntu 14, CentOS 6-7, Windows Server 2012 R2, Windows 8.1.
+  ...
+  https://www.vmware.com/support/converter/doc/conv_sa_60_rel_notes.html
+
+
+
+Links
+=====
+[1] Enabling the use of a non-root user for hot cloning of a Linux source
+machine (1008164)
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1008164
+
+Enabling the use of a non-root user for hot cloning of a Linux source machine (1008164)
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1008164
+
+How to Add a User and Grant Root Privileges on CentOS 6.5
+http://www.liquidweb.com/kb/how-to-add-a-user-and-grant-root-privileges-on-centos-6-5/
+
+How To Become Root
+rmarcil    ALL=(ALL)    ALL
+http://wiki.centos.org/TipsAndTricks/BecomingRoot
+
+How to setup passwordless `sudo` on Linux?
+ALL    ALL = (ALL)    NOPASSWD: ALL
+http://serverfault.com/questions/160581/how-to-setup-passwordless-sudo-on-linux
+
+VMware vCenter Converter Standalone Documentation
+Release 6.0
+5/14/2015 | Build 2716716 | Download
+https://www.vmware.com/support/pubs/converter_pubs.html
+
+VMware vCenter Converter Standalone 6.0 Release Notes
+VMware vCenter Converter Standalone 6.0 | 14 May 2015 | Build 2716716
+https://www.vmware.com/support/converter/doc/conv_sa_60_rel_notes.html
+
+VMware vCenter Converter Standalone
+User's Guide, vCenter Converter Standalone 6.0
+https://www.vmware.com/pdf/convsa_60_guide.pdf
+
+Where I can download the VMware Converter linux version?
+o There is no Linux Converter, but you can convert live Linux to ESX/VC 
+  destination from Windows Converter. HTH
+o For CentOS you may need to try the older 5.0.1 Converter since there is a
+  regression in 5.1 that prevents it from properly recognizing the kernel
+  version of CentOS.
+https://communities.vmware.com/message/2280995
