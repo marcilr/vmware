@@ -1,0 +1,71 @@
+export-machine.txt 
+Created Tue Aug 30 08:30:09 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Investigating the copying of machine from ESX
+
+
+1. Login to anc-esx01
+
+marcilr@boothite:~$ ssh sysmgr@anc-esx01.uaa.alaska.edu
+sysmgr@anc-esx01.uaa.alaska.edu's password: 
+Last login: Mon Aug 29 23:36:22 2011 from anc-backup02.uaa.alaska.edu
+[sysmgr@anc-esx01 ~]
+
+2. Change to /vmfs/volumes/ with virtual machines.
+
+[sysmgr@anc-esx01 ~]$ cd /vmfs/volumes
+[sysmgr@anc-esx01 volumes]$
+
+3. Find anc-itcc-reports virtual machine:
+
+[sysmgr@anc-esx01 volumes]$ find -L . -name anc-itcc-reports
+./4b5a16a7-1a6925b2-4b4d-0017a477000c/anc-itcc-reports
+./ANC-ESX4-CLUSTER-VOLUME03/anc-itcc-reports
+[sysmgr@anc-esx01 volumes]$
+
+[sysmgr@anc-esx01 volumes]$ du -m ./ANC-ESX4-CLUSTER-VOLUME03/anc-itcc-reports
+45105   ./ANC-ESX4-CLUSTER-VOLUME03/anc-itcc-reports   <== 45GB
+[sysmgr@anc-esx01 volumes]$
+
+[sysmgr@anc-esx01 volumes]$ ls -l | grep 4b5a16a7-1a6925b2-4b4d-0017a477000c
+drwxr-xr-t 1 root root 3640 Jul 29 08:41 4b5a16a7-1a6925b2-4b4d-0017a477000c
+lrwxr-xr-x 1 root root   35 Aug 30 08:47 ANC-ESX4-CLUSTER-VOLUME03 -> \
+4b5a16a7-1a6925b2-4b4d-0017a477000c
+[sysmgr@anc-esx01 volumes]$
+
+4. Download anc-itcc-reports files.
+
+i. Configured sshd to allow  password authentication,
+in /etc/ssh/sshd_config, and restarted sshd:
+
+sshd_config:50
+PasswordAuthentication yes
+
+ii. Login to anc-esx01 and  sftp anc-itcc-reports files.  i.e. Transfer anc-itcc-reports 
+files from anc-esx01 VMware ESX 4.1.0 build-348481 to boothite debian squeeze 6.0.2 
+workstation.
+
+marcilr@boothite:~$ ssh sysmgr@anc-esx01
+sysmgr@anc-esx01's password: 
+Last login: Tue Aug 30 09:14:15 2011 from boothite.uaa.alaska.edu
+[sysmgr@anc-esx01 ~]$ cd /vmfs/volumes/ANC-ESX4-CLUSTER-VOLUME03/anc-itcc-reports/
+[sysmgr@anc-esx01 anc-itcc-reports]$ su
+Password: 
+[root@anc-esx01 anc-itcc-reports]# sftp marcilr@boothite
+Connecting to boothite...
+marcilr@boothite's password: 
+sftp> mkdir anc-itcc-reports
+sftp> cd anc-itcc-reports
+sftp> put *.vmdk
+Uploading anc-itcc-reports-flat.vmdk to /home/marcilr/anc-itcc-reports/anc-itcc-reports-flat.vmdk
+Couldn't open local file "anc-itcc-reports-flat.vmdk" for reading: Device or resource busy
+Uploading anc-itcc-reports.vmdk to /home/marcilr/anc-itcc-reports/anc-itcc-reports.vmdk
+anc-itcc-reports.vmdk                                             100%  526     0.5KB/s   00:00    
+sftp> put *.vmx
+Uploading anc-itcc-reports.vmx to /home/marcilr/anc-itcc-reports/anc-itcc-reports.vmx
+Couldn't open local file "anc-itcc-reports.vmx" for reading: Device or resource busy
+sftp>
+
+That doesn't work.
