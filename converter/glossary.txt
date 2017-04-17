@@ -1,0 +1,11 @@
+glossary.txt
+Created Sun Jan 22 16:03:07 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware Converter glossary.
+
+I2V - Image-to-Virtual
+P2V - Physical-to-Virtual
+V2V - Virtual-to-Virtual (Supports vCenter to VMware Player)
+
