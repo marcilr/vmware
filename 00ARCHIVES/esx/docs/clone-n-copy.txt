@@ -1,0 +1,192 @@
+clone-n-copy.txt
+Created Tue Aug 30 10:09:04 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Unable to use VMware converter on running anc-itcc-reports virtual machine.
+Trying the clone and copy technique on 
+
+Clone n' copy technique:
+I.  Clone Virtual Machine with VMware vSphere Client
+II. Copy Clone Using VMware Converter.
+
+
+I. Clone Virtual Machine with VMware vSphere Client
+===================================================
+1. Run VMware vSphere Client 4.1.0 Build 345043
+IP address/Name: anc-vmmgmt01.uaa.alaska.edu
+      User name: remarcil
+       Password: ***
+
+click Login
+
+2. Under Developement clone anc-itcc-reports to anc-itcc-reports-copy:
+
+View > Inventory > Hosts and Clusters
+
+ANC-VMMFGMT01.uaa.alaska.edu
+  Anchorage Data Center 
+    ANC-ESX4-CLUSTER
+      Development
+        anc-itcc-reports
+
+right-click anc-itcc-reports > Clone...
+
+3. At Name and Location set Name and Inventory Location.
+Name: anc-itcc-reports-copy
+
+Inventory Location:
+
+ANC-VMMFGMT01.uaa.alaska.edu
+  Anchorage Data Center
+    Development VMs     <== Select
+
+click Next
+
+4. At Host/Cluster select ANC-ESX-CLUSTER
+Anchorage Data Center
+  ANC-ESX4-CLUSTER
+
+click Next
+
+5. At "Resource Pool" select Development
+ANC-ESX4-CLUSTER
+  Development
+
+click Next
+
+6. At Datastore select volume with free space.
+
+ANC-ESX4-CLUSTER-VOLUME04 (314.24GB Free)   <== Selected
+
+click Next
+
+7. At Disk Format:
+x Same format as source
+  Thin provisioned format
+  Thick format
+
+click Next
+
+8. At Guest Customization
+x Do not customize
+  Customize using the Customization Wizard
+ Customize using using an existing customization specification
+
+
+click Next
+
+8. At Ready to Complete observe:
+
+Settings for the new virtual machine:
+Virtual Machine to Clone:     anc-itcc-reports
+                    Name:     anc-itcc-reports-copy
+                  Folder:     Development VMs
+            Host/Cluster:     ANC-ESX4-CLUSTER
+              Datastores:     ANC-ESX4-CLUSTER-VOLUME04
+            Disk Storage:     Same format as source
+Guest OS Customization 
+           Specification:     None, do not customize guest OS
+
+<unchecked> Power on this virtual machine after creation
+<unchecked> Edit virtual hardware (Experimental)
+
+click Finish
+
+
+II. Copy Clone Using VMware Converter
+=====================================
+1. Installed VMware vCenter Converter Standalone Client 4.3.0 build-29228 on
+blossite-win7-x64 virtual machine (Windows 7 Professional x64).
+
+2. Run VMware vCenter Converter Standalone Client
+
+3. Click "Convert Machine"
+
+4. At "Source System"
+Select the source system you want to convert
+
+Source: none     Destination: none
+
+Select Source type: VMware Infrastructure virtual machine
+                    Convert a virtual machine from VMware VirtualCenter or VMware ESX Server.
+
+Specify server connection information:
+   Server: anc-esx04.uaa.alaska.edu (137.229.138.231)
+User name: sysmgr
+ Password: ***
+
+click Next
+
+5. At Source Machine select anc-itcc-reports-copy vm.
+Select the virtual machine you want to convert
+
+Source: anc-esx04.uaa.alaska.edu     Destination: none
+
+Inventory for anc-esx01.uaa.alaska.edu     
+
+VM name              Power state
+--------------------------------
+Stream                  Running
+...
+anc-itcc-reports-copy   Powered off   <== Select
+...
+web04                   Running
+
+NOTE: Found anc-itcc-reports on anc-esx04 by brute force inspection.
+      Can only run converter on powered off machines.
+
+click Next
+
+Retrieving source machine information...
+
+6. At Destination System.
+
+Source: anc-itcc-reports-copy on anc-esx04.uaa.alaska.edu   Destination: none
+
+Select destination type: VMware Workstation of other VMware virtual machine
+                         Create a new virtual machine for use on VMware Workstation, 
+                         VMware Player, VMware Fusion or other VMware product.
+
+  Select VMware product: VMware Workstation 7.0.x
+
+Virtual machine details
+  name: anc-itcc-reports-copy
+
+Select a location for the virtual machine:
+  Z:\   <== NOTE: anc-itcc-reports-copy/ subdirectory is created automatically on boothite.
+
+Mapped debian squeeze 6.0.2 boothite's \\boothite.uaa.alaska.edu\exports to 
+Z drive for destination.
+
+7. At Options 
+click Next
+
+8. At Summary
+click Finish
+
+Argh, this was taking forever.  Decided to just copy files via sftp...
+
+marcilr@boothite:~$ ssh sysmgr@anc-esx04
+sysmgr@anc-esx04's password: 
+Last login: Tue Aug 30 11:29:27 2011 from boothite.uaa.alaska.edu
+[sysmgr@anc-esx04 ~]$ su
+Password: 
+[root@anc-esx04 sysmgr]# cd /vmfs/volumes/ANC-ESX4-CLUSTER-VOLUME04/anc-itcc-reports-copy/
+[root@anc-esx04 anc-itcc-reports-copy]# sftp marcilr@boothite
+Connecting to boothite...
+marcilr@boothite's password: 
+sftp> cd /exports/anc-itcc-reports-copy
+sftp> sftp> put *
+Uploading anc-itcc-reports-copy-flat.vmdk to \
+/exports/anc-itcc-reports-copy/anc-itcc-reports-copy-flat.vmdk
+
+Shows ETA of ~9-10 hours for 45GB anc-itcc-reports-copy-flat.vmdk
+
+
+Noise:
+
+[root@anc-esx04 sysmgr]# vmware-cmd -l | grep anc-itcc-reports-copy
+/vmfs/volumes/4b5a1748-c27aac2d-df27-0017a477000c/anc-itcc-reports-copy/anc-itcc-reports-copy.vmx
+[root@anc-esx04 sysmgr]#
+
