@@ -1,0 +1,37 @@
+vmware-notes.txt
+Created Thu Nov 29 10:49:57 AKST 2007
+by Raymond E. Marcil
+
+VMware notes for my own reference :)
+
+Latest configuration under:
+$ uname -a
+Linux boothite 2.6.22.10-custom #3 SMP Mon Oct 29 11:27:24 AKDT 2007 i686 GNU/Linux
+
+Configured VMware with:
+# /usr/local/vmware/vmware-config.pl
+...
+In which directory do you want to keep your virtual machine files? 
+[/usr/local/vmware/virtual_machines]
+
+Please enter your 20-character serial number.
+Type XXXXX-XXXXX-XXXXX-XXXXX or 'Enter' to cancel:  
+  91121-YMM68-28KFN-4UP
+
+Serial: 91121-YMM68-28KFN-4UPJM
+  from: marcilr/docs/software/vmware/20071012-vmware-kurt.txt
+
+...
+The configuration of VMware Server 1.0.4 build-56528 for Linux for 
+this running kernel completed successfully.
+
+Up and operational again.
+
+
+virtual machines
+================
+/usr/local/vmware/virtual_machines
+ssb-its-web8250.vmdk -> /usr/local/ssb-its-web8250/ssb-its-web8250.vmdk
+ssb-its-web8250.vmsd
+ssb-its-web8250.vmx -> /usr/local/ssb-its-web8250/ssb-its-web8250.vmx
+ssb-its-web8250.vmxf
