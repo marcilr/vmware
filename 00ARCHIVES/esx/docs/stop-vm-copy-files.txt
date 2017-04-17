@@ -1,0 +1,118 @@
+stop-vm-copy-files.txt
+Created Tue Aug 30 14:47:22 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+
+Stopping a VM and Releasing Files
+=================================
+I had a big problem with file getting locked and then you have to reboot the host to release the 
+file.  Come on guys there may be better way to do so.  Here is something which you will never know 
+until unless you speak to VMWare tech support.  Yeah I understand they make some bucks by hiding 
+such stuff but still I like VMWare for their open source and customer friendly attitude. 
+
+
+Here is what you have to do :
+
+
+Stopping a VM and Releasing Files
+=================================
+Stopping a VM
+
+VMware has added a new command in VI3 to help when a user has a VM that has become unresponsive.
+Below are the progressives steps to go through to get the VM cleanly powered off.  Whatever you 
+do, DO NOT kill the pid for the VM from the Service Console, unless you have tried absolutely 
+everything.  Killing the pid from the Service Console may prevent the VM from restarting.
+
+The following steps assume that the usual graceful shutdowns do not work from within the VM operating 
+system or the Virtual Infrastructure Client.  Commands are bold underscore type, with descriptions of 
+path names and some example output is included.
+
+
+1. Logon to the ESX host where the VM is running and become root.
+
+2. vmware-cmd -l to list all the registered VMs.
+
+3. vmware-cmd /path/copied/from/vmware-cmd getstate to get state of vm
+   a. If the state requires an answer:
+      i. vmware-cmd /path/copied/from/vmware-cmd answer
+   b. If no answer is needed:
+      i. vmware-cmd /path/copied/from/vmware-cmd stop trysoft
+   1. if "trysoft" does not work:
+      a. vmware-cmd /path/copied/from/vmware-cmd stop hard
+
+4. If the vmware-cmd does not help next up is to kill the master user world id
+
+5. cat /proc/vmware/vm/*/names |grep vmname where vmname is the vm that is hung
+   a. find the value for vmid
+
+6. less /proc/vmware/vm/vmid value/cpu/status where vmid value is the number from above
+
+7. scroll over to the right until you find the group field that shows vm.#### where the #### 
+numbers after vm. will be the master user world id
+
+8. /usr/lib/vmware/bin/vmkload_app -k 9 #### where #### is the master user world id
+  a. If successful you will get a WARNING message that a signal 9 is being sent
+
+9. If vmkload_app does not help next up is to crash the vm with the vm-support -X command
+
+10. vm-support -x to get the vmid
+
+11. From a directory that has ample space vm-support -X #### where #### is the vmid
+
+12. Answer all the questions with the default answers.  The entire process takes about 10 minutes 
+and creates an archive log that can be submitted to support.  It will also crash the vm.
+
+
+Releasing Files
+===============
+Sometimes a file or set of files in a VMFS become locked and any attempts to edit them or delete 
+will give a device or resource busy error, even though the vm associated with the files is not 
+running.  If the vm is running then you would need to stop the vm to manipulate the files.  If you 
+know that the vm is stopped then you need to find the ESX server that has the files locked and then 
+stop the process that is locking the file(s).
+
+1. Logon to the ESX host where the VM was last known to be running.
+
+2. vmkfstools -D /vmfs/volumes/path/to/file to dump information on the file into /var/log/vmkernel
+
+3. less /var/log/vmkernel and scroll to the bottom, you will see output like below:
+   a. Nov 29 15:49:17 vm22 vmkernel: 2:00:15:18.435 cpu6:1038)FS3: 130:
+   b. Nov 29 15:49:17 vm22 vmkernel: 2:00:15:18.435 cpu6:1038)Lock [type 10c00001 \
+      offset 30439424 v 21, hb offset 4154368
+   c. Nov 29 15:49:17 vm22 vmkernel: gen 66493, mode 1, owner \
+      46c60a7c-94813bcf-4273-0017a44c7727 mtime 8781867] Bold type added to number for emphasis.
+   d. Nov 29 15:49:17 vm22 vmkernel: 2:00:15:18.435 cpu6:1038)Addr <4, 588, 7>, gen 20, links 1, \
+      type reg, flags 0x0, uid 0, gid 0, mode 644
+   e. Nov 29 15:49:17 vm22 vmkernel: 2:00:15:18.435 cpu6:1038)len 23973, nb 1 tbz 0, zla 2, bs 65536
+   f. Nov 29 15:49:17 vm22 vmkernel: 2:00:15:18.435 cpu6:1038)FS3: 132:
+
+4. The owner of the lock is on line 3c, the last part is all you need, in this case 0017a44c7727
+
+5. esxcfg-info | grep -i 'system uuid' | awk -F '-' '{print $NF}' will display the system uuid of 
+   the esx server. You need to run the esxcfg-info command on each esx server in the cluster to 
+   discover the owner.
+
+6. When you find the ESX server that matches the uuid owner, logon to that ESX server and run the 
+   command: ps -elf|grep vmname where vmname is the problem vm. Example output below:
+   
+   a. 4 S root 7570 1 0 65 -10 - 435 schedu Nov27 ? 00:00:02 /usr/lib/vmware/bin/vmkload_app \
+      /usr/lib/vmware/bin/vmware-vmx -ssched.group=host/user/pool2 -@ pipe=/tmp/vmhsdaemon-0/\
+      vmxf7fb85ef5d8b3522;vm=f7fb85ef5d8b3522 /vmfs/volumes/470e25b6-37016b37-a2b3-001b78bedd4c/\
+      iu-lsps-vstest/iu-lsps-vstest.vmx0
+
+7. Since there is a process running, pid 7570 in the example, you need to kill it by following 
+steps 5-12 on stopping a VM above
+
+8. Once the kill is complete the files should be released.
+
+Posted by Vikash Kumar Roy at 12:11 AM
+Labels: VMWare 
+
+vikashkumarroy.blogspot.com/
+
+
+Links
+=====
+Stopping a VM and Releasing Files
+http://vikashkumarroy.blogspot.com/2008/03/stopping-vm-and-releasing-files.html
