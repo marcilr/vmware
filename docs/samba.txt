@@ -1,0 +1,239 @@
+samba.txt
+Created Fri Jan  4 08:32:22 AKST 2008
+by Raymond E. Marcil
+
+Working on creating a samba share to share files with Windows XP
+under VMware.
+
+package install
+===============
+Packages to install include samba and smbclient.
+
+dpkg -l | grep samba
+ii  samba           3.0.24-6etch9   a LanManager-like file and printer 
+                                    server for Unix
+ii  samba-common    3.0.24-6etch9   Samba common files used by both the 
+                                    server and the client
+
+dpkg -l | grep smb
+ii  libsmbclient    3.0.24-6etch9   shared library that allows applications 
+                                    to talk to SMB/CIFS serv
+ii  smbclient       3.0.24-6etch9   a LanManager-like simple client for Unix
+ii  smbfs           3.0.24-6etch9   ount and umount commands for the smbfs 
+                                    (for kernels >= than 2.2)
+ii  swat            3.0.24-6etch9   Samba Web Administration Tool
+                                    Installed to manage shares on 
+                                    http://localhost:901/
+
+Create directory to share
+=========================
+# mkdir /share
+# chown -R nobody:nogroup /share/
+
+
+Configuration
+===============
+Create SHARE entry in /etc/samba/smb.conf for th e /share
+directory.  This provides a mount point for windows XP in
+VMware to fetch files.  Installed the SHARE entry with swat 
+(Samba Web Administration Tool).  The swat package which 
+allows brain dead samba configuration of share via web
+browser.  Used swat to create the "SHARE" entry below.
+
+#
+# Windows shares for VMWare, added Jan. 4, 2008
+#
+[SHARE]
+        comment = Share for windows files under VMware
+        path = /share
+        valid users = marcilr
+        admin users = marcilr
+        write list = marcilr
+        hosts allow = 137.229.156.110
+
+Test smb.conf with testparm:
+root# testparm -s /etc/samba/smb.conf
+
+Permissions
+===========
+Setting read/write privs on samba share is a bit tricky.
+
+How do I set permissions to Samba shares?
+=========================================
+Samba Basic permissions are as follows (configuration file is smb.conf [/etc/samba/smb.conf]):
+* read only: This parameter controls whether an user has the ability to create or modify files 
+within a share. This is default.
+* guest ok: Uf this parameter is set to yes, the users will have access to the share without
+  having to enter a password. This can pose security risk.
+* writeable: Specifies users should have write access to the share.
+
+You can create the share called helpfiles with read only permission
+[helpfiles]
+path = /usr/share/docs
+read only = Yes
+
+You can create the share called salesdoc with write permission
+[salesdoc]
+path = /home/shared/sales
+writeable = Yes
+
+You can also create a list of users to give write access to the share with write list option. For 
+example allow rocky and tony to write to the share called sales:
+[salesdoc]
+path = /home/shared/sales
+write list = rocky tony
+
+You can use following options
+* read list: This option accepts a list of usernames or a group as its value. Users will be 
+  given read-only access to the share.
+* valid users: You can make a share available to specific users. Usernames or group names can 
+  be passed on as its value.
+* invalid users: Users or groups listed will be denied access to this share.
+
+from: cyberciti.biz/
+
+
+Samba mask permission
+=====================
+It is also possible to specify samba default file creation permission using mask.
+  * create mask: This option is set using an octal value when setting permissions for files.
+  * directory mask: Directories must have the execute bit for proper access. Default parameter 
+    is 0755.
+
+[salesdoc]
+path = /home/shared/sales
+write list = rocky sys
+create mask = 0775
+
+from: cyberciti.biz/
+
+Restart samba
+=============
+root# /etc/init.d/samba restart
+
+
+Add user password
+=================
+root# smbpasswd -a marcilr
+
+
+smb login
+=========
+~$ smbclient //boothite/marcilr
+Password: 
+Domain=[BOOTHITE] OS=[Unix] Server=[Samba 3.0.24]
+smb: \> 
+
+Accepts 'ls' command to list contents of home directory.
+
+$ smbclient //boothite/share
+Password: 
+Domain=[BOOTHITE] OS=[Unix] Server=[Samba 3.0.24]
+smb: \> ls
+  .                                   D        0  Thu Jan  3 14:45:35 2008
+  ..                                  D        0  Thu Jan  3 14:45:35 2008
+
+                58429 blocks of size 4194304. 40486 blocks available
+Also, works for the share.  Cool.
+
+
+List shares
+===========
+$ smbclient -L boothite -U marcilr
+Password: 
+Domain=[BOOTHITE] OS=[Unix] Server=[Samba 3.0.24]
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        print$          Disk      Printer Drivers
+        share           Disk      Shares for windows XP under VMware
+        IPC$            IPC       IPC Service (boothite server)
+        lp              Printer   Generic dot-matrix printer entry
+        marcilr         Disk      Home Directories
+Domain=[BOOTHITE] OS=[Unix] Server=[Samba 3.0.24]
+
+        Server               Comment
+        ---------            -------
+
+        Workgroup            Master
+        ---------            -------
+        JUSTUS               JUSTUS_W
+        ROCKHOUNDING         BOOTHITE
+        SCHOOL               GILLHAM-PC-UAA
+
+
+Mount share
+==========
+To mount the samba share use:
+
+root# mount -t cifs -o user=marcilr,password=*** //boothite/share /mnt
+
+
+List users
+==========
+root# pdbedit -w -L       # To get smbpasswd-like output. 
+
+
+Testing
+=======
+Test smb.conf with testparm:
+root# testparm -s /etc/samba/smb.conf
+
+To strip and optimize smb.conf with:
+root#  testparm -s smb.conf.master > smb.conf
+
+To test samba configuration for user marcilr on server boothite
+use command:
+
+$ smbclient -L //boothite -U marcilr
+Password: 
+Domain=[BOOTHITE] OS=[Unix] Server=[Samba 3.0.24]
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        print$          Disk      Printer Drivers
+        share           Disk      
+        IPC$            IPC       IPC Service (boothite server)
+        lp              Printer   Generic dot-matrix printer entry
+        marcilr         Disk      Home Directories
+Domain=[BOOTHITE] OS=[Unix] Server=[Samba 3.0.24]
+
+        Server               Comment
+        ---------            -------
+
+        Workgroup            Master
+        ---------            -------
+        ROCKHOUNDING     
+
+daemons
+=======
+nmbd - This daemon handles all name registration and resolution requests. 
+  It is the primary vehicle involved in network browsing. It handles all 
+  UDP-based protocols. The nmbd daemon should be the first command started 
+  as part of the Samba startup process. 
+
+smbd - This daemon handles all TCP/IP-based connection services for 
+  file- and print-based operations. It also manages local authentication. 
+  It should be started immediately following the startup of nmbd. 
+from: samba.org/
+
+
+Links:
+=====
+Chapter 1. How to Install and Test SAMBA
+http://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/install.html
+
+Newbie Lesson: Setting up SAMBA File Sharing and Windows Printing
+http://www.novell.com/coolsolutions/feature/1625.html
+
+Samba Server Configuration in Debian
+http://www.debianhelp.co.uk/samba.htm
+
+mount.cifs -- unt using the Common Internet File System (CIFS)
+http://www.samba.org/samba/docs/man/manpages-3/mount.cifs.8.html
+
+SWAT: The Samba Web Administration Tool
+http://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/SWAT.html
+
+How do I set permissions to Samba shares?
+http://www.cyberciti.biz/tips/how-do-i-set-permissions-to-samba-shares.html
