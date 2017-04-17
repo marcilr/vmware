@@ -1,0 +1,44 @@
+links.txt
+Created Wed Aug 17 08:31:07 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware ESX server links.
+
+
+Links
+=====
+VMware ESX
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware_ESX#VMware_ESX
+
+VMware Infrastructure
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware_Infrastructure
+
+VMware vSphere
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware_vSphere
+
+VMware VMFS
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware_VMFS
+
+VMware ESX 4.1 Update 1 Release Notes
+ESX 4.1 Update 1 | 10 February 2011 | Build 348481
+VMware Tools | 10 February 2011 | Build 341836
+http://www.vmware.com/support/vsphere4/doc/vsp_esx41_u1_rel_notes.html
+
+Virtual machine
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/Virtual_machine
+
+Fired techie created virtual chaos at pharma company
+A former IT staffer has pleaded guilty to using a secret 
+vSphere console to wipe company servers
+http://www.itworld.com/it-managementstrategy/194445/fired-techie-created-virtual-chaos-pharma-company
+
+Logical Unit Number
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/Logical_Unit_Number
+
