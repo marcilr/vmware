@@ -1,0 +1,71 @@
+sapphire-20110625.txt
+Created Sat Jun 25 10:35:13 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+FIXME: This failed.  Never did get working image of Shena's Acer Aspire 5470.
+
+Used VMware vcenter converter standalone client 4.3.0 build-292238 to create
+virtual machine of Shena's Acer Aspire 5470 windows 7 home premium 64-bit 
+sapphire laptop.
+
+target: \\BORNITE\movies\sapphire\Sapphire\Sapphire.vmx
+
+\\BORNITE\movies\sapphire\Sapphire\ <== 152 files (143GB)
+Sapphire.vmdk
+Sapphire.vmx
+Sapphire-s001.vmdk
+...
+Sapphire-s150.vmdk
+
+start time: 6/23/2011 3:06:59PM 
+  end time: 6/25/2011 5:51:58AM
+
+
+NOTE: Targeted bornite's movies\sapphire\ subdirectory for space since Sapphire
+      has a 300GB drive.  The Sapphire\ subdirectiry was created by VMware
+      converter.
+      i.e. No need to create initial sapphire\ subdirectory VMware converter
+           will create it.
+
+
+Mon Jun 27 05:59:47 AKDT 2011
+=============================
+Backup of conversion completed:
+
+bornite:/data/movies/sapphire# time tar cvjpf Sapphire-20110625.tar.bz2 Sapphire/
+Sapphire/
+Sapphire/Sapphire-s058.vmdk
+Sapphire/Sapphire-s021.vmdk
+Sapphire/Sapphire-s042.vmdk
+...
+Sapphire/MD5SUM
+...
+Sapphire/Sapphire.vmx
+...
+Sapphire/Sapphire.vmdk
+...
+Sapphire/Sapphire-s102.vmdk
+
+real    997m37.596s ==> 16.61 hourse
+user    956m11.321s
+sys     10m7.706s
+bornite:/data/movies/sapphire# 
+
+  
+
+Sapphire
+========
+     make: Acer
+    model: Aspire 5740
+processor: 4-core Intel Core i5 M430 @ 2.27Ghz
+           1066 Mhz FSB
+      ram: 4GB (3.68GB usable) <== from system properties.
+       os: Windows 7 home premium 64-bit
+    drive: 2.5" 300GB Hitachi Travelstar 5K500.B
+           model: HTS545032B9A300
+      net: Broadcom netlink gigabit ethernet
+           hardware address: 00:26:2D:70:E7:C7 <== ethenet
+
+           Atheros ARB93 wireless network
+           hardware address: 90:4C:E5:88:48:9F <== wireless
