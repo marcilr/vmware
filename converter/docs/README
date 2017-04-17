@@ -1,0 +1,32 @@
+README
+Created Sun Jan 22 15:54:35 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+centos.txt
+  Centos p2v
+
+convert-1.txt
+  Notes on workstation conversion - Jan 3, 2008.
+  This was at AMI.
+
+convert-2.txt
+  Convert a vSphere virtual machine (at UAA ITS) - Jan 25, 2011.
+
+convert-3.txt
+  Converting a centos 6.4 box for work at GCI Network Services, OSS
+  for use with VMware. June 19, 2015
+
+p2v.txt
+  Use VMware Converter for p2v (physical to virtual) conversion.
+  From work at AMI.
+
+sapphire-20110625.txt
+  Results of VMware vCenter Converter Standalone client 4.3.0 build-292238 for Sapphire.
+  FIXME: This failed.  Never did get working image of Shena's Acer Aspire 5470.
+
+v2v.txt
+  Converting anc-itcc-reports virtual machine, from VMware ESX 4.1.0 build-348481,
+  to VMware Workstation 7.1.4 build-385536.  i.e. Virtual to Virtual.
