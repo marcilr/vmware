@@ -1,0 +1,16 @@
+version.txt
+Created Wed Aug 17 08:04:25 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Determine ESX Server version.
+
+
+To get the version of ESX login to the server console:
+
+[root@anc-esx01 ~]# vmware -v
+VMware ESX 4.1.0 build-348481
+
+[root@anc-esx01 ~]# cat /etc/issue
+VMware ESX 4.1 (Kandinsky)
+Kernel \r on an \m
