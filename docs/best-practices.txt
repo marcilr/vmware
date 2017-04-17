@@ -1,0 +1,37 @@
+best-practices.txt
+Created Fri Sep 18 07:48:19 AKDT 2009
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware Best Practices as Standard Build 
+
+Link to UAA ITS wiki page on Sep 17, 2009.
+
+This is a list of windows/vmware build tasks. Many of these are reg files availble on the 
+path32 share, \\Anc-filesrv01.uaa.alaska.edu\PATH32$
+
+1.    Turn on vmware time sync
+2.    Turn off windows time
+3.    Upgrade vmtools
+4.    Trust a network share
+5.    Install support tools, resource kit (or use PATH to network share)
+6.    Change the cd device to client device instead of local device for HA-ness.
+7.    Turn on remote desktop
+8.    Turn off screen saver with local policy
+9.    Turn off the language bar
+10.   Windows CD source needs to be put into the registry to find the CD files
+11.   disable internet explorer security
+12.   Disconnect network at power-on for templates (dupe name problem)
+13.   Windows updates (and .NET frameworks)
+14.   SNMP needs to be installed and have the community string set to ######
+
+from: anc-its.uaa.alaska.edu/
+
+
+Links
+=====
+IT Services > Call Center > Knowledge Base (Wiki) > Wiki Pages > 
+Vmware Best Practices as Standard Build  
+https://anc-its.uaa.alaska.edu/cc/wiki/Wiki%20Pages/Vmware\
+%20Best%20Practices%20as%20Standard%20Build.aspx
+
