@@ -1,0 +1,27 @@
+Subject: awesome vmware hacks; petool, esxi usb boot, usb boot workstation
+Date: Sat, 27 Feb 2010 09:42:44 -0900
+From: "Jim Weller" <jim@jimweller.com>
+To: "Jim Weller" <jim@jimweller.com>,
+	"Jamie Czajkowski" <axjrc@uaa.alaska.edu>,
+	<kurtbunker@gmail.com>,
+	"Rob Weller" <Rob@specialtyimports.com>,
+	<jaguild@gmail.com>,
+	"Ray Marcil" <axrm@uaa.alaska.edu>
+
+1. Petool.exe lets you add windows drivers to the vmware converter CD. We added LSI 
+sas drivers for a proliant ML310 G4. PeTool comes in the zip file w/ the vmconverter iso
+http://www.vmware.com/pdf/VMware_Converter_manual.pdf
+
+2. The classic esxi on a keychain (8 million pages tell how to do this)
+http://www.vladan.fr/how-to-install-esxi-40-on-usb-memory-key/
+
+3. Boot vmware esxi from USB keychain in vmware workstation using PLoP iso. We used 
+this to pre-build our boot keychains using vmware workstation.
+http://www.vladan.fr/great-tip-how-to-boot-from-usb-image-in-vmware-workstation/
+http://www.plop.at/en/bootmanager.html
+
+ 
+
+L33t H4xx0r  !!
+
+Jim
