@@ -1,0 +1,50 @@
+copy-disk.txt
+Created Wed Aug 17 08:21:18 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+As part of the UAA ITS WebApps Blackbaord 9 upgrade, scheduled for winter break 2012,
+Jim Weller advises copying the windows C:\ drive from one machine to another.
+Didn't know the procdedure for this.  On Tue Aug 16, 2011 Weller did a fireside chat 
+and described the procedure to copy a drive from one vm to another.
+
+1. Login to ESX server with sysmgr account.
+
+2. Access drive infrastructure under /vmfs/volumes/
+[sysmgr@anc-esx01 ~]$ cd /vmfs/volumes/
+[sysmgr@anc-esx01 volumes]$ ls | grep ANC-ESX4
+ANC-ESX4-CLUSTER-ADMIN01
+ANC-ESX4-CLUSTER-COLOCATION01
+ANC-ESX4-CLUSTER-VOLUME01
+ANC-ESX4-CLUSTER-VOLUME02
+ANC-ESX4-CLUSTER-VOLUME03
+ANC-ESX4-CLUSTER-VOLUME04
+ANC-ESX4-CLUSTER-VOLUME05
+ANC-ESX4-CLUSTER-VOLUME06
+[sysmgr@anc-esx01 volumes]$
+
+3. The ANC-ESX4-CLUSTER-VOLUME0N are symlinks to the vm drive luns.
+
+[sysmgr@anc-esx01 volumes]$ ls -l ANC-ESX4-CLUSTER-VOLUME06
+lrwxr-xr-x 1 root root 35 Aug 17 08:29 ANC-ESX4-CLUSTER-VOLUME06 -> \
+4ddc106c-88c9fb40-1317-984be176a8fb
+
+NOTE: Think the lun mapping and configuration was done through
+      the gui interface.  Not finding vmkfstools installed anywhere.
+
+
+
+
+UAA ITS ESX servers
+===================
+anc-esx01.uaa.alaska.edu   137.229.138.231
+anc-esx02.uaa.alaska.edu   137.229.138.232
+anc-esx03.uaa.alaska.edu   137.229.138.233
+anc-esx04.uaa.alaska.edu   137.229.138.234
+anc-esx05.uaa.alaska.edu   137.229.138.235
+
+
+Filelist
+========
+pass/vmware-20110817.txt.gpg 
+VMware info.
