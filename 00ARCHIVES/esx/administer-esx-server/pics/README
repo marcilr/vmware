@@ -1,0 +1,68 @@
+README
+Created Wed Aug 17 08:56:43 AKDT 2011
+by Raymond E. Marcil <marcil@gmail.com>
+
+
+Filelist
+========
+Five Ways to Administer a VMware ESX Server
+by David Davis, vExpert, VCP, CCIE 9369 - December 23, 2008
+Copied pictures from here.
+http://www.petri.co.il/5_ways_to_adminster_esx_server.htm
+
+
+5_ways_to_adminster_esx_server_01.jpg
+  VMware ESX Server console
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_01.jpg
+
+5_ways_to_adminster_esx_server_02.jpg
+  VMware ESX Server console login
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_02.jpg
+
+5_ways_to_adminster_esx_server_02_5.jpg
+  SSH to the Service Console
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_02_5.jpg
+
+5_ways_to_adminster_esx_server_03.jpg
+  VMware Virtual Infrastructure (VI) Web Access to the ESX Server
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_03.jpg
+
+5_ways_to_adminster_esx_server_04.jpg
+  VMware Virtual Infrastructure (VI) Web Access to the ESX Server login
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_04.jpg
+
+5_ways_to_adminster_esx_server_05.jpg
+  VMware Virtual Infrastructure (VI) Web Access to the ESX Server
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_05.jpg
+
+5_ways_to_adminster_esx_server_06.jpg
+  VMware Virtual Infrastructure Client Getting Started
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_06.jpg
+
+5_ways_to_adminster_esx_server_07.jpg
+  VMware Virtual Infrastructure Client Run
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_07.jpg
+
+5_ways_to_adminster_esx_server_08.jpg
+  VMware Virtual Infrastructure Client icon
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_08.jpg
+
+5_ways_to_adminster_esx_server_09.jpg
+  VMware Virtual Infrastructure Client login
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_09.jpg
+
+5_ways_to_adminster_esx_server_10.jpg
+  VMware Virtual Infrastructure Client
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_10.jpg
+
+5_ways_to_adminster_esx_server_11.jpg
+  VMware VI Client point at the Virtual Center Server
+  http://www.petri.co.il/images/5_ways_to_adminster_esx_server_11.jpg
+
+
+Links
+=====
+Five Ways to Administer a VMware ESX Server
+by David Davis, vExpert, VCP, CCIE 9369 - December 23, 2008
+http://www.petri.co.il/5_ways_to_adminster_esx_server.htm
+
