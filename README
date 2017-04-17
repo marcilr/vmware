@@ -196,13 +196,26 @@ backups/
   Backups with veeam and vranger-pro
 
 converter/
-  Converting physical machine to VM with VMware's converter
+  Use the intuitive wizard-driven interface of VMware vCenter
+  Converter to transform your physical machines to virtual
+  machines.
+
+docs/
+  VMware documentation
+  http://www.vmware.com/products/converter/
 
 docs/Kurt/VMware
   Copy of Kurt Bunker's VMware documentation.
 
 docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_config_max.pdf
   Important cert study document - easy read for config maximums.
+
+esx/
+  Previous ESX Hypervisor
+
+esxi/
+  VMware vSphere Hypervisor: Bare Metal Hypervisor
+  http://www.vmware.com/products/vsphere-hypervisor/overview.html
 
 glossary.txt
   Glossary for VMware
