@@ -8,5 +8,8 @@ Archived files.
 
 Filelist
 ========
+svn_ext_val.txt
+  List of repo hierarchical directories to checkout under vmware/
+
 TODO
   Prior TODO from 00VMWARE/uaa/
