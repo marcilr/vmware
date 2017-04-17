@@ -1,0 +1,15 @@
+mac-os-x.txt
+Created Wed Aug 26 14:11:22 AKDT 2009
+by Raymond E. Marcil
+
+
+Wow, looks like Mac OS X under VMware is possible.
+
+
+Links
+=====
+Vmware
+This guide can help you with the installation of Mac OS X on a Windows PC.
+http://wiki.osx86project.org/wiki/index.php/Vmware_how_to
+
+
