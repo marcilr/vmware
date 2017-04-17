@@ -195,6 +195,9 @@ VMware Firewall ports(v1.0).xls
 backups/
   Backups with veeam and vranger-pro
 
+converter/
+  Converting physical machine to VM with VMware's converter
+
 docs/Kurt/VMware
   Copy of Kurt Bunker's VMware documentation.
 
