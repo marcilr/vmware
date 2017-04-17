@@ -1,0 +1,48 @@
+cli.txt
+Created Mon Apr 14 15:49:59 AKDT 2008
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+ESX command line interface.
+
+
+Few ESX Commands
+================
+vmkping - use vmkernel to ping a device
+esxcfg-vswif for configuring network interface
+vm-support to run diagnostic commands
+esxupdate -l query query patches installed on ESX Server
+esxcfg-rescan vmhba1 to rescan HBA’s
+ps -ef | grep hostd To check hostd is running
+esxcfg-mpath -l to list path details
+from: wordpress.com/
+
+
+Important Log and their locations
+=================================
+VMKernel Logs = > /var/log/vmware/
+VIClient logs = > /var/log/vmware/hostd.log
+Virtual Center interaction logs = > /var/log/vmware/vpx/vpxa-*.log
+VMWare Patch activity logs = > /var/log/vmware/esxupdate.log
+
+[root@esx2007a config]# cat vmware-sites
+FULLTIME_SITES_TID 00000061
++ 1:8042,8042,8043 esx2007e vmware #FT_Agent_Port=8045
++ 2:8042,8042,8043 esx2007d vmware
++ 3:8042,8042,8043 esx2007b vmware
++ 4:8042,8042,8043 esx2007a vmware
++ 5:8042,8042,8043 esx2007c vmware
+
+License server logs = > %ALLUSERSPROFILE%\Application Data\VMware\VMware License 
+Server\lmgrd.log
+
+from: wordpress.com/
+
+
+
+
+Links:
+=====
+Lets Design, Implement and do Administration of ESX3
+Grabbed some command line commands.
+http://vmzare.wordpress.com/category/vmware/
