@@ -1,0 +1,24 @@
+maximums.txt
+Created Fri Nov  4 11:15:37 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VirtualCenter 2.5 - Up to 200 hosts and 2000 virtual machines.
+ESX Server 3.5    - 256GB physical memory and virtual machines with 64GB of RAM.
+                    If you have a physical server with more memory than 256GB and would like
+                    to have support from VMware, physically remove some RAM so that it
+                    is no greater than 256GB.
+ESX Server        - Support for up to 32 logical processors
+                    64 logical processors are supported experimentally.
+ESX Server 3.5    - Dual SAS/SATA controllers.
+ESX Server 3.5    - 10GigE ethernet support.  Test using any Neterion or NetXen 10GigE NIC.
+
+whatsnew_esx35_vc25.html
+
+
+Links
+=====
+Details of What's New and Improved in VMware Infrastructure 3 version 3.5
+There are a few new things on here not discussed in class that are really good to know.
+Kurt (Thu, 10 Apr 2008 10:27:02 -0800)
+http://www.vmware.com/support/vi3/doc/whatsnew_esx35_vc25.html
