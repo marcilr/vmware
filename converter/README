@@ -1,0 +1,89 @@
+README
+Created Tue Oct 20 13:55:46 AKDT 2009
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware vCenter Converter docs.
+
+
+VMware vCenter Converter Standalone provides an easy-to-use solution to
+automate the process of creating VMware virtual machines from physical
+machines (running Windows and Linux), other virtual machine formats, and
+third-party image formats.  Through an intuitive wizard-driven interface and a
+centralized management console, Converter Standalone can quickly and reliably
+convert multiple local and remote physical machines without any disruptions or
+downtime.
+
+
+Functionality
+=============
+"VMware vCenter Converter (VMware Converter) comes in both Enterprise
+($, bundling and entitlement with vCenter Server) and Standalone (free)
+versions and is designed primarily for the following tasks:[25]
+
+* Convert a physical machine into a virtual machine; referred to as
+  Physical-to-Virtual or P2V.
+* Convert a virtual machine of one type into another (V2V)
+* Run automated configuration tasks on VMware ESX/ESXi servers."
+
+en.wikipedia.org/
+
+
+Boothite Install
+================
+On boothite using VMware Player 2.5.3 build-185404
+
+
+V2V
+===
+Interested in doing a V2V of some of the UAA ITS VMware vCenter virtual
+machines.
+
+The "Migration with VMware Converter" section, "Figure 1-1. VMware Converter
+Source and Destination Machines" clearly shows virtual machines as source and
+VMware Player as the target.  V2v of UAA ITS VMware vCenter virtual machines
+to VMplayer should be entirely possible with VMware Converter.
+VMware_Converter_manual303.pdf, p. 10
+
+
+Tue Oct 20 13:59:24 AKDT 2009
+=============================
+1. Installed VMware-converter-4.0.1-161434.exe on UAA ITS WebApps winXP SP3
+laptop.  Planning to get virtual machine of the laptop then format it with
+windows 7.
+
+2. Selected destination type:
+
+VMware Infrastructure virtual machine  <== Didn't select. 
+  * ESX Server 3.0, 3.5, and 4.0           Although ESXi support looks cool.
+  * ESXi 3.5 and 4.0 Embedded
+  * VMware vCenter Server 2.0, 2.5, and 4.0 
+
+VMware Workstation or other VMware virtual machine <== Selected
+  * VMware Workstation 5.0, 6.0, 6.5
+  * VMware Player 1.0, 2.0, 2.5
+  * VMware Fusion 1.0, 2.0
+  * VMware ACE 2.0, 2.5
+  * VMware Server 1.0, 2.0
+
+Virtual machine name: D-WEB-7sw29k1.uaa.alaska.edu
+Location for virtual machine: C:\Documents and Settings\axrm\Desktop
+
+4. Ran conversion 
+Start time: 10/20/2009 2:27:16PM
+End time:   10/20/2009 2:41:03PM 
+
+
+Links
+=====
+VMware VCenter Converter
+Convert Physical Machines to Virtual Machines - Free!
+http://www.vmware.com/products/converter/
+
+VMware vCenter Converter Standalone 4.0 Release Notes
+Shows export to Virtual Machine for VMware Player 1.x, 2.0.x, and 2.5.x use.
+http://www.vmware.com/support/converter/doc/releasenotes_conv40.html
+
+VMware
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware
