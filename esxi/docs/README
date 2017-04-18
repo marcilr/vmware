@@ -1,0 +1,34 @@
+README
+Created Thu Jan 19 09:38:34 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+ESXi_on_USB.txt
+  Link from Jim Weller Sep 30, 2009
+  vSphere ESXi on a USB memory stick
+  http://www.yellow-bricks.com/2009/06/09/vsphere-esxi-on-a-usb-memory-stick/
+
+format-flash-boot-ESXi.txt
+  Format a USB Flash Drive to Boot the ESXi Installation or Upgrade.
+
+how_to_update_ESXi.txt
+  Note on patching and updating ESXi.
+
+network.txt
+  Network configuration.
+
+nics.txt
+  Network interface controller for use with ESXi
+
+VMware-Go.txt
+  "One place for your SMB to easily manage physical and virtual IT infrastructures from the
+  cloud - eliminating the burden of IT management allowing  you to focus on your business."
+  Still not certain exactly what it is.
+
+vmware-go-service-agreement.txt
+  VMware Go Service Agreement
+  https://go.vmware.com/Eula.aspx
+
+
