@@ -1,0 +1,154 @@
+TODO
+Created Wed Nov  4 18:33:50 AKST 2009
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Latest: VMware ESXi 5.0 (Build 456551) (August 24, 2011)
+        wikipedia.com/
+
+
++++ Tue Aug 30 15:42:31 AKDT 2011 - Install ESXi 5 on USB key with virtual
+machine running DSL (Damn Small Linux).  The goal is to use DSL iso as boot
+loader for ESXi with a virtual machine all on the stick.
+
+HOW TO Create your own bootable VMWare ESXi 4 usb stick
+Filed Under (VMWare ESXi 4) by Just An Admin on 29-05-2009
+JADOTA - Just Another Day Of The Admin!Because my 'challenge' could be yours!
+http://www.jadota.com/2009/05/how-to-create-your-own-bootable-esxi-4-usb-stick/
+
+
+debian squeeze 6.0.2 syslinux package:
+  syslinux - collection of boot loaders
+
+
+marcilr@boothite:~$ syslinux -version
+syslinux 4.02  Copyright 1994-2010 H. Peter Anvin et al
+
+
+"One other thing - ESX(i) has a 2TB LUN limit.  If you get a RAID controller
+and create a 3  TB array, then ESXi won't be able to use it all.  You'll want
+to get something that can create multiple arrays on the same disks.  For
+example, you would create 2 RAID 5 arrays of 1.5 TB each on the 4 disks.
+That way you're under the 2 TB limit but you still use all your drives
+efficiently."
+Please advise which 4 port SATA RAID card to buy
+http://www.vm-help.com/forum/viewtopic.php?f=14&t=881
+
+
+Complete
+========
+x Tue Jun 16 10:11:16 AKDT 2015 - Located in garage PCI box.
+Wed Nov  4 18:33:50 AKST 2009 Track down 4x NETGEAR GA311
+10/100/1000Mbps PCI Gigabit Adapters.
+
+x Wed Aug 31 08:18:23 AKDT 2011 - Got VMware-VMvisor-Installer-5.0.0-469512.x86_64.iso
+downloaded to bornite's /data/00TARBALLS/vmware/ESXi-5/
+
+Track down ESXi ISO image
+VMware-VMvisor-Installer-5.0.0-XXXXXX.x86_64.iso
+
+x Aug 11, 2010 - 3Ware 9650SE-16ML support?
+Yes, see:
+
+3ware 9650se and ESXi 4.0
+December 3rd, 2009
+http://www.righteoushack.net/?p=423
+
+15548, VMware ESX/ESXi 4.0 and ESX/ESXi 4.0 update 1 for 9650SE and 9690SA.
+Is a certified driver available?
+http://kb.lsi.com/KnowledgebaseArticle15548.aspx
+
+
+x Aug 11, 2010 - 3Ware 9650SE-16ML support?
+Yes, 3ware 9650SE can be used as a datastore after boto from USB.
+
+3ware 9650se and ESXi 4.0
+http://www.righteoushack.net/?p=423
+
+
+Supermicro Systems from HCL
+===========================
+Supermicro Computer Inc	2021M-T2R V/B	AMD Opteron 24xx Series	ESX 
+4.0, ESXi 4.0 Installable
+
+A+ Server 2021M-T2R+V/2021M-T2R+B
+These look hella sweet.
+http://www.supermicro.com/Aplus/system/2U/2021/AS-2021M-T2R+.cfm
+
+Supermicro Computer Inc	6016GT-TF-TC2	Intel Xeon 55xx Series	ESX 
+4.0, ESXi 4.0 Installable
+
+Supermicro Computer Inc	A+ Server 2021M-UR+V/B	AMD Opteron 82xx 
+Series	ESX 3.5 U4, ESX 3.5 U3, ESX 3.5 U2, ESX 3.5 U1, ESX 3.5, 
+ESX 3.0.3, ESX 3.0.2 U1, ESX 3.0.2
+
+Supermicro Computer Inc	AS-2021M-32R	AMD Opteron 23xx Series	ESX 
+3.5 U4, ESX 3.5 U3, ESX 3.5 U2, ESX 3.5 U1
+
+Server 2021M-32RV/2021M-32RB
+Super H8DM3-2 motherboard
+nVidia MCP55 Pro chipset.
+PCIe x8 slots, no video, very nice.
+http://www.supermicro.com/Aplus/system/2U/2021/AS-2021M-32R.cfm
+
+-----------
+
+Supermicro Computer Inc	AS-2021TM-BIBXRF	AMD Opteron 23xx 
+Series	ESX 4.0, ESXi 4.0 Installable
+
+Four hot-pluggable systems (nodes) in a 2U form factor.
+http://www.supermicro.com/Aplus/system/2U/2021/AS-2021TM-BIBXRF.cfm
+
+-----------
+
+Supermicro Computer Inc	AS-2041M-32R	AMD Opteron 83xx Series	ESX 
+4.01
+
+Supermicro Computer Inc	AS-2041M-32R+B	AMD Opteron 83xx Series	ESX 
+3.5 U4, ESX 3.5 U3, ESX 3.5 U2, ESX 3.5 U1, ESX 3.5
+
+Supermicro Computer Inc	AS-4041M-T2R	AMD Opteron 83xx Series	ESX 
+4.0
+
+
+Google: VMware ESXi home ==> good hits
+
+
+Links
+=====
+VMware ESX
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware_ESX
+
+Damn Small Linux
+http://www.damnsmalllinux.org/
+
+VMware ESX(i) Home Lab - Why, What and How?
+Considerations when building your own home lab.
+Good stuff...
+http://www.techhead.co.uk/vmware-esxi-home-lab-why-what-and-how-considerations-when-building-your-own-home-lab
+
+VMware vSphere Hypervisor (ESXi)
+Virtualization Made Free and Easy
+http://www.vmware.com/products/vsphere-hypervisor/index.html
+
+VMware vSphere 4.1 Release Notes - ESX Edition
+http://www.vmware.com/support/vsphere4/doc/vsp_esx41_vc41_rel_notes.html
+
+3ware 9650se and ESXi 4.0
+Great article on using 3ware 9650SE with ESXi 4.0
+Array can only be used at datastore not boot device.
+Thats all right since want to boot from USB.
+http://www.righteoushack.net/?p=423
+
+Search the VMware Compatibility Guide
+http://www.vmware.com/resources/compatibility/search.php?deviceCategory=software
+
+Motherboards and unsupported servers that work with ESX 4.0 and / 
+or ESXi 4.0 Installable
+http://www.vm-help.com//esx40i/esx40_whitebox_HCL.php
+
+We need a DIY home ESXi server guide
+ars technica open forum
+http://episteme.arstechnica.com/eve/forums/a/tpc/f/77909774/m/167002658931
+
