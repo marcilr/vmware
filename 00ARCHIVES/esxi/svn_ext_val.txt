@@ -1,0 +1,19 @@
+#
+# svn_ext_val.txt
+# Created Tue Jan 24 08:17:49 AKST 2012
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+
+
+#
+# List of subversion repositories to checkout under esxi/
+#
+# docs/     ESXi documentation
+# esxi-4/   ESXi 4 documentation
+# esxi-5/   ESXi 5 documentation
+# esxi-6/   ESXi 6 documentation
+#
+../../esxi/docs/docs       ./docs
+../../esxi/esxi-4/esxi-4   ./esxi-4 
+../../esxi/esxi-5/esxi-5   ./esxi-5
+../../esxi/esxi-6/esxi-6   ./esxi-6
