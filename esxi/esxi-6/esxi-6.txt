@@ -1,0 +1,30 @@
+esxi-6.txt
+Created Tue Jun 16 10:55:24 AKDT 2015
+Copyright (C) 2015 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+ESXi 6
+
+
+Filelist
+========
+pdf/compsci/virtualization/vmware/esxi/
+  vmware-end-user-license-20150616.pdf
+    VMware vSphere Hypervisor End User License Agreement
+    Downloaded: June 16, 2015
+    Had to agree to download latest ESXi.
+    x * I agree to the terms and conditions outlined in the
+      VMware vSphere Hypervisor End User License Agreement.
+    x Yes, I would like to receive email communications related
+      to VMware including newsletters and invitation-only events.
+      I understand that any information I provide will be treated
+      in accordance with the VMware Privacy Policy
+    https://my.vmware.com/web/vmware/registration?source=dwnp&p=free-esxi6
+
+pdf/compsci/virtualization/vmware/esxi/
+  VMware-Privacy-Policy-20150201.pdf (184KB)
+    VMware Privacy Policy
+    Effective Date: February 1, 2015
+    pages: 6
+    Downloaded: June 16, 2015
+    http://www.vmware.com/help/privacy.html
