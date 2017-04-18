@@ -1,0 +1,81 @@
+INSTALL
+Created Tue Jun 16 11:06:19 AKDT 2015
+Copyright (C) 2015 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+
+Installation of vSphere Hypervisor 6.0 on 
+GCI Network Services, OSS Debian jessie 8.0 amd64 workstation.
+
+1. Register and download the VMware vSphere Hypervisor 6.0.
+
+
+2. At VMware vSphere Hypervisor 6.0 Download Center page:
+
+
+Component                               License key
+---------------------------------------------------------------------
+VMware vSphere Hypervisor 6 License     450CJ-6UL01-J8A81-09886-94M4H
+
+
+Download Packages
+=================
+Your downloads are available below
+VMware vSphere Hypervisor 6.0 - Binaries
+
+VMware-VMvisor-Installer-6.0.0-2494585.x86_64.iso
+  ESXi ISO image (Includes VMware Tools)
+  2015-03-12 | 6.0.0 | 348 MB | iso
+
+  Boot your server with this image in order to install or upgrade to
+  ESXi (ESXi requires 64-bit capable servers).  This ESXi image
+  includes VMware Tools.
+
+  MD5SUM: 478e2c6f7a875dd3dacaaeb2b0b38228 
+  SHA1SUM: a38a9d37ea529329338de049679c1dd1687d3860
+
+  Downloaded June 16, 2015
+
+VMware-viclient-all-6.0.0-2502222.exe
+  VMware vSphere Client
+  2015-03-12 | 6.0.0 | 341 MB | exe
+
+  Separate installer for the VMware vSphere Client.
+  Note: vSphere Web Client can be installed using the
+  vCenter Server installer
+
+  MD5SUM: ccb82b3ba29c0e8bc9f010e088bd00c3 
+  SHA1SUM: ecd7e41e7813e0455a5a521eb66b6ffac02eb17d
+
+  Downloaded June 16, 2015
+
+
+Terms and Conditions
+====================
+This license key can be deployed on an unlimited number
+of physical hosts, but is restricted to deployment on
+less than or equal to 100 Physical Servers.
+
+This license is not entitled to support. To purchase a
+support contract, please visit the VMware Online Store
+
+Upon registration, you agreed to abide by the terms and
+conditions as outlined in the VMware End User License
+Agreement. By downloading VMware executables, you agree
+to continue to abide by these terms and conditions.
+
+Click for information about using MD5 checksums and SHA-1
+checksums.
+
+HARDWARE COMPATIBILITY
+The latest version of VMware vSphere Hypervisor is based
+on VMware ESXi 6.0 which is certified to run on a broad
+range of 64-bit hardware.  Check the Hardware Compatibility
+List to ensure that the server model you intend to use is
+certified to run VMware ESXi 6.0.
+
+
+Links
+=====
+VMware Compatibility Guide
+https://www.vmware.com/resources/compatibility/search.php
