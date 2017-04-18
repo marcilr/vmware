@@ -1,0 +1,39 @@
+ESXi-4.0-license.txt
+Created Wed Dec 16 13:44:25 AKST 2009
+by Raymond E. Marcil
+
+
+
+Activate your VMware ESXi License
+
+from:        The VMware Team <donotreply@vmware.com>
+reply-to:    The VMware Team <donotreply@vmware.com>
+to:          marcilr@gmail.com
+date:        Wed, Dec 16, 2009 at 12:29 PM
+subject:     Activate your VMware ESXi License
+mailed-by:   connect.vmware.com
+
+
+VMware ESXi Product License and Download
+
+Thank you for registering VMware ESXi.
+
+Your license and download information can be found below. If you have questions or need 
+support, visit the VMware Technology Network for product documentation, knowledge bases and 
+other resources, or contact your local authorized VMware partner. Additional support is also 
+available for purchase within the VMware store.
+
+VMware ESXi 4.0 is certified to run on a broad range of 64 bit hardware. If you do not have 
+access to 64 bit hardware, you can download the previous version of ESXi that runs on 32 bit 
+hardware.
+
+Licensing
+=========
+ESXI  	HJ28L-8EJ1P-58L38-0H184-CE7P4
+
+This license key is only valid for VMware ESXi 4.0 and later
+
+
+YOUR LICENSE INCLUDES
+* VMware ESXi 4
+* VMware vSphere Client
