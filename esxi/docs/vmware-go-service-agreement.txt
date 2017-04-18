@@ -1,0 +1,66 @@
+vmware-go-service-agreement.txt
+Created Tue Aug 30 16:22:36 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMWARE GO TERMS OF SERVICE AGREEMENT
+
+BY USING OR ACCESSING VMWARE GO, YOU AGREE TO BE BOUND BY THE TERMS OF THIS VMWARE GO TERMS OF SERVICE AGREEMENT (“AGREEMENT”). IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, YOU MAY NOT USE OR ACCESS VMWARE GO. “YOU” MEANS THE NATURAL PERSON OR THE ENTITY THAT IS AGREEING TO BE BOUND BY THIS AGREEMENT, THEIR EMPLOYEES AND THIRD PARTY CONTRACTORS THAT PROVIDE SERVICES TO YOU. YOU SHALL BE LIABLE FOR ANY FAILURE BY SUCH EMPLOYEES AND THIRD PARTY CONTRACTORS TO COMPLY WITH THE TERMS OF THIS AGREEMENT.
+1. Grant and Use Rights
+
+VMware hereby grants you a non-exclusive, non-transferable license, without rights to sublicense, to use VMware Go and Go Pro Services (collectively the “Services”) for your internal operations only. The Services are intended for you and your use only, and provided to you “as is”. Each account of the Services is individually licensed to the person who created the user ID and password for that account; and the account may not be accessed and the Services may not be used by other individuals using the same user ID and password of such account.
+2. Restrictions
+
+You agree not to reproduce, duplicate, copy, sell, trade, resell or exploit for any commercial purposes, any portion or use of, or access to, the Services. You may not access or use the Services to provide assessments or prepare proposals for third parties. You may not create, develop, license, install, use, or deploy any software or services to circumvent, enable, modify or provide access, permissions or rights which violate the technical restrictions in VMware software products that are associated with the Services.
+3. Support Services
+
+The support terms and conditions for the Services are located at http://www.vmware.com/products/go/support.html.
+4. Your Account, Password and Access
+
+You warrant that you or your employees understand and agree that the right to access the Services is granted because you have sponsored their participation, and if at any time you no longer have such right or you no longer extend that sponsorship to them, you must cease their access and use of the website. You are responsible for authorizing and controlling access to the Services, maintaining the confidentiality of user IDs and passwords and are responsible for any use that occurs under such user IDs and passwords. VMware is not liable for any losses, damages, claims, demands, actions, costs and expenses (including reasonable attorneys’ fees and court costs) arising from or created by any of your acts or omissions related to the access or use of the Services. You acknowledge and agree that the content on the Services, including but not limited to text, software, graphics or other information presented to you is subject to and protected by copyright, trademarks, service marks, patents, or other proprietary rights and relevant law.
+
+VMware does not warrant that access to or the operation of the Services shall be uninterrupted, error-free or completely secure, that any defects in the website shall be corrected, or that the website shall be suitable for or meet your requirements. VMWARE MAKES NO EXPRESS OR IMPLIED WARRANTIES WITH RESPECT TO THE QUALITY OR ACCURACY OF THE DATA COLLECTED. IN NO EVENT SHALL VMWARE AND/OR ITS RESPECTIVE LICENSORS BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE WEBSITE.
+5. Payment
+
+For the Services offered on a subscription basis, fees are quoted and payable in United States dollars. Fees shall be due and payable in advance. Payment obligations are non-cancelable and fees paid are non-refundable. Fees are exclusive of all taxes, levies, or duties imposed by taxing authorities, and such taxes, levies and duties shall be added to the Services fees. The subscription fees are based on monthly periods that begin on the subscription start date and each monthly anniversary thereof. You must be authorized to use the credit card that you enter when you create a billing account. You authorize us to charge such credit card for all Services listed in the Order Form for the initial subscription term and any renewal subscription term(s). Your subscription will be automatically renewed at the end of each subscription period unless you inform us that you do not wish to renew the subscription. You are responsible for maintaining complete and accurate billing and contact information for the Services.
+
+VMware reserves the right to modify the fees at any time, upon 30 days prior written notice to you, which notice may be provided by e-mail or at the website; such new prices shall not apply for subscription for Services which has already been completed, but shall apply to any subscription completed after the effective date of change of the fees.
+6. Data Collection
+
+You acknowledge and agree that VMware may collect certain data and information as a result of your access or use of the Services. For terminated or defaulted accounts, any data related to the Services that is collected by VMware will only be retained for a period of one calendar year from the date that the account was terminated or defaulted. VMware may share personal information with its service providers and suppliers to the extent needed to deliver or provide information on products or services or otherwise support your business needs relating to the Services. Third party service providers and suppliers receiving personal information are expected to apply the same level of privacy protection as VMware. They are required to keep confidential the personal information received from VMware and may not use it for any purpose other than as originally intended.
+7. Links to Third Party Sites
+
+The Services may provide links to third-party web sites for your convenience and information. VMware does not endorse or make any representations about third party web sites, nor does the inclusion of any link imply any such endorsement. If you access those links, you will leave this web site. VMware is not responsible for webcasting or any other form of transmission received from any third-party sites. VMware does not control those sites and VMware is not responsible for the contents of any third-party sites, any links contained in third-party sites, any changes or updates to third-party sites, or their privacy practices, which may differ from those of VMware. The personal data you may choose to give to such third party web sites is not covered by VMware’s privacy policy. VMware encourages you to review the privacy policy of any company before submitting your personal information. Some third party companies may choose to share their personal data with VMware, in which case such data sharing shall be governed by that third party’s privacy policy.
+8. Cancellation or Termination of Services
+
+If you do not wish to renew the subscription, you can cancel your VMware Go Pro subscription at any time. Payments made are for a full month, no refund is available. If you cancel during your subscription’s monthly cycle, you will have access to Go Pro until the last day of your subscription. There is no pro-rata credit or refund for that subscription term.
+
+VMware may, without prior notice, immediately terminate, limit your access to or suspend your account and use of the Services if you fail to comply with any term of this Agreement. VMware expressly reserves the right to suspend your account and use of the Service in the event you fail to pay the fees in full and on time.
+
+VMware reserves the right to cease operating the VMware Go service. In such an event, customers will be given three (3) months notice by e-mail or at the website in advance of the termination date.
+9. Limitation of Liability and Indemnity
+
+IN NO EVENT SHALL VMWARE OR ITS SUPPLIERS HAVE LIABILITY FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSE QUEN TIAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, OR LOSS OF BUSINESS INFORMATION), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, EVEN IF VMWARE AND ITS SUPPLIERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THESE LIMITATIONS SHALL APPLY NOT WITH STANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.
+
+You agree to indemnify and hold VMware and its affiliates and suppliers harmless from any and all claims, liability and expenses, including reasonable attorneys' fees and costs, arising out of your use of The Services or breach of this Agreement (collectively referred to as "Claims"). VMware reserves the right, in its sole discretion and at its own expense, to assume the exclusive defense and control of any Claims. You agree to reasonably cooperate as requested by VMware in the defense of any Claims.
+10. Warranty Disclaimer
+
+IT IS UNDERSTOOD THAT THE SERVICES, ANY DOCUMENTATION, AND ANY UPDATES MAY CONTAIN ERRORS AND ARE PROVIDED FOR LIMITED PURPOSES ONLY. THE SERVICES, ANY DOCUMENTATION, AND ANY UPDATES ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE. VMWARE AND ITS SUPPLIERS SPECIFICALLY DISCLAIM ALL IMPLIED WARRANTIES OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE. THE FOREGOING LIMITATIONS SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, REGARDLESS OF WHETHER VMWARE OR ITS LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF WHETHER ANY REMEDY FAILS OF ITS ESSENTIAL PURPOSE.
+11. Other Provisions
+
+(a) Governing Law. This Agreement, and all disputes arising out of or related thereto, shall be governed by and construed under the laws of the State of California without reference to conflict of laws principles. All such disputes shall be subject to the exclusive jurisdiction of the state and federal courts located in Santa Clara County, California, and the parties agree and submit to the personal and exclusive jurisdiction and venue of these courts.
+
+(b) Assignment. You shall not assign this Agreement or any rights or obligations hereunder, directly or indirectly, by operation of law, merger, acquisition of stock or assets, or otherwise, without the prior written consent of VMware. Subject to the foregoing, this Agreement shall inure to the benefit of and be binding upon the parties and their respective successors and permitted assigns.
+
+(c) Export Controls. You acknowledge that this website, the Services, and the underlying software may include U.S. technical data subject to restrictions under export control laws and regulations administered by the United States government. Diversion contrary to U.S. law is prohibited. Without limiting the foregoing, you agree that (1) you are not, and are not acting on behalf of, any person who is a citizen, national, or resident of, or who is controlled by the government of, Cuba, Iran, North Korea, Sudan, or Syria, or any other country to which the United States has prohibited export transactions; (2) you are not, and are not acting on behalf of, any person or entity listed on the U.S. Treasury Department list of Specially Designated Nationals and Blocked Persons, or the U.S. Commerce Department Denied Persons List or Entity List; and (3) you will not use the Software for, and will not permit the Software to be used for, any purposes prohibited by law, including, without limitation, for any prohibited development, design, manufacture or production of missiles or nuclear, chemical or biological weapons.
+
+(d) Modification. This is the entire agreement between the parties relating to the subject matter hereof and all other terms are rejected. VMware reserves the right to modify the terms of this Agreement at any time without prior notice. The waiver of a breach of any term hereof shall in no way be construed as a waiver of any term or other breach hereof. If any provision of this Agreement is held by a court of competent jurisdiction to be contrary to law the remaining provisions of this Agreement shall remain in full force and effect.
+
+x I agree to the terms and conditions outlined in the VMware Go End User License Agreement. *
+
+
+Links
+=====
+VMware Go Service Agreement
+https://go.vmware.com/Eula.aspx	
+
