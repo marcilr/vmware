@@ -1,0 +1,36 @@
+README
+Created Tue Jun 16 11:25:36 AKDT 2015
+Copyright (C) 2015 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+Download-VMware-vSphere-Hypervisor-for-Free-20150616.pdf
+  Download page with:
+    VMware vSphere Hypervisor 6 License
+    license key: 450CJ-6UL01-J8A81-09886-94M4H
+    VMware vSphere Hypervisor 6.0 - Binaries:
+    o ESXi ISO image (Includes VMware Tools
+      2015-03-12 | 6.0.0 | 348 MB | iso
+    o VMware vSphere Client 
+      2015-03-12 | 6.0.0 | 341 MB | exe
+  Downloaded June 16, 2015
+
+INSTALL
+  Installation of vSphere Hypervisor 6.0 on 
+  GCI Network Services, OSS Debian jessie 8.0 amd64 workstation.
+
+installing-ESXi-in-VirtualBox.txt
+  Installing ESXi in VirtualBox
+  May 16, 2014 by Jonathan Frappier
+  http://www.virtxpert.com/installing-esxi-in-virtualbox/
+
+license-keys.txt
+  At VMware vSphere Hypervisor 6.0 Download Center page:
+
+  Component                               License key
+  ---------------------------------------------------------------------
+  VMware vSphere Hypervisor 6 License     450CJ-6UL01-J8A81-09886-94M4H
+
+  Downloaded June 16, 2015
+
