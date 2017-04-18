@@ -1,0 +1,90 @@
+links.txt
+Created Fri Jul  1 07:57:44 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+ESXi related links
+
+
+Links
+=====
+Creating a new Virtual Machine ESXi
+http://www.youtube.com/watch?v=6U5T9ZRIYjo
+
+Damn Small Linux
+http://www.damnsmalllinux.org/
+
+How to clone virtual machines in VMware ESXi
+http://www.dedoimedo.com/computers/vmware-esxi-clone-machine.htm
+
+Intel Gigabit Server Adapters
+http://ark.intel.com/products/family/46829
+
+Looking for recommendations on AMD platform for VMware ESXi host
+http://www.tomshardware.com/forum/285774-28-looking-recommendations-platform-vmware-esxi-host
+
+Support & Downloads
+http://www.vmware.com/support/
+
+The Syslinux Project
+http://www.syslinux.org/wiki/index.php/The_Syslinux_Project
+
+VMware Download Center
+http://downloads.vmware.com/
+
+VMware ESX
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware_ESX
+
+VMware ESXi Release and Build Number History
+http://www.virten.net/vmware/esxi-release-build-number-history/
+
+VMware VMFS
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMFS
+
+VMware vSphere Hypervisor (ESXi)
+http://www.vmware.com/products/vsphere-hypervisor/overview.html
+
+
+USB flash drive install
+=======================
+Format a USB Flash Drive to Boot the ESXi Installation or Upgrade
+http://pubs.vmware.com/vsphere-50/index.jsp?topic=/com.vmware.vsphere.install.doc_50/GUID-33C3E7D5-20D0-4F84-B2E3-5CD33D32EAA8.html
+
+Create ESXi 4 USB flash drives with Workstation
+i.e. Boot to iso in VMware Workstation vm, attach usb key, and install ESXi.
+http://www.vcritical.com/2009/08/create-esxi-4-usb-flash-drives-with-workstation/
+
+VMware ESXi 5 Scripted Install to USB Flash
+Now with VMware ESXi 5, it is possible to perform an automated 
+installation to USB storage.  Simply specify usb-storage as part 
+of the install command in an automated install script.  For example:
+install --firstdisk=usb-storage --overwritevmfs
+http://www.vcritical.com/2011/08/vmware-esxi-5-scripted-install-to-usb-flash/
+
+Automating ESXi 5.x Kickstart Tips & Tricks
+virtuallyGhetto
+VMware Scripts & Resources
+http://www.virtuallyghetto.com/2011/07/automating-esxi-5x-kickstart-tips.html
+
+Create bootable usb for esxi 5
+http://communities.vmware.com/message/1817688
+
+vSphere 5 - How to run ESXi stateless with vSphere Auto Deploy
+29 July, 2011
+http://www.gabesvirtualworld.com/vsphere-5-how-to-run-esxi-stateless-with-vsphere-auto-deploy/
+
+Using vSphere 5 auto-deploy in your home lab 
+Aug 25, 2011, By Duncan Epping 
+http://www.yellow-bricks.com/2011/08/25/using-vsphere-5-auto-deploy-in-your-home-lab/
+
+Running a Virtual Router & Firewall inside VMware ESX with Vyatta
+by David Davis on September 18, 2008
+http://happyrouter.com/running-a-virtual-router-firewall-inside-vmware-esx-with-vyatta
+
+How to create a bootable VMware ESXi 3.5 & 4.0 (vSphere) USB pen drive.
+http://www.techhead.co.uk/how-to-create-a-bootable-vmware-esxi-usb-pen-drive
+
+Installing VMware ESXi 4.0 on a USB Memory Stick "The Official Way"
+http://www.techhead.co.uk/installing-vmware-esxi-4-0-on-a-usb-memory-stick-the-official-way
