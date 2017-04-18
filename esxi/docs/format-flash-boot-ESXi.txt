@@ -1,0 +1,79 @@
+format-flash-boot-ESXi.txt
+Created Wed Aug 31 08:10:49 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+ESXi and vCenter Server 5.0 Documentation > vSphere Installation and Setup \
+> Introduction to vSphere Installation and Setup > Media Options for Booting the ESXi Installer
+ 
+
+Format a USB Flash Drive to Boot the ESXi Installation or Upgrade
+=================================================================
+You can format a USB flash drive to boot the ESXi installation or upgrade.
+
+The instructions in this procedure assume that the USB flash drive is detected as /dev/sdb.
+
+
+Prerequisites
+=============
+o Linux machine
+o The ESXi ISO image VMware-VMvisor-Installer-5.0.0-XXXXXX.x86_64.iso, including the 
+file isolinux.cfg,where XXXXXX is the build number of the installer ISO image.
+o USB flash drive
+
+
+Procedure
+=========
+1. Attach the USB flash drive to a Linux machine.
+2. Create a partition table.
+/sbin/fdisk /dev/sdb
+a. Type d to delete partitions until they are all deleted.
+b. Type n to create primary partition 1 that extends over the entire disk.
+c. Type t to set the type to an appropriate setting for the FAT32 file system, such as c.
+d. Type a to set the active flag on partition 1.
+e. Type p to print the partition table.
+
+The result should be similar to the following text:
+
+  Disk /dev/sdb: 2004 MB, 2004877312 bytes
+  255 heads, 63 sectors/track, 243 cylinders
+  Units = cylinders of 16065 * 512 = 8225280 bytes
+     Device Boot      Start         End      Blocks   Id  System
+  /dev/sdb1   *           1         243     1951866    c  W95 FAT32 (LBA)
+
+f. Type w to write the partition table and quit.
+
+3. Format the USB flash drive with the Fat32 file system.
+  /sbin/mkfs.vfat -F 32 -n USB /dev/sdb1
+
+4. Run the following commands.
+  /path_to_syslinux-3.82_directory/syslinux-3.82/bin/syslinux /dev/sdb1
+  cat /path_to_syslinux-3.82_directory/syslinux-3.82/usr/share/syslinux/mbr.bin > /dev/sdb1
+
+5. Mount the USB flash drive.
+  mount /dev/sdb1 /usbdisk
+
+6. Mount the ESXi installer ISO image.
+  mount -o loop VMware-VMvisor-Installer-5.0.0-XXXXXX.x86_64.iso /esxi_cdrom
+
+7. Copy the contents of the ISO image to /usbdisk.
+  cp -r esxi_cdrom/* /usbdisk
+
+8. Rename the isolinux.cfg file to syslinx.cfg.
+  mv /usbdisk/isolinux.cfg /usbdisk/syslinux.cfg
+
+9. Unmount the USB flash drive.
+  umount /usbdisk
+
+10. Unmount the installer ISO image.
+  umount /esxi_cdrom
+
+The USB flash drive can now boot the ESXi installer.
+
+Help us improve this information. Send feedback to docfeedback@vmware.com.
+
+
+Links
+=====
+Format a USB Flash Drive to Boot the ESXi Installation or Upgrade
+http://pubs.vmware.com/vsphere-50/index.jsp?topic=/com.vmware.vsphere.install.doc_50/GUID-33C3E7D5-20D0-4F84-B2E3-5CD33D32EAA8.html
