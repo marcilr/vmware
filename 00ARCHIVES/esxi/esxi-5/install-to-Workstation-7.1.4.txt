@@ -1,0 +1,348 @@
+install-to-Workstation-7.1.4.txt
+Created Thu Feb  9 15:24:48 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Tried test installation to VMware Workstation 7.1.4 on boothite.  
+This worked.
+
+To use VMware Workstation 7.1.4 on boothite, under /lib/modules/2.6.32-5-amd64/misc,
+had to manually insmod:
+  vmmon.o
+  vmci.o
+
+1. Launched workstation.
+Applications > System Tools > Vmware Workstation
+
+2. Create new machine.
+File > New > Virtual Machine...
+
+3. At Virtual Machine Configuration
+x Typical (recommended)
+  Create a Workstation 6.5-7.x virtual machine in a few easy steps.
+
+<unchecked> Custom (advanced)
+click Next 
+
+4. At Install operating system from:
+
+<unchecked> Installer disc:
+            Device: /dev/scd0
+
+x Installer disc image file (ISO):
+/home/marcilr/home/marcilr/VMware-VMvisor-Installer-5.0.0-469512.x86_64.iso 
+
+<unchedked> I will install the operating system later:
+            The virtual machine will be created with a blank hard disk
+
+click Next
+
+5. At Guest Operating System
+   <unchecked> 1. Microsoft Windows
+   <unchecked> 2. Linux
+   <unchecked> 3. Novell NetWare
+   <unchecked> 4. Sun Solaris
+   <unchecked> 5. VMware ESX
+   <unchecked> 6. Other
+   Version: ESX Server 4
+
+click Next
+
+6. At Virtual Machine Name
+Name:      ESXi-5   (updated from "ESX Server 4")
+Location:  /home/marcilr/vmware/ESXi-5
+           (updated from /home/marcilr/vmware/ESX Server 4)
+
+The default location can be changed at Edit > Preferences
+
+click Next
+
+7. At Disk Size
+
+Maximum disk size (in GB): 40.0
+Recommended size for ESX Server 4: 40GB
+<unchecked> store virtual disk as a single file
+x Split virtual disk into multiple files
+
+click Next
+
+8. At Ready to Create Virtual Machine
+
+The virtual machine will be created with the following settings:
+
+name:            ESXi-5
+Location:        /home/marcilr/vmware/ESXi-5
+version:         Workstation 6.5-7.x
+os:              ESX Server 4
+hard disk:       40GB
+memory:          2048MB
+network adapter: NAT
+other devices:   2 CPU cores, CD/DVD, Floppy, USB Controller
+
+Customize Hardware...
+
+x Automatically power on this virtual machine after creation
+
+9. Update ram from 2048MB to 4096MB
+click Customize Hardware...
+
+Update memory from 2048MB to 4096MB
+
+click Save
+
+10. At Ready to Create Virtual Machine
+click Finish
+
+11. At ESXi-5.0.0-469512-standard Boot Menu
+<select>     ESXi-5.0.0-469512-standard Installer
+<unselected> Boot from local disk
+
+click Enter
+
+12. Watch Loading ESXi Installer
+VMware ESXi 5.0.0 (VMKernal Release Build 469512)
+
+13. At VMware ESXi 5.0.0 Installer
+Welcome to the VMware ESXi 5.0.0 Installation
+VMware ESXi 5.0.0 installs onmost systems but only
+system on VMware's Compatibility Guide are supported.
+
+COnsult the VMware Compatibility Guide at:
+http://www.vmware.com/resource/compatibility
+
+Slect the opertion to perform.
+
+(Esc) Cancel   (Enter) Continue
+
+click Enter
+
+14. At End User License Agreement (EULA)
+VMWARE END USER LICENSE AGREEMENT
+...
+VMware vSphere Hypervisor
+You may only install and use vSphere Hypervisor on a Server
+that has up to 32GB of physical RAM and the vRAM entitlement
+for each Server is limited to 32 gigabytes.
+...
+(ESC) Do not Accept   (F11) Accept and Continue
+
+click F11
+
+
+15. At Select a Disk to Install or Upgrade
+* Contains a VMFS partition
+
+Storage Device                                      Capacity
+------------------------------------------------------------
+Local:
+   VMware, VMware Virtual S (mpx.vmhbal:C0:T0:L0)   40.00GB
+Remote:
+   (none)
+
+(ESC) Cancel   (F1) Details  (F5) Refresh   (Enter) Continue
+
+click Enter
+
+16. At Please select a keyboard layout
+US Default
+
+(Esc) Cancel   (F9) Back   (Enter) Continue
+
+click Enter
+
+17. At Please enter a root password (recommended)
+Root password:    the usual + 7
+Confirm password: the usual + 7
+
+(Esc) Cancel   (F9) Back   (Enter) Continue
+
+click Enter
+
+18. At Error(s)/Warning(s) Found During System Scan
+The system encountered the following warning(s).
+                Warning(s)
+
+(HARDWARE_VIRTUALIZATION WARNING: Hardware Virtualization in not
+a feature of the CPU, or is not enabled in the BIOS)
+
+(Esc) Cancel   (F9) Back   (Enter) Continue
+
+click Enter
+
+19. At Confirm Install
+The installer is configured to install ESXi 5.0.0 on:
+             mpx.vmbal:C0:T0:L0.
+
+Warning: This disk will be repartitioned.
+
+(Esc) Cancel   (F9) Back   (F11) Install
+
+click F11
+
+20. Watch Installing ESXi 5.0.0
+...
+
+21. At Installation Complete.
+
+ESXi 5.0.0 has been successfully installed.
+
+ESXi 5.0.0 will operate in evaluation mode for 60 days.  To
+use ESXi 5.0.0 after the evaluation period, you must
+register for a VMware product license.  To administer your
+server, use the vSphere Client or the Direct Control User
+Interface.
+
+Remove the installation disc before rebooting.
+
+Reboot the server to start using ESXi 5.0.0.
+
+(Enter) Reboot
+
+
+22. ESXi 5.0.0 rebooted then got:
+
+ESXi 5.0.0 (VMKernel Release Build 469512)
+VMware, Inc. VMware Virtual Platform
+2x Intel Core i7-2920AM CPU @ 2.50Ghz
+4GiB Memory
+
+Download tools to manage this host from:
+http://0.0.0.0/
+
+Download tools to manage this host from:
+http://169.254.0.1/ (Waiting for DHCP...)
+
+Warning: DHCP lookup failed.  You may be unable to access this system until you customize its
+network configuration.
+
+23. Think that VMware Workstation 7.1.4 needs network configuration.
+
+Inserted addition workstation modules under /lib/modules/2.6.32-5-amd64/misc/
+Had inserted vmci and vmmon prior to launching VMware Workstation 7.1.4 
+
+# insmod vmnet.o
+# insmod vsock.o
+# insmod vmblock.o
+# lsmod | grep vm
+vmblock                10462  0 
+vmnet                  37057  0 
+vmci                   46596  2 vsock
+vmmon                  64195  13
+#
+
+24. At ESXi-5 - VMware Workstation powered off ESXi-5 machine.
+
+25. Relaunched VMware Workstation
+
+26. Edit > Virtual Network Editor disiplays vmnet0 bridged to eth0.
+
+27. Started ESXi-5
+right-click ESXi-5 > Power On
+
+28. Loaded ESCi 5.0.0:
+
+Loading VMware ESXi
+...
+VMKernel loaded sucessfully
+...
+VMware ESXi 5.0.0 (VMKernel Release Build 469512)
+VMware, Inc.  Vmware Virtual Platform
+2x Intel Core i7-2920XM CPU @ 2.50GHz
+4 GiB Memory
+
+Popup window:
+
+Hint 
+The virtual machine's operating system has attempted to enable promiscuous on adapter Ethernet0.
+This is not allowed for security reasons.
+
+Please go to th Web page "http://vmware.com/info/is=161" for help enabling promiscuous mode on 
+the virtual machine.
+
+OK
+
+click OK
+...
+Download tools to manage this host form:
+http://0.0.0.0/
+
+29. Per "Using Virtual Ethernet Adapters in Promiscuous Mode on a Linux Host",
+at kb.vmware.com/ configured vmnetx devices for read/write:
+
+i. (/dev/vmnet0 if using basic bridged mode):
+$ ls -l /dev/vmnet*
+crw------- 1 root root 119, 0 Feb  9 15:22 /dev/vmnet0
+crw------- 1 root root 119, 1 Feb  9 15:22 /dev/vmnet1
+crw------- 1 root root 119, 8 Feb  9 15:22 /dev/vmnet8
+$ 
+
+ii. Create new vmnet group:
+
+# groupadd vmnet
+$ grep vmnet /etc/group
+vmnet:x:1011:
+$
+
+iii. Change ownership of /dev/vmnetx devices to vmnet group:
+# chgrp vmnet /dev/vmnet*
+# chmod g+rw /dev/vmnet*
+# ls -l /dev/vmnet*
+crw-rw---- 1 root vmnet 119, 0 Feb  9 15:22 /dev/vmnet0
+crw-rw---- 1 root vmnet 119, 1 Feb  9 15:22 /dev/vmnet1
+crw-rw---- 1 root vmnet 119, 8 Feb  9 15:22 /dev/vmnet8
+#
+
+iv. Add marcilr account to vmnet in /etc/group:
+vmnet:x:1011:marcilr
+
+v. Logout and login to get vmnet group:
+$ id
+uid=1000(marcilr) gid=1000(marcilr) groups=1000(marcilr),24(cdrom),25(floppy),29(audio),30(dip),\
+40(src),44(video),46(plugdev),50(staff),100(users),109(netdev),110(bluetooth),113(fuse),\
+116(scanner),1002(tivo),1003(svn),1004(scans),1010(sshfs),1011(vmnet)
+
+Looks good.
+
+30. Lauched Workstation
+right-click ESXi-5 > Power On
+
+31. VMware ESXi is loaded:
+Loading VMware ESXi
+...
+VMKernel loaded sucessfully
+...
+VMware ESXi 5.0.0 (VMKernel Release Build 469512)
+VMware, Inc.  Vmware Virtual Platform
+2x Intel Core i7-2920XM CPU @ 2.50GHz
+4 GiB Memory
+
+Dowload tools to manage this fost from:
+http://0.0.0.0/
+
+  Warning: DHCP lookup failed.  You may be unable to access this system until you customize its
+  network configuration.
+
+<F2> Customize System/View Logs   <F12 Shut Down/Restart
+
+
+FIXME: Obviously still has some network issues.
+
+
+click <F12>
+Authentication Required
+Enter an authorized login name and password for localhost...
+
+Configured Keyboard (US Default)
+Login name:        [ root
+Password:          [ the usual
+
+                               <Enter> OK   <Esc> Cancel
+
+Argh... The password fails.
+
+
+Links
+=====
+Using Virtual Ethernet Adapters in Promiscuous Mode on a Linux Host
+VMware KB
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=287
