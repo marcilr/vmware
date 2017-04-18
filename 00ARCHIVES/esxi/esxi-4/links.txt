@@ -1,0 +1,20 @@
+links.txt
+Created Tue Jun 16 10:22:22 AKDT 2015
+Copyright (C) 2015 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+ESXi 4 related links
+
+
+Links
+=====
+HOW TO Create your own bootable VMWare ESXi 4 usb stick
+Filed Under (VMWare ESXi 4) by Just An Admin on 29-05-2009
+http://www.jadota.com/2009/05/how-to-create-your-own-bootable-esxi-4-usb-stick/
+
+How-to install ESXi 4.0 on USB memory Key
+http://www.vladan.fr/how-to-install-esxi-40-on-usb-memory-key/
+
+VMware vSphere 4 Documentation
+https://www.vmware.com/support/pubs/vs_pubs.html
+
