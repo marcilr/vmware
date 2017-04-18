@@ -1,0 +1,33 @@
+TODO
+Created Thu Feb  9 11:44:27 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Complete
+========
+x Thu Feb  9 11:44:27 AKST 2012 - Now with VMware ESXi 5, it is possible to perform an 
+automated installation to USB storage.  Simply specify usb-storage as part of the install 
+command in an automated install script.
+
+For example:
+  install --firstdisk=usb-storage --overwritevmfs
+
+Create ESXi 5.0 usb boot stick with access to local drives and raid?
+
+vcritical.com/
+
+
+Links
+=====
+VMware ESXi 5 Scripted Install to USB Flash
+August 9, 2011 in Virtualizationism | 1 comment
+http://www.vcritical.com/2011/08/vmware-esxi-5-scripted-install-to-usb-flash/
+
+How to make a bootable VMware vSphere 5 USB installation media
+August 29, 2011 
+This only creates an ESXi installer boot stick.  Not embedded ESXi.
+http://www.satheesh.net/2011/08/29/how-to-make-a-bootable-vmware-vsphere-5-usb-installation-media/
+
+Create bootable usb for esxi 5
+Points to link above.
+http://communities.vmware.com/thread/326249
