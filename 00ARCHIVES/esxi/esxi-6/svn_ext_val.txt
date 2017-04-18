@@ -1,0 +1,13 @@
+#
+# svn_ext_val.txt
+# Created Tue Jun 16 11:19:00 AKDT 2015
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+
+
+#
+# List of subversion repositories to checkout under esxi-6/
+#
+# INSTALL/   Installation of VMware vSphere Hypervisor 6.0
+#
+../../esxi-6/INSTALL/INSTALL   ./INSTALL
