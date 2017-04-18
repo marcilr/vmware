@@ -1,0 +1,16 @@
+links.txt
+Created Tue Jun 16 11:46:54 AKDT 2015
+Copyright (C) 2015 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Installation related links
+
+
+Links
+=====
+Installing ESXi in VirtualBox
+May 16, 2014 by Jonathan Frappier
+http://www.virtxpert.com/installing-esxi-in-virtualbox/
+
+VMware Compatibility Guide
+https://www.vmware.com/resources/compatibility/search.php
