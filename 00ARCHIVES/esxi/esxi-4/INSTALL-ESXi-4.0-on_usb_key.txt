@@ -1,0 +1,37 @@
+INSTALL-ESXi-4.0-on_usb_key.txt
+Created Wed Dec 16 13:04:58 AKST 2009
+by Raymond E. Marcil
+
+
+To Install ESXi 4.0 on USB key:
+
+
+1. Mount ESXi 4.0 installer iso:
+# mount -o loop VMware-VMvisor-Installer-4.0.0.Update01-208167.x86_64.iso /mnt
+
+2. Expand image.tgz
+$ mkdir /tmp/image
+$ /tmp/image/
+$ tar zxvpf /mnt/image.tgz
+
+3. Extract VMware-VMvisor-big-164009-x86_64.dd file.
+$ cd /tmp/image/usr/lib/vmware/installer/
+$ bzip2 -d VMware-VMvisor-big-208167-x86_64.dd.bz2 
+
+4. DD is the linux command you use to create the USB key.
+# dd if=[filepath.img] of=/dev/[devicename]
+
+so
+
+$ cd /tmp/image/usr/lib/vmware/installer/
+# time dd if=VMware-VMvisor-big-208167-x86_64.dd of=/dev/sdf1
+1843200+0 records in
+1843200+0 records out
+943718400 bytes (944 MB) copied, 144.677 s, 6.5 MB/s
+
+real    2m24.702s
+user    0m0.608s
+sys     0m6.284s
+
+Yeh Hah! 
+
