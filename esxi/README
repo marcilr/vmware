@@ -162,6 +162,9 @@ o Alternatively can get VI client from the ESXi 4.0 installer distro.
 
 Filelist
 ========
+glossary.txt
+  Glossary for ESXi
+
 links.txt
   ESXi related links
 
@@ -180,7 +183,7 @@ http://en.wikipedia.org/wiki/VMware_ESX
 
 My VMware ESXi installation checklist
 Last updated $Date: 2009-10-16 12:58:45 $
-Martti Kupar inen <martti.kuparinen@iki .fi>
+Martti Kupar inen <martti.kuparinen@iki.fi>
 Some good info here.
 http://kuparinen.org/martti/comp/vmware/esxichecklist.html
 
