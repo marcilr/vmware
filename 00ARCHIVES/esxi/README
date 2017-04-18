@@ -11,5 +11,8 @@ esxi-4/
 esxi-5/
   ESXi 5
 
+esxi-6/
+  ESXi 6
+
 svn_ext_val.txt
   List of subversion repositories to checkout under esxi/
