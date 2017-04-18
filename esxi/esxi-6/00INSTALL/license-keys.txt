@@ -1,0 +1,12 @@
+license-keys.txt
+Created Tue Jun 16 11:24:39 AKDT 2015
+Copyright (C) 2015 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+At VMware vSphere Hypervisor 6.0 Download Center page:
+
+
+Component                               License key
+---------------------------------------------------------------------
+VMware vSphere Hypervisor 6 License     450CJ-6UL01-J8A81-09886-94M4H
+
