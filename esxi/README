@@ -1,0 +1,307 @@
+README
+Created Sat Jan 10 19:21:38 AKST 2009
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware ESXi
+
+
+"Run all your production applications at near-native performance on the
+next-generation OS-independent VMware hypervisor, now available for free.
+VMware ESXi has the same functionality and performance as VMware ESX but with
+a 32 MB disk footprint."
+
+Compatible motherboards?
+* Support for up to 8 cores
+* Support for x64 guest systems
+* Ability to boot ESXi 4.0 from USB (preferably USB 2.0)
+* At least 2 supported on-board gigabit controllers
+* On-board video
+
+Product: ESXi 4 Single Server Licensed for 1 physical CPUs (1-6 cores per CPU)
+         Looks like 1x 6-core CPU is the way to go.
+
+
+Manage VMware ESXi from Anywhere
+================================
+Get point-and-click management for your ESXi host and its virtual machines
+using the intuitive graphical interface of VMware vSphere Client.  Take
+snapshots of your virtual machines and roll back changes when testing patches
+or updates, monitor performance and  resource utilization, and perform basic
+hardware component monitoring.
+from: http://www.vmware.com/products/esxi/
+
+Want 5x Netgear GA311 gigabit cards:
+  2x in bornite
+  2x in turchoise
+  1x in malachite
+
+NETGEAR GA311 10/100/1000Mbps PCI Gigabit Adapter 
+with Jumbo Frame support 1 x RJ45 - Retail
+price: $24.00 (newegg.com)
+
+
+Commands
+========
+Alt-F1 - Unsupported console.
+
+
+Notes
+=====
+o Enter license: Go to configuration -> licensing in vi client to enter code.
+o IP address reported on console at boot.  
+
+
+ASUS M3N78-VM - malachite
+=============
+Target this motherboard for ESXi.
+
+1x PCIe x1    <== Empty
+1x PCIe x16   <== 3ware 9650SE-8LPML (PCIe x4 in x16 slot)
+2x PCI        <== Creative Labs SB Live!
+                  ethernet card (make/model ???)
+
+Pull 9650SE-8LPML and Creative labs card.
+Have 4x Netgear GA311 gigabit cards to setup 2 lines to bornite?
+
+
+Gigabyte GA-K8VM800M - turchoise
+====================
+cpu:   2.2GHz AMD Athlon 64 3200+
+ram:   4GB
+net:   VIA 6103L (10/100 Mbit) <== Not gigabit!
+sata:  2x SATA 1.5Gb/s         <== Not 3.0Gb/s!
+pci:   3x PCI
+video: 1x AGP <== Use old matrox dual card?
+
+TODO: Add gigabit PCI card.
+
+
+Asus M2N32 WS Pro - bornite
+=================
+Configure with 1x gigabit to switch and 2x gigabit direct to new ESXi on
+turchoise.
+
+cpu:       dual-core AMD Athlon 64 X2 5000+ Brisbane 2.6GHz
+ram:       4GB
+net:       2x Marvell 88E1116 gigabit
+sata:      6x 3.0Gb/s connectors
+           1x eSATA 3.0Gb/s
+video:     ATI Rage XL PCI
+pci:       2x PCIe x16 slots    <== PCI populated config???
+           2x PCIe x1 slots
+           2x PCI-X slots
+           1x PCI 2.2 slot
+gigabit:   Netgear GA311 PCI
+
+
+Sat Dec  3 09:08:06 AKST 2011
+=============================
+Had great get together with current and ex UAA ITS coworkers.  Shena was with
+her friend Kari, downtown at Snow City Cafe, helping her with an art display.
+Cliff Duncan, ITS Desktop lead, was heading back to work to complete user
+migrations and kindly gave me a ride over to the Bear Tooth to meet with the
+team.
+
+Met with:
+
+Mark Rice         themarkrice@gmail.com         Now at Alaska USA
+Josh P. Ford      jpford2@uaa.alaska.edu        New ITS Systems engineer
+Ryan R. Nixon     srnixon@uaa.alaska.edu        Ex-student employee now at
+                                                AK state
+Kurt Mathews      axkim@uaa.alaska.edu          Ex-student employee now at 
+                                                UAA Allied Health Sciences, 
+                                                i.e. nursing.
+Rachel E Waters   rewaters@uaa.alaska.edu       WebApps lead
+Joseph D Watson   jdwatson@dev.uaa.alaska.edu   Systems lead
+
+I actually got to the tooth about 1-1/2 hours after everybody else.  Had to do
+a bit of catchup on a pitcher of the Jurassic Stout.  Pretty good but a bit
+too viscous or slippier for my total liking. 
+
+            Rachel Waters        Joe Watson
+Mark Rice                                         Kurt Mathews
+             Josh Ford      Ryan Nixson   myself
+
+Had a good discussion with Ryan Nixon, Curt Mathews, and Mark Rice about
+VMware ESXi.  
+
+Discussion points:
+o Curt Mathews said that ESXi 5.0 had been released date was August 24, 2011.  
+Ryan Nixon said he had just installed ESXi 4.1 in July a month too early.
+
+o When I asked if VMs could be installed on the same phycial system as ESXi 
+Mark Rice said that ESXi could be installed on a drive with rest of the drive 
+allocated to VMFS for VMs.  Henceforth I think that ESXi could be installed
+on a USB drive with a local disk used for VMs.
+
+o Ryan Nixon and Curt Mathews discussed whether an ISO image could be mounted
+or referced in VMware's vSphere.  Ryan insisted it was *not* possible.  Curt
+thought that it was.
+
+A great group of people that I'd love to go out when it warms up in the
+spring.
+
+
+Thu Dec 17 09:49:15 AKST 2009
+=============================
+Note per discussion with Jim Weller.
+
+o There is some displayed on the ESXi USB boot screen.
+o alt-f1 yields unsupported console with root login.
+o Updated /etc/init.d to turn on ssh.
+o Also supports scp.
+o ESXi USB key boot does not mess with any drives.
+  i.e. Can try booting on malachite.
+o Use VI client to access ESXi.
+o VI client, configuration > licensing to enter the license code.
+o IP address reported on console at boot.
+o Can go to reported IP address to download VI client.
+o Alternatively can get VI client from the ESXi 4.0 installer distro.
+
+
+Filelist
+========
+links.txt
+  ESXi related links
+
+VMware-viclient.exe
+  Under: src/00TARBALLS/vmware/VMware-vSphere-Client-4.0/
+  VMware vSphere Client 4.0.0 Build 162856 installer
+  VMware Infrastructure Client install for access to UAA ITS
+  VMware virtual machines installed on HP blades.
+
+
+Links
+=====
+VMware ESX
+From Wikipedia, the free encyclopedia
+http://en.wikipedia.org/wiki/VMware_ESX
+
+My VMware ESXi installation checklist
+Last updated $Date: 2009-10-16 12:58:45 $
+Martti Kupar inen <martti.kuparinen@iki .fi>
+Some good info here.
+http://kuparinen.org/martti/comp/vmware/esxichecklist.html
+
+VMware vSphere Hypervisor (ESXi)
+http://www.vmware.com/products/vsphere-hypervisor/index.html
+
+Motherboards and unsupported servers that work with
+ESX 4.0 and / or ESXi 4.0 Installable
+Lasted updated - 2010.02.19
+http://vm-help.com/esx40i/esx40_whitebox_HCL.php
+
+VMware ESXi 4
+http://communities.vmware.com/community/vmtn/vsphere/esxi
+
+Unsupported Console and SSH on ESXi 4
+http://professionalvmware.com/2009/05/unsupported-console-and-ssh-on-esxi-4/
+
+Dell grows Intel 'Nehalem EP' iron
+Posted in Servers, 17th June 2009 20:59 GMT
+ESXi on Dell Nehalem EP servers
+Mentions PowerEdge T710, PowerEdge 10G, and 11G machines running
+ESXi hypervisors.
+http://www.theregister.co.uk/2009/06/17/dell_nehalem_server_update
+
+ESXi on Asus m3n78-vm
+Sounds like it works.
+Patch to get nVidia MCP78 SATA controller in ACHI mode working.
+http://communities.vmware.com/message/1249681
+
+Linux-iSCSI Project
+driver and daemon for using iSCSI on Linux
+http://linux-iscsi.sourceforge.net/
+
+A Quick Guide to iSCSI on Linux
+http://www.cuddletech.com/articles/iscsi/
+
+vRanger Pro 4
+Platforms Supported:
+* VMware vSphere - ESX 4.x
+* VMware ESX 3.x 
+http://www.vizioncore.com/products/vRangerPro/
+
+vRanger Pro 3
+* Physical to Virtual Backup and Recovery
+* Backups via VCB
+* ESXi Support
+ESXi Support - Supports VMware 3, 4 (vSphere) and ESXi
+http://www.vizioncore.com/products/vRangerPro/vRanger3x.php
+
+How to access the VMware ESXi hidden console
+http://www.virtualizationadmin.com/articles-tutorials/vmware-esx-articles/\
+general/how-to-access-the-vmware-esxi-hidden-console.html
+
+VMware ESXi Free - Common questions with very straight forward answers
+http://troyfontaine.com/tag/vmware-esxi
+
+Compatible hardware.
+HCL - http://www.vmware.com/resources/compatibility/search.php
+
+Motherboards and unsupported servers that work with ESX 4.0
+and / or ESXi 4.0 Installable
+Lasted updated - 2009.10.05
+http://www.vm-help.com//esx40i/esx40_whitebox_HCL.php
+
+Ultimate ESX Whitebox
+Find hardware for your own VMWare ESX whitebox
+http://ultimatewhitebox.com/
+
+VMware ESXi
+Virtualization Made Free and Easy
+http://www.vmware.com/products/esxi/
+
+VMware vSphere
+VMware ESX and VMware ESXi - Build the Foundation of a Responsive Data Center
+http://www.vmware.com/products/esx/index.html
+
+Q15548 - How to question: I need support for VMware ESX 4.0 and ESXi 4.0
+for 9650SE and 9690SA.
+Is a certified driver available?
+"A certified driver for the LSI 3ware 9650SE and 9690SA for VMware ESX 4.0
+and ESXi 4.0 is available.  The certified driver and installation instructions
+are attached to this KB article."
+http://www.3ware.com/KB/article.aspx?id=15548
+
+Q15416 - Compatibility: Does 3ware have support for VMware ESXi?
+http://www.3ware.com/kb/Article.aspx?id=15416
+
+VMware ESXi
+Implement Production-Proven Server Virtualization for Free
+Has free download link.
+http://www.vmware.com/products/esxi/
+
+VMware ESXi hardware compatibility
+Some good links.
+
+These are nice guides, but they only list tried and known working parts:
+  http://ultimatewhitebox.com/index.php
+  http://www.vm-help.com/
+  http://www.vmware.com/resources/communitysupport/
+
+http://episteme.arstechnica.com/eve/forums/a/tpc/f/77909774/m/211003254931/inc/-1
+
+Ultimate ESX Whitebox
+Nice page from above.
+http://ultimatewhitebox.com/index.php
+
+Unofficial VMware ESX Server
+Sweet page.
+http://www.vm-help.com/
+
+Motherboards and unsupported servers that work with
+ESX 3.5 and / or ESXi 3.5 Installable Really sweet page.
+http://www.vm-help.com/esx/esx3.5/Whiteboxes_SATA_Controllers_for_ESX_3.5_3i.htm
+
+VMware Resources
+Community-Supported Hardware/Software for VMware Infrastructure
+The final friendly compatibility page.
+Short listing though.
+http://www.vmware.com/resources/communitysupport/
+
+Install ESXi 3.5 to an IDE drive
+Useful resolution to VMware ESX Server 3i 3.5.0 installation to IDE.
+From above page.
+http://www.vm-help.com/esx/esx3i/ESXi_install_to_IDE_drive/ESXi_install_to_IDE_drive.php
