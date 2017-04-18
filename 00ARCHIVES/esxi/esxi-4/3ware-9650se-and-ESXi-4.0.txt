@@ -1,0 +1,79 @@
+3ware-9650se-and-ESXi-4.0.txt
+Created Wed Aug 11 15:14:16 AKDT 2010
+by Raymond E. Marcil
+
+
+Great article on configuring 3ware 9650SE controller as a datastore under ESXi 4.0
+
+
+3ware 9650se and ESXi 4.0
+=========================
+December 3rd, 2009
+
+Of course the first thing that I did tonight after receiving my 3ware 9650se 
+was to install it in my ESXi 4.0 server and get it going. There are a few 
+caveats that I expected and a few that I didn't. Hopefully this post 
+will help a few of you out there.
+
+Here are the steps that I performed:
+1. Physically installed card and drives.
+2. Built the logical unit / volume on the card.
+3. Booted ESXi and noticed the card / array not showing up.
+
+I expected #3 from my pre-sales madness research, yeah I'm that bad about 
+pre-sales. There is a driver for ESX 4 that enables the hypervisor to be 
+installed onto the array. For the rest of us with ESXi 4.0 however, the array
+can only be used as a datastore. This isn't an issue anyways since the critical
+files are on the array not the single disk or USB device that we install the 
+ESXi OS onto.
+
+This led me to 3ware' support site to find the exact article regarding this. 
+You can find the article titled "I need support for VMware ESX/ESXi 4.0 and 
+ESX/ESXi 4.0 update 1 for 9650SE and 9690SA. Is a certified driver available?"
+here. Basically, the top half of the document applies to ESX while the lower 
+portion is dedicated to ESXi.
+
+First off, the fact that 3ware has this and other great articles is excellent,
+they seem like the "get it". On the other hand I found something difficult to 
+do, and not for technical reasons. They instruct you to find the file
+"offline-bundle.zip" on the included driver CD.  I searched all over the 
+provided driver CD and had no luck locating it; I couldn't help but think that
+there ought to have been a download link as well***.  After locating the file
+I proceeded down the list of the well written how-to. Unfortunately for me, 
+after running the perl vihostupdate.pl -server x.x.x.x -username root 
+-password "" -b c:\offline-bundle.zip -i command I received zero feedback 
+from the CLI.  I restarted the ESXi server per the documents recommendations 
+and upon reboot, no RAID array. Hrmm, I didn't get any errors or feedback. 
+After shorting the name of the original file to offline-bundle.zip 
+and re-running the command, I did get positive feedback in the form of this \
+message: The update completed successfully, but the system needs to be 
+rebooted for the changes to be effective. Delicious! Now were are working the 
+way we ought to. Restart the ESXi server and enjoy.
+
+*** - Clarification and special note: At the bottom of the page you will see a
+download link for a file named: 
+vmware-esx-drivers-scsi-3w-9xxx_400.2.26.08.035vm40-1.0.4.00000.179560.iso..  
+This ISO image contains the offline-bundle folder. The file that you need for 
+the upgrade/upload is named: AMCC_2.26.08.035vm40-offline_bundle-179560.zip. 
+The process would not succeed until I renamed 
+AMCC_2.26.08.035vm40-offline_bundle-179560.zip to offline-bundle.zip.
+
+Happy virtualizing!
+
+-Himuraken
+
+
+Links
+=====
+3ware 9650se and ESXi 4.0
+December 3rd, 2009
+http://www.righteoushack.net/?p=423
+
+
+15548, VMware ESX/ESXi 4.0 and ESX/ESXi 4.0 update 1 for 9650SE and 9690SA.
+Is a certified driver available?
+Some very good info here.  Found when googling for "I need support for VMware ESX/ESXi 4.0 
+and ESX/ESXi 4.0 update 1 for 9650SE and 9690SA. Is a certified driver available?"
+Original link was gone since LSI bought 3ware.
+http://kb.lsi.com/KnowledgebaseArticle15548.aspx
+
