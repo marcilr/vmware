@@ -1,0 +1,12 @@
+README
+Created Thu Feb  9 12:01:26 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+all-in-one.pdf
+  How to build a ALL-In-One system (ESXi with embedded NAS/SAN Server + other ... 
+  add a storage OS, so it could be a 16-32 GB SLC-USB3 Stick connected to USB2 ...
+  Boot ISO ESXi 4.1 or ESXi 5 (free download from vmware.com), burn it ...
+  http://www.napp-it.org/doc/downloads/all-in-one.pdf
