@@ -1,0 +1,33 @@
+glossary.txt
+Created Sat Dec  3 09:37:55 AKST 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Glossary for ESXi
+
+
+Glossary
+========
+ESXi - Free VMware Hypervisor 
+       http://en.wikipedia.org/wiki/VMware_ESX
+
+RDM  - Raw Device Mapping
+       "As Chopper said, you can use RDM for direct access to the hardware, however, it may be
+       more beneficial to format the SAS drive as a VMFS, create a vmdk file on it, and map that
+       as an additional virtual disk.  This way you'll take advantage of the encapsulation, making
+       it easy to move, clone, snapshot, backup, etc."
+       Attach local disk to a VM in VMware ESXi
+       http://serverfault.com/questions/57575/attach-local-disk-to-a-vm-in-vmware-esxi
+
+P2V  - Physical to virtual can be performed using VMware Converter.
+          
+
+VMFS - Virtual Machine File System is VMware, Inc.'s cluster file system. 
+       It is used by VMware ESX Server and the company's flagship server 
+       virtualization suite, VMware.
+       http://en.wikipedia.org/wiki/VMFS
+
+VMware Converter
+       Convert Microsoft Windows and Linux-based physical machines and third-party image formats
+       to VMware virtual machines.
+       http://www.vmware.com/products/converter/
