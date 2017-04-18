@@ -32,9 +32,9 @@ http://www.syslinux.org/wiki/index.php/The_Syslinux_Project
 VMware Download Center
 http://downloads.vmware.com/
 
-VMware ESX
+VMware ESXi
 From Wikipedia, the free encyclopedia
-http://en.wikipedia.org/wiki/VMware_ESX
+https://en.wikipedia.org/wiki/VMware_ESXi
 
 VMware ESXi Release and Build Number History
 http://www.virten.net/vmware/esxi-release-build-number-history/
