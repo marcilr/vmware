@@ -7,30 +7,37 @@ Re: ESXi 4 Licence - Free license restrictions - cpu usage Jun 12, 2009 3:17 AM
 in response to: fg001
 
 @fg001 :
-Please do not take this as an expert reply - I have very little knowledge about vmware 
-products.
+Please do not take this as an expert reply - I have very little
+knowledge about vmware products.
 
-When you initially apply for the free-esxi download and license you are able to specify how 
-many physical cpus the instance of esxi will be running on. The license you are given is 
-tailored for that physical cpu count. (not the cpu core count)
+When you initially apply for the free-esxi download and license
+you are able to specify how many physical cpus the instance of
+esxi will be running on. The license you are given is tailored
+for that physical cpu count. (not the cpu core count)
 
-To install the license, you use the vSphere Client to connect to your esxi box and add your 
-license (under server configuration - licensing). You can run esxi for 60 days without 
-installing any license - it runs in an evaluation mode. The evaluation mode is set by default 
-on installation, it's up to you to install your license.
+To install the license, you use the vSphere Client to connect to
+your esxi box and add your license (under server configuration
+- licensing).  You can run esxi for 60 days without installing
+any license - it runs in an evaluation mode.  The evaluation
+mode is set by default on installation, it's up to you to install
+your license.
 
-If your physical cpu count differs from that in your issued license, you'll need to get a new 
-license. The only way I could find to do that was to completely restart the entire process of 
-getting a free esxi download/license (+without+ downloading the binaries again of course). By 
-completely restart, I mean re-register with a new email address and everything - if there's a 
-better way +I'd love to know+! When I restarted the entire process I specified the new 
-correct physical cpu count and was sent a new license to install ( installed using vShere 
-Client ).
+If your physical cpu count differs from that in your issued
+license, you'll need to get a new license.  The only way I could
+find to do that was to completely restart the entire process of 
+getting a free esxi download/license (+without+ downloading the
+binaries again of course).  By completely restart, I mean
+re-register with a new email address and everything - if there's
+a  better way +I'd love to know+!  When I restarted the entire
+process I specified the new correct physical cpu count and was
+sent a new license to install ( installed using vShere Client ).
 
-Yes, esxi can handle multiple physical cpus, but the license must match that physical cpu 
-count. Yes, esxi can handle multiple physical cpus each with multiple cores. I would be 
-surprised if you couldn't do 2 x Quadcore or 4 x Dualcore. I really couldn't comment on which 
-was better either (other than I'd go 2 x Quad.)
+Yes, esxi can handle multiple physical cpus, but the license must
+match that physical cpu count.  Yes, esxi can handle multiple
+physical cpus each with multiple cores.  I would be surprised
+if you couldn't do 2 x Quadcore or 4 x Dualcore.  I really
+couldn't comment on which was better either (other than I'd go
+2 x Quad.)
 
 Hope this helps...
 
