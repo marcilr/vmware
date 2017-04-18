@@ -1,0 +1,145 @@
+install-to-VirtualBox.txt
+Created Thu Feb  9 14:27:35 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Testing installation of ESXi 5 to VirtualBox VM.
+
+FIXME: This hangs on "Starting VMKernel Initialization..."
+
+
+Looks like VirtualBox by default has (from bottom of Oracle VM VirtualBox Manager windows):
+  Intel PRO/1000 MT Desktop (NAT)
+
+From VMware download login (Feb 9, 2012):
+  VMware vSphere Hypervisor 5 License: N4637-42K02-M8V48-0KCR6-8H130
+
+pass/vmware-20110817.txt.gpg
+  VMware vSphere Hypervisor License: HJ28L-8EJ1P-58L38-0H184-CE7P4
+
+1. In Oracle VM Virtual Manager v4.1.8 r75467 create new virtual machine.
+Machine > New...
+
+2. At Welcome to the New Virtual Machine Wizard!
+click Next
+
+3. At VM Name and OS Type:
+Name:             ESXi-5
+Operating System: Other
+Version:          Other/Unknown
+click Next
+
+4. At Memory:
+Base Memory Size: 4096MB (4GB)
+click Next
+
+5. At Virtual Hard Disk
+          x Start-up Disk
+          x Create new hard disk
+<unchecked> User existing hard disk
+click Next
+
+6. At Welcome to the virtual disk creation wizard
+
+File type
+x VDI (Virtual Disk Image)
+  VMDK (Virtual Machine Disk)
+  VHD (Virtual Hard Disk)
+  HDD (Parallels Hard Disk)
+
+click Next
+
+7. At Virtual disk storage details
+
+Storage details
+          x Dynamically allocated
+<unchecked> Fixed size
+
+click Next
+
+8. At Virtual disk file location and size
+
+Location: ESXi-5  (default)
+Size:     2.00GB (default)
+
+click Next
+
+9. At Summary:
+File type:  VDI (Virtual Disk Image)
+Details:    Dynamically allocated storage
+Location:   /home/marcilr/VirtualBox VMs/ESX-5/ESX-5.vdi
+Size:       2.0GB (2147483648 B)
+
+click Create
+
+10. At Summary:
+Name:        ESXi-5
+OS Type:     Other/Unknown
+Base Memory: 4096MB
+Start-up Disk: ESXi-5.vdi (Normal: 2.00GB)
+
+click Create
+
+11. Select ESXi-5 
+click Start
+
+12. At Welcome to the First Run Wizard!
+click Next
+
+13. At Select Installation Media
+Media Source: VMware-VMvisor-Installer-5.0.0-469512.x86_64.iso (290.74MB)
+
+click Next
+
+14. Summary
+Type:   CD/DVD-ROM Device
+Source: VMware-VMvisor-Installer-5.0.0-469512.x86_64.iso (290.74MB)
+
+click Start
+
+15. At ESXi-5.0.0-469512-standard Boot Menu
+  <select> ESXi-5.0.0-469512-standard installer
+<unselect> Boot from local disk
+
+hit return
+
+
+16. Watch Loading ESXi Installer
+VMware ESXi 5.0.0 (VMKernel Release Build 469512)
+Starting VMKernel initialiation ...
+
+Appears to hang at this point.
+
+
+Filelist
+========
+VMware-VMvisor-Installer-5.0.0-469512.x86_64.iso
+ESXi 5.0 ISO image (Includes VMware Tools) Boot your server with
+this image in order to install or upgrade to ESXi. This ESXi image
+includes VMware Tools. NOTE: ESXi requires 64-bit capable servers.
+ESXi 5.0 Installable (CD ISO)
+08/24/11  |  5.0.0  |  291 MB  |  Binary (.iso)
+MD5SUM:  4035d2425a750a9f7297aee14a371325
+SHA1SUM: 0d9108a5f5ad75540d6f5f4f91f88f87fc8372d6
+
+product:      VMware vSphere Hypervisor 5.0
+version:      5.0.0
+build number: 456551
+release date: 2011/08/24
+type:         Product Binaries
+
+
+Links
+=====
+VBox Guest: VMware vSphere Hypervisor Based on ESXi
+"PS: if you use ESXi 4.0, you can switch between the installation screen 
+and the console screen with ALT-F1 / ALT-F2, and get a root prompt on the 
+console screen by typing "unsupported".
+https://forums.virtualbox.org/viewtopic.php?f=4&t=33532
+
+Minimum system requirements for installing ESX/ESXi
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003661
+
+Boot hangs at vmkernel initialization
+Sep 20, 2007 4:32 AM
+http://communities.vmware.com/message/755500
