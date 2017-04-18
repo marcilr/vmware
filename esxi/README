@@ -162,6 +162,9 @@ o Alternatively can get VI client from the ESXi 4.0 installer distro.
 
 Filelist
 ========
+00INSTALL/
+  Installation of ESXi
+
 glossary.txt
   Glossary for ESXi
 
