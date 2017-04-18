@@ -1,0 +1,27 @@
+VMware-Go.txt
+Created Wed Aug 31 08:59:30 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+
+VMware Go
+
+"One place for your SMB to easily manage physical and virtual IT infrastructures from the
+cloud - eliminating the burden of IT management allowing  you to focus on your business."
+
+Still not certain exactly what it is.
+
+
+Wed Aug 31 08:59:30 AKDT 2011
+=============================
+Installed VMware Go on blossite-win7-x64 virtual machine to get access top ESXi 5.0.0
+iso image.
+
+
+Links
+=====
+VMware Go
+https://go.vmware.com/
+
+Vmware Go installation
+https://go.vmware.com/default2.aspx
