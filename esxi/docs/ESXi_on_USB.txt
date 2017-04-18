@@ -1,0 +1,67 @@
+ESXi_on_USB.txt
+Created Tue Oct 20 16:00:23 AKDT 2009
+by Raymond E. Marcil
+
+
+From Jim Weller's Sep 30, 2009 email.
+
+
+vSphere ESXi on a USB memory stick
+==================================
+Posted by Duncan Epping in June 9th, 2009
+Published in Server
+
+The procedure has not changed much since ESXi 3.5 but I thought I would 
+document it anyway. A lot of people seem to end up here by googling 
+"USB ESXi vSphere".
+
+Here you go:
+   1. First get the following tools: 7-Zip(Free), WinImage(Demo)
+   2. Download the ESXi ISO (VMware-VMvisor-Installer-4.0.0-164009.x86_64.iso)
+   3. Open the ISO with 7-Zip
+   4. Open "image.tgz" with 7-Zip
+   5. Browse to "image.tgz.temptar\usr\lib\vmware\installer\VMware-VMvisor-big-164009-x86_64.dd.bz2\"
+   6. Extract "VMware-VMvisor-big-164009-x86_64.dd"
+   7. Open WinImage and go to Disk, click on "Restore Virtual Harddisk Image 
+on physical drive"
+   8. Select a physical drive
+   9. Select "VMware-VMvisor-big-164009-x86_64.dd"
+  10. And click "yes" to write the DD image to the USB Disk
+
+Done! Now, let's see if I can get my old Dell GX620 running with vSphere ESXi
+
+
+Need 1GB USB stick.
+
+--------------
+
+Also the same as before, you can use dd under linux/cygwin
+  dd if=VMware-VMvisor-big-164009-x86_64.dd of=device (/dev/sdX) bs=1M
+
+--------------
+
+Hi Duncan, I have successfully used your method to deploy ESXi4 on USB keys. The only way to 
+run VMs is to attached a data store via iSCSI, NFS or local drives. Personally I want to use 
+the USB key itself to store my VMs but could not find out a way... Any idea ?
+
+--------------
+
+Actually, the method has changed considerably since ESX 3.5. In fact, the CD-ROM installer 
+will find your USB flash drive and install directly to it without resorting to imaging or 
+dd.
+
+http://solori.wordpress.com/2009/05/22/preview-install-esxi-4-0-to-flash/
+
+The process - from CD-boot to initial start-up – is about 14 minutes long, depending on 
+CD-ROM speed and flash speed.
+
+
+Links
+=====
+vSphere ESXi on a USB memory stick
+http://www.yellow-bricks.com/2009/06/09/vsphere-esxi-on-a-usb-memory-stick/
+
+Preview: Install ESXi 4.0 to Flash
+Looks easy.  Boot to CD install to flash.
+http://solori.wordpress.com/2009/05/22/preview-install-esxi-4-0-to-flash/
+
