@@ -6,9 +6,10 @@ by Raymond E. Marcil <marcilr@gmail.com>
 VMware vSphere Hypervisor
 Download Center
 
-Welcome to the VMware vSphere Hypervisor Download Center! This download center features 
-technical documentation, installation demos and classes to make your use of vSphere 
-Hypervisor a success.
+Welcome to the VMware vSphere Hypervisor Download
+Center! This download center features technical
+documentation, installation demos and classes to
+make your use of vSphere Hypervisor a success.
 
 Top VMware vSphere Hypervisor Assets 
 o VMware ESXi 5.0 Getting Started Guide
@@ -21,17 +22,21 @@ o Register for vSphere Hypervisor (ESXi) classes
 Option 1: VMware Go
 ===================
 VMware Go
-A free web-based service that lets users virtualize their servers with just a few mouse clicks.
+A free web-based service that lets users virtualize
+their servers with just a few mouse clicks.
 
-VMware Go Pro adds patch management, software license management, and hardware asset management 
+VMware Go Pro adds patch management, software license
+management, and hardware asset management 
 to control assets and secure IT infrastructure.
 
 Launch VMware Go/VMware Go Pro [https://go.vmware.com/]
 ------------------------------    
 
-This link will take you to the VMware Go web site which guides users through the installation 
-and configuration of VMware ESXi.  Please make a note of your license key as you will be asked 
-for it within 60 days of using VMware Go.
+This link will take you to the VMware Go web site which
+guides users through the installation and configuration
+of VMware ESXi.  Please make a note of your license key
+as you will be asked for it within 60 days of using
+VMware Go.
 
 VMware Go System Requirements
 o Windows XP SP3, Windows Vista SP1 or SP2, or Windows 7
@@ -100,16 +105,28 @@ based on VMware ESXi 3.5 and is supported on 32-bit hardware.
 Filelist
 ========
 bootable-usb-ESXi-5.txt
-  Create bootable usb key with ESXi 5.
-
-ESXi-5.0-license.txt
-  ESXi 5.0 license agreement.
+  Create bootable usb key with ESXi 5
 
 ESXi-5.0.txt
-  VMware ESXi 5.0 info.
+  VMware ESXi 5.0 info
 
-license-ESXi-5.txt
-  VMware vSphere Hypervisor 5 License     N4637-42K02-M8V48-0KCR6-8H130
+links.txt                                                
+  ESXi 5 related links
+
+install-to-usb-flash.txt
+  Install ESXi to USB flash 
+
+install-to-VirtualBox.txt
+  Installation of ESXi 5 to VirtualBox VM
+
+install-to-Workstation-7.1.4.txt
+  Installation to VMware Workstation 7.1.4 on boothite workstation
+
+promiscuous-mode.txt
+  Using Virtual Ethernet Adapters in Promiscuous Mode on a Linux Host
+
+TODO 
+  Items for VMware 5
 
 VMware vSphere Hypervisor
 Download Center
