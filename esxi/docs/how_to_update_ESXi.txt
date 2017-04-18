@@ -1,0 +1,46 @@
+how_to_update_ESXi.txt
+Created Thu Oct 30 08:51:34 AKDT 2008
+by Raymond E. Marcil
+
+
+How to Update ESXi
+==================
+October 14, 2008 at 2:12 pm | ESXi, Howto
+- Posted by admin | Add Your Comments
+
+ESXi patches and updates can be downloaded from here.
+
+The Quick & Easy way to Install the patches are..
+
+If VMware Infrastructure Update(VIU) is not installed, reinstall 
+VMware Infrastructure Client and select (VIU) during the install. 
+Its part of that.
+
+Shutdown all the VM's. The Update will reboot the ESXi host
+
+1. Connect the VI Client to the host that needs to be updated.
+2. Choose Start > Programs > VMware > VMware Infrastructure Update. 
+(this is installed during the VI client install for ESXi)
+3. On the Hosts tab, select the ESXi hosts to check for updates.
+4. On the Updates tab, click Check Now.
+5. Install the Update. This will download the Update.
+6. Once the update is downloaded, will prompt for authentication for 
+your ESXi host and install the update.
+7. From VI Client, reboot the ESXi host
+
+
+From: Jim Weller <axjww@uaa.alaska.edu>
+To: VMware_Admins <VMware_Admins@uaa.alaska.edu>,
+Kurtis Bunker 
+<kurtbunker@gmail.com>
+Subject: updating my home esxi
+Date: Wed, 29 Oct 2008 18:25:25 -0800
+
+Best and shortest discussion that covers a relatively confusing 
+subject to have to google.
+
+http://www.vdi.co.nz/?p=141
+
+Jim Weller, Lead Software Engineer
+Information Technology Services, University of Alaska Anchorage
+(907) 786-4656 jim.weller@uaa.alaska.edu 
