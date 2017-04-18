@@ -1,0 +1,8 @@
+license-ESXi-5.txt
+Created Tue Aug 30 16:01:32 AKDT 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Licensing
+=========
+VMware vSphere Hypervisor 5 License 	N4637-42K02-M8V48-0KCR6-8H130
