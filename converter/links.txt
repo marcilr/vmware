@@ -46,6 +46,9 @@ More seriously - Converter does not support SSH key login,
 you have to use password.
 https://communities.vmware.com/thread/508799
 
+vCenter Converter
+http://www.vmware.com/products/converter.html
+
 VMWare Converter How to Guide
 Details of converter v4.0.1
 https://kb.swivelsecure.com/wiki/index.php/VMWare_Converter_How_to_Guide
