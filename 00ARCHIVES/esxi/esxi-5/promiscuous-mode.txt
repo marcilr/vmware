@@ -1,0 +1,102 @@
+promiscuous-mode.txt
+Created Fri Feb 10 07:35:48 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+
+Using Virtual Ethernet Adapters in Promiscuous Mode on a Linux Host
+
+
+Fri Feb 10 07:48:08 AKST 2012
+=============================
+On UAA ITS boothite workstation got error whilst installed ESXi 5.0 to VMware Workstation
+7.1.4 machine "The virtual machine's operating system has attempted to enable promiscuous
+on adapter Ethernet0.  This is not allowed for security reasons."  Googled up solution
+at vmware.com
+
+1. Inspect VMware's vmnetx devices (/dev/vmnet0 if using basic bridged mode):
+
+$ ls -l /dev/vmnet*
+crw------- 1 root root 119, 0 Feb  9 15:22 /dev/vmnet0
+crw------- 1 root root 119, 1 Feb  9 15:22 /dev/vmnet1
+crw------- 1 root root 119, 8 Feb  9 15:22 /dev/vmnet8
+$ 
+
+2. Create new vmnet group:
+
+# groupadd vmnet
+$ grep vmnet /etc/group
+vmnet:x:1011:
+$
+
+3. Change ownership of /dev/vmnetx devices to vmnet group:
+# chgrp vmnet /dev/vmnet*
+# chmod g+rw /dev/vmnet*
+# ls -l /dev/vmnet*
+crw-rw---- 1 root vmnet 119, 0 Feb  9 15:22 /dev/vmnet0
+crw-rw---- 1 root vmnet 119, 1 Feb  9 15:22 /dev/vmnet1
+crw-rw---- 1 root vmnet 119, 8 Feb  9 15:22 /dev/vmnet8
+#
+
+4. Add marcilr account to vmnet in /etc/group:
+vmnet:x:1011:marcilr
+
+5. Logout and login to get vmnet group:
+$ id
+uid=1000(marcilr) gid=1000(marcilr) groups=1000(marcilr),24(cdrom),25(floppy),29(audio),30(dip),\
+40(src),44(video),46(plugdev),50(staff),100(users),109(netdev),110(bluetooth),113(fuse),\
+116(scanner),1002(tivo),1003(svn),1004(scans),1010(sshfs),1011(vmnet)
+
+Looks good.
+
+
+How do I set my virtual Ethernet adapter on my Linux host to run in promiscuous mode? 
+
+Solution
+========
+VMware software does not allow the virtual Ethernet adapter to go into promiscuous mode unless the
+user running the VMware software has permission to make that setting.  This follows the standard 
+Linux practice that only root can put a network interface into promiscuous mode.
+
+When you install and configure your VMware software, you run the installation as root, and we 
+create the vmnet0-vmnet3 devices with root ownership and root group ownership.  We also give those
+devices read/write access for the owner root only.  For a user to be able to set the virtual 
+machine's network adapter to promiscuous mode, the user who launches the VMware product needs to 
+have read/write access to the vmnetx device (/dev/vmnet0 if using basic bridged mode).
+
+One way to do this is to create a new group, add the appropriate users to the group, and give that
+group read/write access to the appropriate device. These changes need to be made on the host 
+operating system as root (su). For example:
+
+    chgrp newgroup /dev/vmnet0
+    chmod g+rw /dev/vmnet0
+
+    where newgroup is the group that should have the ability to set vmnet0 to promiscuous mode.
+
+If you want all users to be able to set the virtual network adapter (/dev/vmnet0 in our example) 
+to promiscuous mode, you can simply run the following command on the host operating system as root:
+
+    chmod a+rw /dev/vmnet0
+
+For more information about issues with promiscuous mode, see Host Crashes at Power on with Bridged
+ Networking (514).
+ 
+For Linux systems that use udev, you may see the error as device nodes are recreated at boot time:
+
+    The virtual machines operating system has attempted to enable promiscuous mode on adapter 
+    Ethernet0. This is not allowed for security reasons. 
+
+To resolve this error, create the vmnet* devices with the desired ownership and permissions under 
+/udev/devices/, rather than creating it under /dev/, as above. .
+ 
+Note: The location depends on the flavor of Linux.
+
+vmware.com/
+
+
+Links
+=====
+Using Virtual Ethernet Adapters in Promiscuous Mode on a Linux Host
+VMware KB
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=287
+
