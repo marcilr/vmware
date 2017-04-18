@@ -1,0 +1,58 @@
+install-to-usb-flash.txt
+Created Thu Feb  9 12:09:31 AKST 2012
+by Raymond E. Marcil <marcilr@gmail.com>
+
+
+
+"The ESXi installer will install directly to a USB flash drive as it did in 4 and 4.1:
+
+vmware.com/
+
+# mount -t iso9660 -o loop VMware-VMvisor-Installer-5.0.0-469512.x86_64.iso /mnt
+
+
+
+
+VMware ESXi 5 Scripted Install to USB Flash
+August 9, 2011 in Virtualizationism | 1 comment
+===============================================
+One of the great features of VMware vSphere is the capability to boot VMware ESXi from USB 
+flash - eliminating local storage and array controllers can reduce the acquisition and 
+operational costs for hypervisor hosts.
+
+Now with VMware ESXi 5, it is possible to perform an automated installation to USB storage.
+Simply specify usb-storage as part of the install command in an automated install script.
+
+For example:
+
+  install --firstdisk=usb-storage --overwritevmfs
+
+For more flexibility in a single script, multiple disk types can be specified; they will be 
+tried in order.  Below is an example install command from a script for HP servers.  If USB 
+flash is not installed, the on-board SAS disks will be used.  If neither are present - such 
+as when installing virtual ESXi systems - generic local storage is the last resort.
+
+  install --firstdisk=usb-storage,hpsa,local --overwritevmfs
+
+Perhaps not one of the major new feature of VMware vSphere 5, but handy.
+
+
+Links
+=====
+VMware ESXi 5 Scripted Install to USB Flash
+August 9, 2011 in Virtualizationism | 1 comment
+http://www.vcritical.com/2011/08/vmware-esxi-5-scripted-install-to-usb-flash/
+
+Format a USB Flash Drive to Boot the ESXi Installation or Upgrade
+http://pubs.vmware.com/vsphere-50/index.jsp?topic=/com.vmware.vsphere.install.doc_50/GUID-33C3E7D5-20D0-4F84-B2E3-5CD33D32EAA8.html
+
+Create bootable usb for esxi 5
+http://communities.vmware.com/message/1817688
+
+How to make a bootable VMware vSphere 5 USB installation media
+http://www.satheesh.net/2011/08/29/how-to-make-a-bootable-vmware-vsphere-5-usb-installation-media/
+
+VMware vSphere 5 Documentation
+http://pubs.vmware.com/vsphere-50/index.jsp
+
+
