@@ -1,0 +1,104 @@
+nics.txt                                                  
+Created Wed Dec 14 15:03:07 AKST 2011
+by Raymond E. Marcil <marcilr@gmail.com>
+
+ESXi compatible nics.
+
+For the virtualization server buildup ideally want 6 nics.
+Unfortunately I think two 4-port or 4-port and 2-port PCIe 
+Intel nics is the way to go.  Show me the dollars.
+
+Best compatible PCIe Intel nic?
+
+Intel E1G44HT  - quad port, PCIe 2.0, 82580 chipset, 5GT/s lane x4 lane
+Intel E1G44ET2 - quad port, PCIe 2.0, 82576 chipset, 2.5 GT/s Lane x 4 Lane
+Intel E1G42ET  - dual port, PCIe 2.0, 82576 chipset, 2.5 GT/s Lane x 4 Lane
+  "This card does work with ESXi 5 using out of the box drivers." (newegg - Feb 8, 2012)
+
+o Intel 82576 Gigabit Ethernet Controller
+o Low-profile
+o iSCSI remote boot support
+o Compatible with x4, x8, and x16 standard and low-profile PCI Express* slots
+o Virtual Machine Device Queues (VMDQ)
+
+Intel Ethernet Server Adapter I350-T2 <==
+  2-port, PCIe v2.0 (5.0GT/s), 5 GT/s, x4 Lane, Intel I350, VMDQ, $128 - $136
+ 
+Intel Ethernet Server Adapter I350-T4 <==
+  4-port, PCIe v2.0 (5.0GT/s), 5 GT/s, x4 Lane, Intel I350, VMDQ, $299 - $318
+
+Intel Ethernet Server Adapter I340-T2
+  2-port, PCIe v2.0 (5.0GT/s), 5 GT/s, x4 Lane, Intel 82580, VMDQ, n/a (discontinued ???)
+
+Intel Ethernet Server Adapter I340-T4
+  4-port, PCIe v2.0 (5.0GT/s), 5 GT/s, x4 Lane. Intel 82580, VMDQ, $247 - $260
+
+
+Does ESXi 5 provide great compatibility for multiple NIC?
+=========================================================
+Of course, always add NIC's ESX/ESXi.  Minimum recommended is 4, and 6 in case you 
+have iSCSI based storage.
+
+NIC0 & NIC1 - vMotion & Management network -ensure only is active and other is stand by.
+NIC2 & NIC3 - Virtual Machines
+NIC4 & NIC5 - iSCSI (If you have)
+
+Also ensure NIC01 goes to Phy Switch01 and NIC0 goes to Phy Switch02, this way you can 
+achieved redudancy even at switch level
+
+Same for other nic as well. 
+
+Hope it helps
+
+vmware.com/message/1839362
+
+
+
+
+
+NETGEAR GA311 Gigabit Adapter:
+  Does not work with VMware ESXi. VMware does not have a driver for it.
+  newegg.com/
+
+Intel PRO/1000:
+  If you need a NIC for ESXi get the Intel PRO/1000 single port Desktop Adapter.
+  newegg.com/
+
+
+
+Links
+=====
+VMware ESXi 5.0 Driver for Intel 82580 and I350 Gigabit Ethernet...
+VMware ESXi 5.0 driver includes version 3.1.17 of the Intel igb driver,
+which enables support for products based on the Intel 82580 and 
+I350 Gigabit Ethernet Controllers.
+This page has a great selection of Intel drivers.
+http://downloads.vmware.com/d/details/dt_esxi50_intel_i350/dHRAYnQlQGhiZHAlJQ==
+
+VMware ESX Server 3.5 Driver CD for Intel 82575 and 82576 Gigabit...
+http://downloads.vmware.com/d/details/esx_35u5_intel_82575_82576_dt/dGViZGolaGJkZXBo
+
+Intel Gigabit Server Adapters
+http://ark.intel.com/products/family/46829
+
+Intel Gigabit ET2 Multi-Port Server Adapters 
+http://www.intel.com/content/www/us/en/network-adapters/gigabit-network-adapters/ethernet-et2-multi-port.html
+
+Intel Gigabit ET2 Quad Port Server Adapter
+$385 - $402, Intel 82576, VMDQ, PCIe v2.0, 2.5 GT/s, x4 Lane
+http://ark.intel.com/products/49187/Intel-Gigabit-ET2-Quad-Port-Server-Adapter
+
+Intel Gigabit ET Dual Port Server Adapter
+$145 - $160, Intel 82576, VMDQ, PCIe v2.0, 2.5 GT/s, x4 Lane
+http://ark.intel.com/products/50397/Intel-Gigabit-ET-Dual-Port-Server-Adapter
+
+NETGEAR GA311 Gigabit Adapter 
+with Jumbo Frame support 10/100/1000Mbps PCI 1x RJ45
+http://www.newegg.com/Product/Product.aspx?Item=N82E16833122133&Tpk=ga311
+
+Does ESXi 5 provide great compatibility for multiple NIC?
+http://communities.vmware.com/message/1839362
+
+VMware ESXi 5 whitebox NIC support
+Some good links on this page.
+http://www.ivobeerens.nl/tag/whitebox/
