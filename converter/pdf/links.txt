@@ -1,0 +1,17 @@
+links.txt
+Created Tue Apr 25 10:49:52 AKDT 2017
+Copyright (C) 2017 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Portable Document Format related links
+
+
+Links
+=====
+VMware vCenter Converter Standalone 6.1 Release Notes
+VMware vCenter Converter Standalone 6.1.1 | 16 FEB 2016 | Build 3533064
+https://pubs.vmware.com/Release_Notes/en/converter/61/conv_sa_61_rel_notes.html
+
+VMware vCenter Converter Standalone 6.0 Release Notes
+VMware vCenter Converter Standalone 6.0 | 14 May 2015 | Build 2716716
+https://www.vmware.com/support/converter/doc/conv_sa_60_rel_notes.html
