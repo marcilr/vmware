@@ -11,6 +11,9 @@ Links
 Download URLs for VMware vSphere Client (2089791)
 https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2089791
 
+Download  VMware vSphere
+https://my.vmware.com/web/vmware/info?slug=datacenter_cloud_infrastructure/vmware_vsphere/6_0
+
 GCI web-based vsphere:
 User name: <blank>
 Password:  <blank>
