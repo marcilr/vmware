@@ -8,6 +8,17 @@ vSphere related links
 
 Links
 =====
+Download URLs for VMware vSphere Client (2089791)
+https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2089791
+
+GCI web-based vsphere:
+User name: <blank>
+Password:  <blank>
+x Use Windows session authentication
+click Login
+https://192.168.56.30/vsphere-client/?csp
+
+
 VMware vCenter Singel Sign-On
 GCI OSS vsphere-client login,
 Provided by Jerry Buttitta Fri March 17, 2017
