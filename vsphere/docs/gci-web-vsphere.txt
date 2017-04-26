@@ -1,0 +1,16 @@
+gci-web-vsphere.txt
+Created Wed Apr 26 13:43:30 AKDT 2017
+Copyright (C) 2017 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+GCI web-based vSphere client
+
+
+Access to the GCI web-based vsphere works well in windows via 
+"Use Windows session authentication" option:
+
+  User name: <blank>
+  Password:  <blank>
+  x Use Windows session authentication
+  click Login
+  https://192.168.56.30/vsphere-client/?csp
