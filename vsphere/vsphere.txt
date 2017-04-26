@@ -1,0 +1,39 @@
+vsphere.txt
+Created Wed Apr 26 13:52:07 AKDT 2017
+Copyright (C) 2017 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware vSphere Client
+
+
+GCI web-based vSphere client
+============================
+Access to the GCI web-based vsphere works well in windows via 
+"Use Windows session authentication" option:
+
+  User name: <blank>
+  Password:  <blank>
+  x Use Windows session authentication
+  click Login
+  https://192.168.56.30/vsphere-client/?csp
+
+Successfully tested Wed April 26, 2017
+
+
+Wed Apr 26 13:53:25 AKDT 2017
+=============================
+o Sucessfully tested login via GCI web-based vSphere client at:
+  https://192.168.56.30/vsphere-client/?csp
+
+  This prompted for installation of the VMware Client Integration
+  Plugin that installed:
+    VMware-ClientIntegrationPlugin-6.0.0.exe
+
+o Installed VMware vSphere Client 6.0 Update 3 on 
+  rmarcil win 7 pro machine from:
+    http://vsphereclient.vmware.com/vsphereclient/5/1/1/2/5/0/8/\
+    VMware-viclient-all-6.0.0-5112508.exe
+
+Links
+=====
+
