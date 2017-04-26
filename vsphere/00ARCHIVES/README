@@ -7,3 +7,7 @@ Filelist
 ========
 svn_ext_val.txt
   List of repo hierarchical directories to checkout under vsphere/
+
+vsphere.txt
+  VMware vSphere docs.
+  This is the old version from UAA circa 2009.
