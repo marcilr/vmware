@@ -14,6 +14,14 @@ convsa_60_guide.pdf
   VMware vCenter Converter Standalone
   User's Guide
   vCenter Converter Standalone 6.0
+  Helper virtual machine to powered on source machine
+  o TCP Ports: 22
+  o Used to establish an SSH connection between the helper virtual
+    machine and the source machine. By default, the IP address of
+    the helper virtual machine is assigned by DHCP. If no DHCP
+    server is available on the destination network, you must
+    manually assign the helper virtual machine an IP address.
+    p. 27
   pages: 104
   http://www.vmware.com/pdf/convsa_60_guide.pdf
 
