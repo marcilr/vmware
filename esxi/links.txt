@@ -17,6 +17,9 @@ http://www.damnsmalllinux.org/
 How to clone virtual machines in VMware ESXi
 http://www.dedoimedo.com/computers/vmware-esxi-clone-machine.htm
 
+Installing ESXi on a supported USB flash drive or SD flash card (2004784)
+https://kb.vmware.com/s/article/2004784
+
 Intel Gigabit Server Adapters
 http://ark.intel.com/products/family/46829
 
