@@ -1,0 +1,21 @@
+fusion.txt
+Created Wed Apr 18 09:52:02 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware Fusion
+
+
+VMware Fusion: Powerfully Simple Virtual Machine for Mac
+
+VMware Fusion gives Mac users the power to run Windows on Mac
+along with hundreds of other operating systems side by side
+with Mac applications, without rebooting.  Fusion is simple
+enough for home users and powerful enough for IT professionals,
+developers and businesses.
+
+
+Links
+=====
+Fusion
+https://www.vmware.com/products/fusion.html
