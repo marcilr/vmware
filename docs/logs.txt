@@ -1,0 +1,24 @@
+logs.txt
+Created Wed Apr 18 08:58:22 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Log files
+
+
+Log files are just that- a log of virtual server activity for a
+single virtual server. Here is an example of what a log file looks
+like:
+  Microsoft MVP Program
+
+Author is a Windows Server System - Exchange Server MVP
+  Read More
+
+by: David Davis
+--dokles.wordpress.com
+
+
+Links
+=====
+Virtualize Your IT Infrastructure   | VMware & Hyper-V |
+https://dokles.wordpress.com/category/vmware/page/35/
