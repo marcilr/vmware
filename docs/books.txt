@@ -1,0 +1,13 @@
+books.txt
+Created Wed Apr 18 09:16:58 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Books for VMware
+
+
+The Book of Vmware: The Complete Guide to Vmware Workstation
+  by Brian Ward
+  This one looked useful.  However, could  be version specific.
+  $26.37 (Amazon Jan. 3, 2008)
+
