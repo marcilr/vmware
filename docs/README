@@ -24,6 +24,9 @@ files.txt
   VMware Workstation 5.5 What Files Make Up a Virtual Machine?
   https://www.vmware.com/support/ws55/doc/ws_learning_files_in_a_vm.html
 
+logs.txt
+  Log files
+
 mac-os-x.txt
   Wow, looks like Mac OS X under VMware is possible.
 
