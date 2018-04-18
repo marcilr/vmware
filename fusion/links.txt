@@ -1,0 +1,13 @@
+links.txt
+Created Wed Apr 18 09:54:35 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware Fusion related links
+
+
+Links
+=====
+Fusion
+https://www.vmware.com/products/fusion.html
+
