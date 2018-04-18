@@ -1,0 +1,64 @@
+vmware.txt
+Created Wed Apr 18 08:43:27 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware
+
+
+Fri Nov  4 14:16:52 AKDT 2011
+=============================
+I like ESXi for the handful of random non-production systems I use.  I just
+don't buy that VM is the right direction for every company as a primary
+platform.  Sure, small scale VM has it's benefits, but in a large scale
+scenario the overhead and vendor lock in becomes short sighted.  Yes,
+eventually with enough VM in your datacenter, you'll save money, but at what
+long term expense?  What's that vendor proprietary solution going to do for
+you in 10 years when you want to move to the next big thing?  I say build out
+your DC using commodity hardware and design your applications and network with
+fault tolerance and efficiency in mind.  Need a more efficient footprint?  Try
+microservers http://www.dell.com/us/business/p/poweredge-c5125/pd [dell.com]
+
+1. Focus on getting the best bang for your buck with commodity hardware
+2. Focus your people on streamlining operations for this model (instead of
+   focusing on how to integrate VM with existing models, etc) 
+3. Design your applications/architecture around not having some magical 
+   single box with a thousand mac addresses that can move around the data
+   center on a whim.  Who would be dumb enough to believe in this model?
+   Google and Facebook, for starters.
+
+Waste of time/money (Score:2)
+by ctime (755868) on Friday November 04, @01:48PM (#37949978) 
+http://it.slashdot.org/story/11/11/04/1712205/vmware-a-falling-giant
+
+
+Wed Feb 18 08:10:04 AKST 2009
+=============================
+"But Dell, Fujitsu Siemens, HP, IBM, and NEC all ship servers with x86
+virtualization, often VMware's ESX, built in.  A hypervisor talks directly
+to the hardware in lieu of of the operating system.  It lifts the OS up a
+layer and assigns it the task of communicating with the application.  Windows
+used to talk directly to the hardware; in virtualized environments, it just
+hands off requests for hardware services to the hypervisor."
+
+"Dell's lowend $349 netbook runs with consumer-friendly Ubuntu Linux."
+--informationweek.com
+
+
+VMware Server & Workstation Disk Files Explained
+================================================
+When using VMware Server & Workstation, you will, at some point, go to the
+directory where your VMware virtual machines are stored. Inside this directory,
+you will see a number of strange files and you will probably wonder what they
+are and what they do. Now, you can stop wondering and find out.
+--petri.com
+
+
+
+Links
+=====
+VMware File Types Explained: VMDK, VMEM, VMSN, VMSD, VMX & More
+https://www.petri.com/virtual_vmware_files_explained
+
+Why Windows Must Go Open Source, Information Week, p. 24
+https://www.informationweek.com/software/operating-systems/why-windows-must-go-open-source/d/d-id/1076104?
