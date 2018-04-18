@@ -1,0 +1,46 @@
+files-you-should-know.txt
+Created Wed Apr 18 09:05:03 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Files you should know
+
+
+Log files - Log files are just that- a log of virtual server activity for a
+single virtual server.  Log files should be used only when you are having
+trouble with a virtual machine.
+
+VMDK files - VMDK files are the actual virtual hard drive for the virtual
+guest operation system (virtual machine / VM). You can create either dynamic
+or fixed virtual disks.  With dynamic disks, the disks start small and grow as
+ the disk inside the guest OS grows. With fixed disks, the virtual disk and
+guest OS disk start out at the same (large) disk.  For more information on
+monolithic vs. split disks see this comparison from sanbarrow.com.
+
+VMEM - A VMEM file is a backup of the virtual machine's paging file.  It will
+only appear if the virtual machine is running, or if it has crashed.
+
+VMSN & VMSD files - these files are used for VMware snapshots. A VMSN file is
+used to store the exact state of the virtual machine when the snapshot was
+taken. Using this snapshot, you can then restore your machine to the same
+state as when the snapshot was taken. A VMSD file stores information about
+snapshots (metadata). You'll notice that the names of these files match the
+names of the snapshots.
+
+NVRAM files - these files are the BIOS for the virtual machine. The VM must
+know how many hard drives it has and other common BIOS settings. The NVRAM
+file is where that BIOS information is stored.
+
+VMX files - a VMX file is the primary configuration file for a virtual
+machine. When you create a new virtual machine and answer questions about the
+operating system, disk sizes, and networking, those answers are stored in this
+file. As you can see from the screenshot below, a VMX file is actually a
+simple text file that can be edited with Notepad.
+--communities.vmware.com/
+
+
+Links
+=====
+Virtual Machine File Types
+Posted by mjha in Alex_Hunt's Blog on Nov 9, 2014 5:58:44 AM
+https://communities.vmware.com/blogs/vgeeks/2014/11/09/vmware-file-types
