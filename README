@@ -7,45 +7,10 @@ VMware
 
 
 
-Articles
-========
-Why Windows Must Ho Open Source
-by Charles Babcock, cbabcock@techweb.com
-Information Week, Feb 2, 2009, p. 22-28 
-
-
-Books
-=====
-The Book of Vmware: The Complete Guide to Vmware Workstation
-by Brian Ward
-
-This one looked useful.  However, could  be version specific.
-$26.37 (Amazon Jan. 3, 2008)
-
-
-
 Filelist
 ========
 00ARCHIVES/
   Archives
-
-VMware Firewall ports(v1.0).xls
-  BEAUTIFUL vmware firewall sheet and diagram!!!!
-  From Jim Weller on Jan. 1, 2009
-  http://communities.vmware.com/docs/DOC-5401
-
-  Created on: May 22, 2008 1:56 PM by rake
-  Last Modified:  May 23, 2008 2:53 PM by rake
- 
-  VMWARE NETWORK PORTS Goal: To create a comprehensive list of known 
-  ports & protocols used for all VMware communications, in order to configure 
-  firewalls to allow specified traffic. 
-
-  V1.0 Current version (First Draft) V1.1 Fill in any blank cells. V1.2 
-  Improve descriptions in "Functionality" column. Detailed info - How each 
-  port is used. V2.0 Add a column to indicate which VMware software and 
-  version # is affected. If this information is available elsewhere, I have 
-  not found it, please notify me! Thank you Cameron Rake
 
 backups/
   Backups with veeam and vranger-pro
@@ -59,19 +24,6 @@ docs/
   VMware documentation
   http://www.vmware.com/products/converter/
 
-docs/Kurt/VMware
-  Copy of Kurt Bunker's VMware documentation.
-
-docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_config_max.pdf
-  Important cert study document - easy read for config maximums.
-
-esx/
-  Previous ESX Hypervisor
-
-esxi/
-  VMware vSphere Hypervisor: Bare Metal Hypervisor
-  http://www.vmware.com/products/vsphere-hypervisor/overview.html
-
 glossary.txt
   Glossary for VMware
 
@@ -81,103 +33,18 @@ index.html
 links.txt
   VMware related links
 
-/net/its/OPERATIONS/Kurt/VMWare/
-  Net share with Kurt Bunker's VMware documentation at UAA IT Services.
-
-Makefile
-  Install vmware docs to location web directory 
-
-mui/
-  Management Interface
-
 pdf/
   Portable Document Format files
 
-p2v/
-  Physical to virtual
-  Use of VMware Convert to convert physical machines to virtual machines.
-
-player/
-  Player for executing VMs on workstation.
-
 server/
   Server
-
-src/
-  Source code
-
-tools/
-  VMware Tools is a suite of utilities that enhances the
-  performance of the virtual machine's guest operating system
-  and improves management of the virtual machine.  Without
-  VMware Tools installed in your guest operating system, guest
-  performance lacks important functionality.
-  http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=340
-
-uaa/
-  UAA VMware docs
-
-vcp5/
-  VMware Certified Professional 5
-
-vix/
-  API for programmatic control 
-
-vm/
-  Virtual Machine
-
-vmdk/
-  VMDK (Virtual Machine Disk) is a file format used for
-  virtual appliances developed for VMware products.  The
-  format is a container for virtual hard disk drives to be
-  used in virtual machines like VMware Workstation or
-  Virtualbox. 
-  http://en.wikipedia.org/wiki/VMDK
 
 vmware.txt
   VMware
   https://www.vmware.com/
 
-vmware-temp-completed
-  Copy of C:\Documents and Settings\ray\Local Settings\Temp
-  Created on 2nd try of running converter 3.0 against the
-  ami-hq-rm windows 2000 workstation on June 7, 2007.
-  Run completed since excluded e:\ drive for additional hard drive space.
-  Archived for log info.
-
-vmware-temp-failed
-  Copy of C:\Documents and Settings\ray\Local Settings\Temp
-  Created on 1st try of running converter 3.0 against the
-  ami-hq-rm windows 2000 workstation on June 6, 2007.
-  Run failed since out of hard drive space.
-  Archived for log info.
-
-/usr/local/src/00TARBALLS/vmware/vmware-1.0.4/
-
-VMware-server-1.0.4-56528.tar.gz
-  VMware server 1.0.4
-  Working license key
-  Specify Virtual Machines directory on installation.
-
-VMware-workstation-6.0.1-55017.i386.tar.gz
-  VMware workstation 6.0.1
-  No working license key
-  Checks ~/vmware for virtual machines.
-
-vmx/
-  .vmx, <vmname>.vmx, This is the primary configuration file,
-  which stores settings chosen in the New Virtual Machine
-  Wizard or virtual machine settings editor.  If you created
-  the virtual machine under an earlier version of VMware
-  Workstation on a Linux host, this file may have a .cfg
-  extension
-  https://www.vmware.com/support/ws55/doc/ws_learning_files_in_a_vm.html
-
 vsphere/
   VMware management utility
-
-workstation/
-  VMware Workstation
 
 
 Links
@@ -188,22 +55,3 @@ https://www.vmware.com/
 VMware
 From Wikipedia, the free encyclopedia
 http://en.wikipedia.org/wiki/VMware
-
-VMware publications
-http://www.vmware.com/support/pubs
-
-VMware Build Info
-http://vsphere-land.com/vinfo/release-build-info
-
-VMware Server & Workstation Disk Files Explained
-http://www.petri.co.il/virtual_vmware_files_explained.htm
-
-VMware VCenter Converter
-Convert Physical Machines to Virtual Machines - Free!
-http://www.vmware.com/products/converter/
-
-Veeam Backup & Replication
-http://www.veeam.com/vmware-esx-backup.html
-
-VMware Server & Workstation Disk Files Explained
-http://www.petri.co.il/virtual_vmware_files_explained.htm
