@@ -11,8 +11,12 @@ Filelist
 backups/
   Backups for VMware
 
+esx/
+  Predecessor to VMware ESXi
+
 esxi/
-  ESXi
+  VMware vSphere Hypervisor: Bare Metal Hypervisor
+  http://www.vmware.com/products/vsphere-hypervisor/overview.html
 
 svn_ext_val.txt
   List of repo hierarchical directories to checkout under vmware/
@@ -20,5 +24,104 @@ svn_ext_val.txt
 TODO
   Prior TODO from 00VMWARE/uaa/
 
-esx/
-  Predecessor to VMware ESXi
+
+
+Old filelist
+============
+From README in base:
+
+docs/Kurt/VMware/
+  Copy of Kurt Bunker's VMware documentation.
+
+docs/Kurt/VMware/White_Papers/3.5/vi3_35_25_config_max.pdf
+  Important cert study document - easy read for config maximums.
+
+/net/its/OPERATIONS/Kurt/VMWare/
+  Net share with Kurt Bunker's VMware documentation at UAA IT Services.
+
+Makefile
+  Install vmware docs to location web directory
+
+mui/
+  Management Interface
+
+p2v/
+  Physical to virtual
+  Use of VMware Convert to convert physical machines to virtual machines
+
+player/
+  Player for executing VMs on workstation
+
+src/
+  Source code
+
+tools/
+  VMware Tools is a suite of utilities that enhances the
+  performance of the virtual machine's guest operating system
+  and improves management of the virtual machine.  Without
+  VMware Tools installed in your guest operating system, guest
+  performance lacks important functionality.
+  http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=340
+
+uaa/
+  UAA VMware docs
+
+vcp5/
+  VMware Certified Professional 5
+
+vix/
+  API for programmatic control
+
+vm/
+  Virtual Machine
+
+vmdk/
+  VMDK (Virtual Machine Disk) is a file format used for
+  virtual appliances developed for VMware products.  The
+  format is a container for virtual hard disk drives to be
+  used in virtual machines like VMware Workstation or
+  Virtualbox.
+  http://en.wikipedia.org/wiki/VMDK
+
+vmware.txt
+  VMware
+  https://www.vmware.com/
+
+vmware-temp-completed/
+  Copy of C:\Documents and Settings\ray\Local Settings\Temp
+  Created on 2nd try of running converter 3.0 against the
+  ami-hq-rm windows 2000 workstation on June 7, 2007.
+  Run completed since excluded e:\ drive for additional hard drive space.
+  Archived for log info.
+
+vmware-temp-failed
+  Copy of C:\Documents and Settings\ray\Local Settings\Temp
+  Created on 1st try of running converter 3.0 against the
+  ami-hq-rm windows 2000 workstation on June 6, 2007.
+  Run failed since out of hard drive space.
+  Archived for log info.
+
+/usr/local/src/00TARBALLS/vmware/vmware-1.0.4/
+
+VMware-server-1.0.4-56528.tar.gz
+  VMware server 1.0.4
+  Working license key
+  Specify Virtual Machines directory on installation.
+
+VMware-workstation-6.0.1-55017.i386.tar.gz
+  VMware workstation 6.0.1
+  No working license key
+  Checks ~/vmware for virtual machines.
+
+vmx/
+  .vmx, <vmname>.vmx, This is the primary configuration file,
+  which stores settings chosen in the New Virtual Machine
+  Wizard or virtual machine settings editor.  If you created
+  the virtual machine under an earlier version of VMware
+  Workstation on a Linux host, this file may have a .cfg
+  extension
+  https://www.vmware.com/support/ws55/doc/ws_learning_files_in_a_vm.html
+
+workstation/
+  VMware Workstation
+
