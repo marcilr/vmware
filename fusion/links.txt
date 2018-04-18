@@ -8,6 +8,10 @@ VMware Fusion related links
 
 Links
 =====
+Creating a custom virtual machine in VMware Fusion (1013810)
+Document Id: 1013810
+https://kb.vmware.com/s/article/1013810
+
 Fusion
 https://www.vmware.com/products/fusion.html
 
