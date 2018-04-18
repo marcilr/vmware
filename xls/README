@@ -10,3 +10,23 @@ Request for VM1_EXCEL.xls (19kb)
   Spreadsheet to request new vm.
   From Jerry Buttitta <gbuttitta@gci.com>
   Thu 4/27/2017 2:39 PM
+
+vmware-firewall-ports-v1.0.xls
+  VMware Firewall ports(v1.0).xls
+  ===> vmware-firewall-ports-v1.0.xls
+  BEAUTIFUL vmware firewall sheet and diagram!!!!
+  From Jim Weller on Jan. 1, 2009
+  http://communities.vmware.com/docs/DOC-5401
+
+  Created on: May 22, 2008 1:56 PM by rake
+  Last Modified:  May 23, 2008 2:53 PM by rake
+
+  VMWARE NETWORK PORTS Goal: To create a comprehensive list of known
+  ports & protocols used for all VMware communications, in order to configure
+  firewalls to allow specified traffic.
+
+  V1.0 Current version (First Draft) V1.1 Fill in any blank cells. V1.2
+  Improve descriptions in "Functionality" column. Detailed info - How each
+  port is used. V2.0 Add a column to indicate which VMware software and
+  version # is affected. If this information is available elsewhere, I have
+  not found it, please notify me! Thank you Cameron Rake
