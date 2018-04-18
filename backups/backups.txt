@@ -4,3 +4,11 @@ Copyright (C) 2014 by Raymond E. Marcil <marcilr@gmail.com>
 
 
 Backups for VMware   
+
+
+Kurtis Bunker had mentioned esxRanger as a promising looking
+backup product.
+* no quiesce, live backup
+
+--http://www.vizioncore.com/esxranger_eval.html  (googled link)
+
