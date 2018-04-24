@@ -5,9 +5,16 @@ Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
 
 Filelist
 ========
+create-new-machine.txt
+  Create new Debian 9.4.0 amd64 machine 
+
 exit-full-screen-mode.txt
   To exit VMware Fusion full screen mode  on macBook Pro:
     command+control+f
 
 syntax.txt
   Syntax
+
+xfce-icon-size.txt
+  Adjust the icon size in XFCE in vm on macBookPro
+
