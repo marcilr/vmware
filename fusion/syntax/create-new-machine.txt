@@ -1,0 +1,146 @@
+create-new-machine.txt
+Created Wed Apr 18 10:23:26 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Create new Debian 9.4.0 amd64 machine:
+
+1. Run VMware Fusion v8.5.8 (5824040)
+   on macBook Pro, running macOS Sierra v10.12.6.
+
+click File > New...
+
+2. At Select thje Installation Method:
+
+click Create a custom virtual machine
+click Continue
+
+3. At Choose Operating System
+   Select the operating system to be used in this virtual machine.
+
+   click Linux
+   click Debian 8.x 64-bit (not quite right but will rename)
+   click Continue
+
+4. At Choose a Virtual Disk
+   Select a virtual disk to be used with this virtual machine.
+
+Choose a vitual disk option:
+x Create a new virtual disk
+  Use an existing virtual disk
+
+Guest OS: Debian 8.x 64-bit
+  Option: New Hard Disk
+
+Capcity: 20GB
+
+click Continue
+
+5. At Finish
+   The configuration of the virtual manchine is now complete
+
+Virtual Machine Summary
+Guest Operating System: Debian 8.x 64-bit
+New Hard Disk:          Capacity 20GB
+Memory:                 512MB
+Networking:             Share with my Mac (NAT)
+Device Summary:         CD/DVD, USB Controller, Printer, Sound Card
+
+To change the default virtual machine settings, click Customize Settings.
+To run the virtual machine now, click Finish.
+
+click Customize Settings
+
+At Settings popup:
+  Update settings:
+    Save As: Debian 8.x 64-bit ===> Debian 9.4.0 amd64
+    Tags:    <blank>
+    Shere:   Virtual Machines
+
+  click Save
+
+6. At Debian 9.4.0 amd64: Settings popup:
+  click CD/DVD (IDE)
+
+7. At Debian 9.4.0 amd64: CD/DVD (IDE) popup:
+
+x Connect CD/DVD Drive
+
+This CD/DVD drive is configured to use the following:
+Autodetect ===> Choose a disc or disc image
+
+Advanced Options
+  Bus type: IDE         <=== Left at default
+
+  Remove CD/DVD Drive   <=== Button
+
+8. At Choose a disk or disc image popup:
+  select Downloads/debian-9.4.0-amd64-netinst.iso (ISO Disk Image - 305.1MB)
+  click Open
+
+  This is Debian Stretch 9.4.0 amd64
+
+9. At Debian 9.4.0 amd64: CD/DVD (IDE)
+x Connect CD/DVD Drive
+
+This CD/DVD drive is configured to use the following:
+  debian-9.4.0-amd64-netinst.iso
+
+Advanced Options 
+  Bus type: IDE         <=== Left at default
+
+  Remove CD/DVD Drive   <=== Button   
+
+click Add Device... (upper right)
+
+10. At Debian 9.4.0 amd64 window:
+  click right triangle play button
+
+11. At It appears that other virtual machines are running.
+    Some host devices may be unavailable to this virtual
+    machine.  Some host devices (such as CD-ROM drives)
+    may be shared among several virtual machines
+    by toggling the entries in the "Virtual Machine" menu.
+    Select OK to continue, Cancel to power off.
+    click OK
+
+12. At Debian GNU/Linux installer boot menu:
+  Graphical install
+  Install
+  Advanced options             <===
+  Help
+  Install with speech synthesis 
+
+  select Advanced options
+  click Enter
+
+13. At Advanced options menu:
+  Back..
+  Graphical expert install
+  Graphical rescue mode
+  Graphical automatd install
+  Expert install             <===
+  Rescue mode
+  Automated install
+  Speech-enabled advanced options
+
+  select Expert install
+  click enter
+
+14. At Debian installer main meni install Debian
+  hostname:     LT-F34328-MAC (same as macOS)
+  domain name:  gci.com
+  user account: rmarcil/the usual
+  kernel:       linux-image-4.9.0-amd64
+ 
+  debian desktop environment:
+  ...
+  * Xfce
+  ...
+  * printer server 
+  * SSH sercer
+  * standard system utilities
+  click Continue
+
+Installed 1166 items (~12 minutes)
+
