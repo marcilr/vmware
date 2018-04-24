@@ -15,6 +15,106 @@ enough for home users and powerful enough for IT professionals,
 developers and businesses.
 
 
+The GCI macBook Pro 2016 running macOS Sierra v10.12.6 (April 23, 2016)
+has VMware Fusion 8.5.8 (5824040) installed running Win 7 Pro.
+I was also able to install a machine running Debian 9.4.0 amd64.
+Very nice.
+
+
+Tue Apr 24 09:55:46 AKDT 2018
+=============================
+Updated VMwre Fusion from VMware Fusion 8.5.8 (5824040) to ???
+
+1. In VMware Fusion 8.5.8 (5824040):
+close any running machines
+
+2. In VMware Fusion 8.5.8 (5824040):
+click VMware Fusion > Check for Updates...
+
+At A new version of VMware Fusion is available!
+
+VMware Fusion 8.5.10 is now available (you have 8.5.8)
+Would you like to download VMware Fusion 8.5.19 now?
+
+  VMware Fusion 8.5.10 is a FREE update
+  and is recommended for all VMware
+  Fusion 8 users.  VMware Fusion 8.5.10
+  contains fixes and minor improvements.
+
+  See the VMware Fusion release notes for
+  more details.
+  https://docs.vmware.com/en/VMware-Fusion/index.html
+
+click Download and Install
+
+3. Watch VMware Fusion is downloading updates
+   Determining updated packages...
+   Updating VMware Fusion Core...
+
+At VMware Fusion requires administrative privileges]
+to install.
+
+Enter your password to allow this.
+
+User Name: Raymond Marcil
+Password: (AD password)
+
+4. After the update the VMware Fusion 
+Virtual Machine Library popped up
+displays machines:
+
+  Virtual machines:
+    Debian 8.x 64-bit
+    Debian 9.4.0 amd64
+
+  Shared virtual machines:
+    LT-34328-VM
+
+5. Check new version:
+click VMware Fusion > About VMware Fusion
+
+This displays:
+  VMware Fusion
+  Version 8.5.10 (7527438)
+
+Looks good!
+
+6. Run Debian 9.4.0 amd64 machine machine:
+select empty macOS screen
+click VMware Fusion icon to run
+click File > Open and Run...
+select Debian 9.4.0 amd64
+click open
+
+7. Run Win 7 Pro machine:
+select screen with VMware Fusion (has Debian 9.4.0 amd64)
+hover mouse at top and option key to get VMware Fusion toolbar
+
+select empty macOS screen
+click command space to get macOS application seach
+search for VMware Fusion
+
+This displays:
+  VMware Fusion
+  2 Recent Documents
+
+  Debian 9.4.0 amd64
+  Today, 10:09AM
+
+  LT-F34328-VM
+  Today, 9:51AM
+
+click LT-F34328-VM to restore the win 7 pro virtual machine state...
+click black display to get classic Win 7 Pro:
+  Press ctrl-alt+deleete to unlock this computer
+
+click ctrl-command-delete to get win 7 pro login.
+login
+
+Still running automic.  Looks good.
+
+
+
 Links
 =====
 Fusion
