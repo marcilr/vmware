@@ -1,0 +1,12 @@
+xfce-icon-size.txt
+Created Wed Apr 18 13:33:39 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+To adjust the icon size in XFCE in vm on macBookPro:
+
+1. right-click desktop, i.e two-finger click on macBookPro
+   select Desktop Settings... > Icons
+   adjust Icon size as desired.  80 looks good
+   click Close
+
