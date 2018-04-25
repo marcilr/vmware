@@ -1,0 +1,22 @@
+workstation.txt
+Created Wed Apr 25 09:46:20 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware Workstation Pro
+
+
+VMware Workstation Pro Lets You Run Multiple Operating Systems as
+Virtual Machines (including Windows VMs) on a Single Windows or Linux PC
+
+VMware Workstation Pro is the industry standard for running multiple
+operating systems as virtual machines (VMs) on a single Linux or Windows
+PC.  IT professionals, developers and businesses who build, test or demo
+software for any device, platform or cloud rely on Workstation Pro.
+--vmware.com
+
+
+Links
+=====
+Workstation Pro
+https://www.vmware.com/products/workstation-pro.html
