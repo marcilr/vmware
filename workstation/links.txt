@@ -1,0 +1,15 @@
+links.txt
+Created Wed Apr 25 09:43:36 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware workstation related links
+
+
+Links
+=====
+VMware Workstation 14 Pro
+price: $249.99
+price: $149.99 (upgrade from Workstation 11.x or Player 7 Pro or greater
+April 25, 2018
+https://www.vmware.com/products/workstation-pro.html
