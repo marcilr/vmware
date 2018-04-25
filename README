@@ -6,7 +6,6 @@ by Raymond E. Marcil <marcilr@gmail.com>
 VMware
 
 
-
 Filelist
 ========
 00ARCHIVES/
@@ -45,6 +44,10 @@ vmware.txt
 
 vsphere/
   VMware management utility
+
+workstation/
+  VMware workstation
+  Excel spreadsheets
 
 
 Links
