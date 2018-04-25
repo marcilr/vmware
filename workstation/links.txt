@@ -8,6 +8,16 @@ VMware workstation related links
 
 Links
 =====
+Download VMware Workstation Pro
+Version: 14.0
+https://my.vmware.com/en/group/vmware/info?slug=desktop_end_user_computing/vmware_workstation_pro/14_0
+
+Download VMware Workstation Pro
+Version 12.0
+Has VMware Workstation Pro 12.5.9 for Linux
+Release Date: 2018-01-10
+https://my.vmware.com/en/group/vmware/info?slug=desktop_end_user_computing/vmware_workstation_pro/12_0
+
 VMware Workstation 14 Pro
 price: $249.99
 price: $149.99 (upgrade from Workstation 11.x or Player 7 Pro or greater
