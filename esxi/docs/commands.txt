@@ -1,0 +1,12 @@
+commands.txt
+Created Thu May 17 10:59:33 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware ESXi commands
+
+
+Commands
+========
+Alt-F1 - Unsupported console
+
