@@ -6,13 +6,6 @@ by Raymond E. Marcil <marcilr@gmail.com>
 VMware ESXi
 
 
-
-
-Commands
-========
-Alt-F1 - Unsupported console.
-
-
 Notes
 =====
 o Enter license: Go to configuration -> licensing in vi client to enter code.
