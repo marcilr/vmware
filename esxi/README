@@ -6,41 +6,6 @@ by Raymond E. Marcil <marcilr@gmail.com>
 VMware ESXi
 
 
-"Run all your production applications at near-native performance on the
-next-generation OS-independent VMware hypervisor, now available for free.
-VMware ESXi has the same functionality and performance as VMware ESX but with
-a 32 MB disk footprint."
---VMware ESXi 3.5 and Updates
-  https://h20392.www2.hpe.com/portal/swdepot/displayProductInfo.do?productNumber=HPVM05
-
-Compatible motherboards?
-* Support for up to 8 cores
-* Support for x64 guest systems
-* Ability to boot ESXi 4.0 from USB (preferably USB 2.0)
-* At least 2 supported on-board gigabit controllers
-* On-board video
-
-Product: ESXi 4 Single Server Licensed for 1 physical CPUs (1-6 cores per CPU)
-         Looks like 1x 6-core CPU is the way to go.
-
-
-Manage VMware ESXi from Anywhere
-================================
-Get point-and-click management for your ESXi host and its virtual machines
-using the intuitive graphical interface of VMware vSphere Client.  Take
-snapshots of your virtual machines and roll back changes when testing patches
-or updates, monitor performance and  resource utilization, and perform basic
-hardware component monitoring.
-from: http://www.vmware.com/products/esxi/
-
-Want 5x Netgear GA311 gigabit cards:
-  2x in bornite
-  2x in turchoise
-  1x in malachite
-
-NETGEAR GA311 10/100/1000Mbps PCI Gigabit Adapter 
-with Jumbo Frame support 1 x RJ45 - Retail
-price: $24.00 (newegg.com)
 
 
 Commands
