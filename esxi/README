@@ -165,6 +165,11 @@ Filelist
 00INSTALL/
   Installation of ESXi
 
+esxi.txt
+  ESXi bare metal hypervisor 
+  https://en.wikipedia.org/wiki/VMware_ESXi
+  https://www.vmware.com/products/esxi-and-esx.html
+
 glossary.txt
   Glossary for ESXi
 
