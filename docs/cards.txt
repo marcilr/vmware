@@ -3,6 +3,11 @@ Created Thu May 17 11:06:11 AKDT 2018
 Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
 
 
-VMware cards I own:
+3Ware cards I own:
 
-o 3ware 9650SE-8LPML (PCIe x4)
+o 3ware 9650SE-8LPML SATA II PCI Express RAID 6 Card
+  price: $399.99 + shipping = $429.38 (ebay - 2/11/2008)
+
+o AMCC 3Ware 9650SE-16ML 16-port PCI-E SATA-II RAID 
+  price: $480.00 + $12 shipping = $492.00 (ebay - 02/14/2009)
+
