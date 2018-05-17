@@ -1,0 +1,18 @@
+links.txt
+Created Thu May 17 13:48:05 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+ESXi installation related links
+
+
+Links
+=====
+Booting ESXi off USB/SD - VMware vSphere Blog
+https://blogs.vmware.com/vsphere/2011/09/booting-esxi-off-usbsd.html
+
+Install ESXi 4.0 to a USB device - vm-help.com
+http://www.vm-help.com/esx40i/Boot_ESXi_from_USB_flash_drive.php
+
+Installing ESXi on a supported USB flash drive or SD flash card ...
+https://kb.vmware.com/s/article/2004784
