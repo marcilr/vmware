@@ -35,6 +35,9 @@ http://www.syslinux.org/wiki/index.php/The_Syslinux_Project
 VMware Download Center
 http://downloads.vmware.com/
 
+VMware ESXi: The Purpose-Built Bare Metal Hypervisor
+https://www.vmware.com/products/esxi-and-esx.html
+
 VMware ESXi
 From Wikipedia, the free encyclopedia
 https://en.wikipedia.org/wiki/VMware_ESXi
