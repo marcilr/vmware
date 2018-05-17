@@ -3,7 +3,15 @@ Created Thu May 17 10:46:23 AKDT 2018
 Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
 
 
-ESXi
+ESXi The Purpose-Built Bare Metal Hypervisor
+
+
+"Run all your production applications at near-native performance on the
+next-generation OS-independent VMware hypervisor, now available for free.
+VMware ESXi has the same functionality and performance as VMware ESX but with
+a 32 MB disk footprint."
+--VMware ESXi 3.5 and Updates
+  https://h20392.www2.hpe.com/portal/swdepot/displayProductInfo.do?productNumber=HPVM05
 
 
 Fri Nov  4 14:16:52 AKDT 2011
@@ -36,4 +44,3 @@ Links
 =====
 VMware ESXi: The Purpose-Built Bare Metal Hypervisor
 https://www.vmware.com/products/esxi-and-esx.html
-
