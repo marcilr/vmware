@@ -6,11 +6,6 @@ by Raymond E. Marcil <marcilr@gmail.com>
 VMware ESXi
 
 
-Notes
-=====
-o Enter license: Go to configuration -> licensing in vi client to enter code.
-o IP address reported on console at boot.  
-
 
 ASUS M3N78-VM - malachite
 =============
