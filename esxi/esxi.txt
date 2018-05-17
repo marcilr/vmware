@@ -30,3 +30,10 @@ microservers http://www.dell.com/us/business/p/poweredge-c5125/pd [dell.com]
 Waste of time/money (Score:2)
 by ctime (755868) on Friday November 04, @01:48PM (#37949978) 
 http://it.slashdot.org/story/11/11/04/1712205/vmware-a-falling-giant
+
+
+Links
+=====
+VMware ESXi: The Purpose-Built Bare Metal Hypervisor
+https://www.vmware.com/products/esxi-and-esx.html
+
