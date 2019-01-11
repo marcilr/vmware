@@ -20,3 +20,11 @@ Links
 =====
 Workstation Pro
 https://www.vmware.com/products/workstation-pro.html
+
+VMware Workstation 15 Pro
+o VMware Workstation Pro is the industry standard for running multiple
+  operating systems on a single Linux or Windows PC.
+o Workstation 15 Pro improves on the leading desktop with an updated
+  high-DPI user interface, a new REST API, support for the latest Windows
+  and Linux operating systems, and more…
+https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html
