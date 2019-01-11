@@ -28,6 +28,10 @@ Installed VMware Workstation Pro:
   Ran as Administrator and installed to Windows 10 for testing.
   Skips advanced keyboard package that would have required a reboot.
 
+Got nice VMware Workstion Pro icon on desktop
+
+P.S. Oracle VM VirtualBox is failure badly these days.
+
 
 Links
 =====
