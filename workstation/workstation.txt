@@ -16,6 +16,18 @@ software for any device, platform or cloud rely on Workstation Pro.
 --vmware.com
 
 
+Thu Jan 10 15:28:43 AST 2019
+============================
+Downloaded VMware Workstation 15 Pro to check it own for use to
+run Debian under Windows 10.
+
+This downloaded:
+  VMware-workstation-full-15.0.2-10952284.exe (512MB)
+
+Ran as Administrator and installed to Windows 10 for testing.
+Skips advanced keyboard package that would have required a reboot.
+
+
 Links
 =====
 Workstation Pro
