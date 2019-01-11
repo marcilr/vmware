@@ -88,7 +88,7 @@ Looks good.
   x SSH server
   x standard system utilities
 
-Installed 1166 packages.
+Left running at 4:00PM with 688 of 1166 packages installed.
 
 
 
