@@ -24,8 +24,9 @@ run Debian under Windows 10.
 This downloaded:
   VMware-workstation-full-15.0.2-10952284.exe (512MB)
 
-Ran as Administrator and installed to Windows 10 for testing.
-Skips advanced keyboard package that would have required a reboot.
+Installed VMware Workstation Pro:
+  Ran as Administrator and installed to Windows 10 for testing.
+  Skips advanced keyboard package that would have required a reboot.
 
 
 Links
