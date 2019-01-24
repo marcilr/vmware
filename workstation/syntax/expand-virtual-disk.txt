@@ -1,0 +1,41 @@
+expand-virtual-disk.txt
+Created Wed Jan 23 15:05:17 AST 2019
+by Raymond E. Marcil <ray.marcil@alaska.gov>
+
+
+Expand virtual disk under VMware Workstation 15 Pro
+
+
+VM specs:
+  Expand a virtual disk under VMware Workstation 15 Pro
+  version 15.0.2 build-10952284
+  Running under Windows 10, 64-bit (Build 17134) 10.0.17134
+
+  Hard Disk
+    Current size:     6 GB
+    System free:: 806.9 GB
+    Maximum size:    32 GB
+
+1. Powered off Debian 9.x 64-bit VM
+
+2. View Hard Disk (SCSI) VM settings
+right-click Debian 9.x 64-bit machine
+click Settings...
+click Hard Disk (SCSI) 32GB
+
+3. Expand hard disk from 6GB to 20GB
+i. Under Disk utilities or Expand disk capacity:
+   click Expand...
+
+ii. At Expand Disk Capacity popup:
+
+Specify the maximum size for the virtual disk:
+  Maximum disk size (GB): 32GB   <=== Accept default > current 6GB
+
+  Expand increases only the size of a virtual disk.  Sizes of
+  partitions and file systems are not affected.
+
+  Expand buttong is greyed out.
+
+NOTE: Do not need to do this.  Space is devided amongst logical volumes.
+
