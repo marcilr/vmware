@@ -16,6 +16,20 @@ software for any device, platform or cloud rely on Workstation Pro.
 --vmware.com
 
 
+Thu 16 Jul 2020 08:55:36 AM AKDT
+================================
+Uncertain if I actaully purchased VMware Workstation 15 Pro 
+for $249.99 last Tue Aug 20, 2019 or not.
+
+Logging into vmware.com:
+Email:   marcilr@gmail.com
+Pass:    the usual
+
+NOTE: Don't find license or any solid reference to this
+purchase.  i.e. Do not think I have actully 
+purchased VMware Workstation.
+
+
 Tue Aug 20 15:15:37 AKDT 2019
 =============================
 Purchased a copy of VMware Workstation 15 Pro for $249.99
