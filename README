@@ -8,6 +8,9 @@ VMware
 
 Filelist
 ========
+.gitignore
+  Files for git to ignore
+
 00ARCHIVES/
   Archives
 
