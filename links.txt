@@ -138,6 +138,11 @@ VMware Workstation 4.5
 Using Samba on a Linux Host
 http://www.vmware.com/support/ws45/doc/network_samba_ws.html
 
+Workstation Player FAQs
+Good comparison of VMware Player vs. Workstation
+Friday August 14, 2020
+https://www.vmware.com/products/player/faqs.html#:~:text=VMware%20Workstation%20Player%20enables%20you,create%20and%20run%20virtual%20machines.&text=VMware%20Workstation%20Pro%20is%20much,Machines%20settings%20and%20much%20more.
+
 Welcome to Trivore VMware ESX Server v2.1.x hints 'n' tips
 @ http://trivore.com/vmware/
 http://trivore.com/vmware/esx21.html
