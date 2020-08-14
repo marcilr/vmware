@@ -1,0 +1,33 @@
+player-vs-workstation.txt
+Created Fri Aug 14 11:01:21 AKST 2020
+Copywrite 2020 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+VMware Player vs Workstation
+
+
+How does VMware Workstation Player compare to VMware Workstation Pro?
+
+VMware Workstation Player enables you to quickly and easily create and 
+run virtual machines. The Workstation Player user interface is designed 
+to be as easy to use as possible. It is intended for people who need to 
+run virtual machines, typically provided to them by their IT organization, 
+system administrator, instructor, software supplier etc.
+
+VMware Workstation Pro is much more advanced and comes with powerful 
+features including snapshots, cloning, remote connections to vSphere or 
+vCloud Air, sharing VMs, advanced Virtual Machines settings and much more. 
+Workstation is designed to be used by technical professionals such as 
+developers, quality assurance engineers, systems engineers, IT 
+administrators, technical support representatives, trainers, etc. 
+More comparison details are available in the Workstation Pro vs Workstation 
+Player comparison table.
+--Workstation Player FAQs
+  https://www.vmware.com/products/player/faqs.html#:~:text=VMware%20Workstation%20Player%20enables%20you,create%20and%20run%20virtual%20machines.&text=VMware%20Workstation%20Pro%20is%20much,Machines%20settings%20and%20much%20more.
+
+Links
+=====
+How does VMware Workstation Player compare to VMware Workstation Pro?
+Workstation Player FAQs
+Friday August 24, 2020
+https://www.vmware.com/products/player/faqs.html#:~:text=VMware%20Workstation%20Player%20enables%20you,create%20and%20run%20virtual%20machines.&text=VMware%20Workstation%20Pro%20is%20much,Machines%20settings%20and%20much%20more.
