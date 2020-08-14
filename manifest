@@ -27,5 +27,6 @@
 # Virtualization
 #
 # =====================================================================
+ssh://git@github.com/marcilr/vmware-player             player
 ssh://git@github.com/marcilr/vmware-workstation        workstation
 
