@@ -1,0 +1,31 @@
+# manifest
+# Created Fri Aug 14 10:17:24 AKST 2020
+# Copyright (C) 2020 by Raymond E. Marcil <marcilr@gmail.com>
+#
+# Manifest for resync application
+#
+# To my knowledge GitHub does not support hierarchical repositories outside
+# of perhaps git submodules.  However, submodules are not so good so I've
+# implemented hierarchical repositories using repo names and this manifest.
+#
+# The dashes in the repo names represent directory separation.  There are
+# some repos like svn-to-git/ that have acutally dashes in the repo name.
+# Have not escaped these dashes in any way.   Might do this at some point.
+#
+
+# =====================================================================
+# =====================================================================
+#
+# Public GitHub repositories
+#
+# =====================================================================
+# =====================================================================
+
+
+# =====================================================================
+#
+# Virtualization
+#
+# =====================================================================
+ssh://git@github.com/marcilr/vmware-workstation        workstation
+
